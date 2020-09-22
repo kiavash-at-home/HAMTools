@@ -4,7 +4,7 @@ This is a collection of open source, free to use and/or abandonware tools for Am
 **NOTE**: Scripts don't do any error checks. You need to check by yourself (or better implement them in a Pull Request)!
 
 ## How to build
-1. Cloning the repository locally
+1. Clone the repository locally
 0. `cd src`
 0. `./build.sh`
    1. Install the packages that are missing.
