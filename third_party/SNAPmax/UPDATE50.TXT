@@ -1,0 +1,67 @@
+          Changes in Versions 500 and 501 of SNAPmax
+          ------------------------------------------
+
+          SNAPmax was extensively rewritten for V.500/501. Although
+          it has not changed in its essential "look and feel", many
+          great features have been added.  If you have used SNAPmax
+          previously, it will look a little different in places but
+          you will find that it's comfortably similar in use and in
+          general appearance, even to much earlier versions.
+
+
+         **   USING SNAP.INI FROM PREVIOUS VERSIONS of SNAPmax    **
+         **  ==================================================   **
+         ** As SNAPmax is now set up for free non-commercial use  **
+         ** it generates a new .INI file for you automatically.   **
+
+
+         Version 501 adds noise vs. freq. presentation for your site.
+
+         The enhancements in Version 500 were:-
+          o A new display shows the performance of any of many modes
+            (CW, PSK, RTTY, TOR, SSB, AM, broadcast AM, wideband FM)
+            as Good, Median & Poor --- depending on their required
+            bandwidth and inherent efficiency.
+          o Three remote sites are saved, with transmit antenna data,
+            power, name, prefix, latitude and longitude. A fourth
+            "site" presents ground wave propagation for your station.
+            All site data may be saved independently for future use.
+            The data you use for "Band Open" can now be saved too.
+          o For digital modes, multipath delay is calculated, and the
+            likely onset of significant signal distortion indicated.
+          o Long path can be selected and displayed.
+          o Noise data for VK1 thru VK8, ZL, JA, ZS, DL, F and many
+            other world wide etc. countries is now included.
+          o A frequency scan from 2 - 12 MHz can now also be selected
+            for better detail on lower bands, for example in NVIS use.
+          o An option allows an approximate estimate of "chordal hop"
+            signals, but makes no prediction of mode probability.
+          o The 'analysis' graphic displays have been improved and now
+            show signal-noise ratio and required levels. ["Good" etc.]
+          o Day/night condition at the ends and mid-point are shown.
+          o FOT is now shown on print-outs as well as on screen.
+          o Presentation and operation much simplified and improved.
+          o Many technical improvements described in tech. data files.
+
+          Versions in the 400 series were developmental.
+
+          These features were added in Versions 34 and 35:-
+          o  You can select your own preferred default start-up mode.
+          o  The graphic 'analysis' mode has E,F mode flags, shows
+              probable limits of MUF and has much path data.
+          o  MUF is from Fricker's equations (from the BBC).
+          o  Antipodal focusing is included with optional extent.
+          o  Auroral zone loss calculations are provided to Northern
+              and Far Southern stations using near-polar routes.
+          o  Users can use internally calculated antenna gain, their
+              own gain values or zero-gain isotropic antennas.
+          o  Users in USA, Canada, Australia, NZ & UK have internal
+              noise maps; anywhere else, you can use your own noise
+              map data, as well as an approximate internal value.
+          o  All QTH records are compatible with earlier versions.
+
+           GL & 73 DE Crawford MacKeand   WA3ZKZ, VP8CMY, ex-G4ARR
+         Tyndar Press P.O.Box 236 Montchanin DE 19710 USA 20 Aug 01
+
+
+

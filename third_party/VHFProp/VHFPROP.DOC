@@ -1,0 +1,204 @@
+                             Documentation for
+              VHFProp -- An interactive Signal Analysis Program
+                 for the 6 Meters through 23 CM Amateur Bands
+
+VHFProp is a computer program to implement the procedures of the QST article
+'A Method for Determining V.H.F. Station Capabilities' published in November
+1961 by D. W. Bray, K2LMG, and reprinted in most ARRL VHF and Antenna Handbooks
+since that date.  K2LMG is also the author of VHFProp.
+
+The program allows the user to estimate received signal strength from a distant
+VHF/UHF amateur radio station in the 6 meter to 23 cm bands.  The estimate is
+based on distance between stations, transmitted power, antenna gain of both the
+transmitting and receiving stations, line losses, antenna heights, station site
+heights above average terrain, and other factors.
+
+The program is 'window oriented' and as such need little explanation about its
+operation.  Some help about the technical aspects are a given below, however.
+
+There is one addition to this program which does not appear in the QST article.
+This is determining the station capabilities when using a repeater for one or
+both of the stations.  There is no difference between a base station and a
+repeater in their propagation characteristics except a repeater is usually
+located at a site which is far above the average terrain in the local area.  It
+is this situation which has been added to the calculation.
+
+PROGRAM USAGE
+
+In order for two station to communicate it is necessary that the Signal-to-
+Noise Ratio (S/N) of the received signal is greater than 0db.  The greater the
+S/N ratio the better the signal. The desired S/N is usually considerably
+greater than 0db.  Typical program usage is to enter values for both stations
+and then decide if the S/N is great enough. If the program indicates a S/N
+which is not satisfactory, then you can explore changes to your station by
+adjusting the transmitted power, antenna gain, antenna height, etc. until a
+satisfactory value is obtained.
+
+When the predicted S/N value is 0db or greater the received signal should be
+readable under the assumed conditions. As you know propagation conditions vary
+from hour to hour.  If you have set the Mode Reliability value to '50%', then
+50% of the time (averaged over many days) the signal should be readable.  Also
+if the Mode Fading is set to 'No' then at 0db S/N you should hear the signal
+fade in and out over a period of minutes. If you have a station setup, you can
+check out the program and the values you have entered by observing the
+receiver's S meter.  S meters usually read about 6db per S unit, so you can get
+a rough check of the S/N ratio by dividing the predicted S/N value by 6 and
+then checking it out on your receiver's S meter.
+
+When the program starts up you will find that most of the parameters are set to
+zero and the cursor is located at the parameter for distance between the
+stations.  The distance value is pre-set to 10 miles.  First change the
+distance for the value between the two stations of interest.  You will see the
+resulting Signal-to-Noise value, Path Loss, and Station Gain for the initial
+values.  As you continue to change the parameters new results are calculated.
+
+The values are changed by entering the desired numbers and then pressing the
+Enter (or Return) key, or pressing an arrow key.  If Enter is pressed the value
+is entered and the cursor remains at the same parameter. If an arrow key is
+pressed the value is entered and the cursor is moved to the parameter in the
+direction of the arrow.
+
+Please refer to the sample VHFProp display screen:
+
+              VHFProp -- An interactive Signal Analysis Program
+
+    Transmitting Station Parameters    |    Receiving Station Parameters
+---------------------------------------+-------------------------------------
+ Power (watts):                 50.0   | Noise Figure (db):             1.0
+ Line Loss (db):                 3.0   | Line Loss (db):                2.0
+ Antenna Gain (db):             11.0   | Antenna Gain (db):            14.0
+ Antenna Height (feet):         80.0   | Antenna Height (feet):        30.0
+ Site Height (feet):          1500.0   | Site Height (feet):            0.0
+ Horizon Angle (degrees):        0.0   | Horizon Angle (degrees):       0.0
+                                       | Bandwidth (KHz):               5.0
+
+ Distance (miles):             100.0       Modes - Select with Enter Key
+                                         ----------------------------------
+ Line of sight distance:        47.4     Frequency Band:                 2m
+ Eff. scatter distance:         52.6     Modulation:                     fm
+                                         Reliability:                   99%
+             Results                     Include Fading:                Yes
+ -----------------------------------
+ Signal to Noise Ratio (db):    10.5
+ Path Loss (db):               185.6
+ Receiver Sensitivity (db):   -163.4
+ Station Gain (db):            196.1
+                                                                Use ESC to Quit
+
+The display is divided into three areas: Parameters, Modes and Results. The
+Parameter area is that part of the display where the parameters are shown and
+may be edited. This area is basically the top part of the screen down to and
+including the Distance parameter. The arrow keys allow you to move over the
+various parameters and change them by entering numbers as described above.  The
+Modes area is the four lines below the title: 'Modes - Select with Enter Key'.
+The arrow keys allow you to move into this area also, but these parameters are
+changed by pressing the Enter key repeatedly until the desired value is shown.
+The possible values of the modes are:
+
+Frequency Band:   6m, 2m, 1.25m, 70cm, 33cm, 23cm
+Modulation:       fm, ssb, cw, am
+Reliability:      50%, 99%
+Include Fading:   No, Yes
+
+The Results area displays the four results of the calculations.
+
+If as you enter data the computer beeps the data entered is out of range. The
+distance must not be greater than 500 miles. The transmitter power must not
+be less than 0.01 watts.  The antenna and site height must be positive.  The
+horizon angle must be such that the effective distance is greater than 0 and
+not greater than 500 miles.
+
+
+TECHNICAL HELP and HINTS
+
+Each of the parameters and modes is discussed next.
+
+TRANSMITTER POWER.  This is simply the transmitter output power in watts.
+
+NOISE FIGURE.  This parameter is a measure of the noise introduced by the front
+end of your receiver.  Most receiver manuals will give you this figure.  If
+not, these days 1db is a good value unless you have a special preamp.  In that
+case the preamp manual will tell you its noise figure.  If you have an old or
+inexpensive receiver you might want to use 2 to 3 db for the noise figure.
+
+LINE LOSS.  Refer to almost any ARRL handbook.  Measure the length of your coax
+and multiply by the loss per foot for your type of coax.
+
+ANTENNA GAIN.  The antenna gain parameter is more than just the gain of your
+antenna. In addition to the gain of the antenna itself you should add about 4db
+for earth reflection. If your antenna is more than a wavelength above the
+ground, and the soil is a good conductor (that is, has a fair amount of
+moisture etc.) the earth acts as a mirror, providing a reflection of your
+antenna "under the ground".  Under perfect conditions this would give you a 6db
+additional antenna gain.  4db is probably a good value unless the soil is dry
+or rocky; in that case reduce the value below 4db.
+
+If you don't know the gain of your antenna you can estimate it as follows:
+
+A 1/4 wave Ground Plane: 0 db
+A 1/2 wave dipole: 1.2 db
+A yagi beam: 10 * log(L * F * N / 98) where: log is the base 10 logarithm, L
+     is the length in feet, F is the frequency in MHz, and N is the number of
+     yagi's stacked widely apart.
+
+ANTENNA HEIGHT:  This is simply the height of the antenna above the base of the
+mast, in feet.
+
+SITE HEIGHT:  This is to be used when one of the stations is located high above
+the surrounding terrain.  It should be set to the height of the ground (the
+base of the antenna mast) at the station above the average terrain; in
+particular the height above the average terrain in the direction of the other
+station.
+
+HORIZONTAL ANGLE:  This parameter is related to the Site Height. If one of the
+stations is located either high on a hill, or down in a valley, such that the
+angle to the horizon is not near to zero, then the angle to the horizon in the
+direction of the other station should be used.  The elevation angle may be
+either positive or negative.  Negative if the station is on a hill overlooking
+the terrain, and positive if the station is in a valley. This is to adjust be
+large elevation differences in the stations.
+
+     NOTE: When one station is on a high hill only one of the parameters: Site
+Height, OR a negative Horizon Angle should be used, NOT both.  You will see
+that you get approximately the same value using one or another of these
+parameters. In case one of the stations is in a valley, and the other is on a
+high hill, then it is permissible to use Site Height for one and a positive
+Elevation Angle for the other.
+
+     Estimating the angle to the horizon is difficult.  The disk of the sun is
+about 1/2 a degree.  So if the sun rises or sets near the desired direction the
+angle can be estimated fairly well.  There is an optical illusion when the sun
+is near the horizon making it look a little larger than it really is, so you
+might want to compensate for that.  Also the sun moves at a rate of 1/4 degree
+per minute.  Sometimes that fact can help.
+
+RECEIVER BANDWIDTH.  Your receiver's instruction book will probably tell you
+its effective bandwidth for the modulation mode and filter you indent to use.
+
+FREQUENCY BAND.  The amateur band you are using.
+
+MODULATION.  The modulation mode you are using.
+
+RELIABILITY.  This mode parameter compensates for long term (day to day)
+tropospheric scatter variations.  If you are going to use the path for
+communications you should choose 99% reliability.  If you are using the path
+for experimentation you probably want to use 50% reliability.
+
+INCLUDE FADING. This mode parameter compensates for short term (minute to
+minute) fading. Set this according to the path's intended use, as discussed
+above.
+
+MORE INFORMATION
+
+Refer to almost any ARRL VHF or Antenna Handbook to find more information.  You
+will find an explanation for making the calculations using charts (nonmgrams),
+along with an example.
+
+--------------------------------------------------------------------------------
+This program was written by D. W. Bray -- K2LMG.  It has been placed in the
+Public Domain by the author.  The program is written in the C language, and
+compiled under Turbo-C. (Not all Turbo-C compilers can compile the program
+because of cursor control.) The distribution compressed archive which you
+received should have included: VHFPROP.EXE, VHFPROP.DOC, VHFPROP.C and READ.ME
+--------------------------------------------------------------------------------
+

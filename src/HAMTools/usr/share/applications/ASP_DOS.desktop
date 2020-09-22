@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Name=ASP
+GenericName=Amplifier Simulation Program 4.0
+TryExec=ASP_DOS
+Exec=ASP_DOS %F
+Icon=ASP_DOS
+Terminal=false
+Type=Application
+Categories=Education;Math;Engineering;
+MimeType=application/ASP_DOS;

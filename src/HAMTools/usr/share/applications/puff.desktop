@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Name=Puff
+GenericName=Microwave CAD software
+TryExec=puff
+Exec=puff %F
+Icon=puff
+Terminal=false
+Type=Application
+Categories=Education;Math;Engineering;
+MimeType=application/puff;

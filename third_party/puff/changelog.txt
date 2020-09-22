@@ -1,0 +1,82 @@
+HISTORY
+=======
+
+2000-11-12: first public release of the patch files for Linux.
+
+2001-02-18: second release, fixing a few problems:
+   - keyboards with a non-US layout now work correctly.
+   - the question mark (for component sweeps) can now be entered
+   - export of artwork as an HPGL file now works.
+   - PUFF's built-in printer support now works.
+   - one cause of an FPU stack overflow, causing a "runtime error 207",
+     has been found and fixed.
+   (thanks to Stefan Frank, DG1BAZ, for pointing out most of these
+   problems and help with fixing and testing)
+
+2006-01-31: third release:
+   - update for compatibility with more recent versions of the Free 
+     Pascal compiler (e.g. version 1.9.4).
+     Using such a recent version of the compiler is needed for
+     compatibility with Linux 2.6 kernels.
+   (Thanks to Lorenzo Rosa, IK4XQM, for providing the modified Makefile.
+   The update of the package was in January 2006, but Lorenzo's updated
+   Makefile had been available separately on my webpage since 2004.)
+
+2006-02-17: fourth release:
+   - update for compatibility with Free Pascal compiler version 2.0.0 .
+     This version is no longer compatible with earlier compiler versions;
+     if you have any of those, you should use an earlier version of the
+     package.
+   - minor bugfix in pfrw_21.pas; this bug showed up with version 2.0.2
+     of the compiler, but not with 2.0.0 and earlier, so I'm not sure
+     whether the bug is in the puff code or in the compiler... (it's a
+     buffer overflow happening during a ReadLn() call).
+
+2007-02-11: fifth release:
+   - minor update for compatibility with version 2.0.4 of fpc.
+   (Thanks to J.W. Bruce for testing this.)
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+dec.2009/jan.2010:
+  - much dos-specific code removed (kc8ldo, pa3fwm).
+  - original puff code released under GPLv3 by Dave Rutledge.
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+2010-01-17, pa3fwm: 
+  make insert_key default to true, and remember this setting when changing
+  window (to match what users nowadays expect on a computer).
+
+2010-01-17, pa3fwm: 
+  removed references to CGA from the code (mostly in outdated comments, since
+  the code didn't seem to support CGA anymore anyway).
+
+2010-01-20, pa3fwm: 
+  don't hide the filename extension (.puf) on the screen.
+
+2010-01-18...22, pa3fwm: 
+  made the screen (i.e., the X11 window on linux) resizable.
+  (Since the code was written with a few fixed screen sizes in mind, this
+  was non-trivial; there are still a few situations where a resize is not
+  handled perfectly, e.g. between the first and second Esc keypress for
+  leaving the program.)
+
+2010-01-22, pa3fwm: 
+  - removed the _21 from the source file names.
+  - updated the initial screen.
+
+2010-01-25, pa3fwm: 
+  - removed/corrected some more outdated comments and DOS code
+  - added Alt-s to help window
+
+2010-01-27, pa3fwm: 
+  - fixed window resize in case plot data is not valid
+  - added README.txt
+
+2010-05-31, pa3fwm: 
+  - fixed: window resize caused plot settings to be reset to their initial values.
+
+2016-06-12, pa3fwm:
+  - minor change in Makefile to no longer hard-code the location of libX11.so
+

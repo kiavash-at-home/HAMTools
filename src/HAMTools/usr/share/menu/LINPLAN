@@ -1,0 +1,6 @@
+?package(LINPLAN):needs="X11" \
+ section="Applications/Science/Electronics" \
+ title="LINPLAN" \
+ longtitle="CAD for Linear and Planar Antenna Array of Various Radiating Elements" \
+ icon="/usr/share/pixmaps/LINPLAN.xpm" \
+ command="/usr/local/bin/LINPLAN"

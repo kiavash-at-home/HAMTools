@@ -1,0 +1,357 @@
+<html>
+<head><script src="//archive.org/includes/analytics.js?v=cf34f82" type="text/javascript"></script>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app12.us.archive.org';v.server_ms=1345;archive_analytics.send_pageview({});});</script><script type="text/javascript" src="/_static/js/playback.bundle.js?v=R56vIgLu" charset="utf-8"></script>
+<script type="text/javascript" src="/_static/js/wombat.js?v=cRqOKCOw" charset="utf-8"></script>
+<script type="text/javascript">
+if (window._WBWombatInit) {
+  wbinfo = {}
+  wbinfo.url = "http://www.imaxx.net:80/~kd9jq/asp_theory.html";
+  wbinfo.timestamp = "19991109015201";
+  wbinfo.request_ts = "19991109015201";
+  wbinfo.prefix = "http://web.archive.org/web/";
+  wbinfo.mod = "if_";
+  wbinfo.is_framed = false;
+  wbinfo.is_live = false;
+  wbinfo.coll = "web";
+  wbinfo.proxy_magic = "";
+  wbinfo.static_prefix = "/_static/";
+  wbinfo.enable_auto_fetch = true;
+  wbinfo.auto_fetch_worker_prefix = "http://web.archive.org/web/";
+  wbinfo.wombat_ts = "19991109015201";
+  wbinfo.wombat_sec = "942112321";
+  wbinfo.wombat_scheme = "https";
+  wbinfo.wombat_host = "www.imaxx.net:80";
+  wbinfo.ignore_prefixes = ["/__wb/",
+                            "/_static/",
+                            "/web/",
+                            "http://analytics.archive.org/",
+                            "https://analytics.archive.org/",
+                            "//analytics.archive.org/",
+                            "http://archive.org/",
+                            "https://archive.org/",
+                            "//archive.org/",
+                            "http://faq.web.archive.org/",
+                            "http://web.archive.org/",
+                            "https://web.archive.org/"
+                            ];
+  wbinfo.wombat_opts = {};
+  window._WBWombatInit(wbinfo);
+}
+__wm.init("http://web.archive.org/web");
+</script>
+<link rel="stylesheet" type="text/css" href="/_static/css/banner-styles.css?v=_99BHQfY" />
+<link rel="stylesheet" type="text/css" href="/_static/css/iconochive.css?v=qtvMKcIJ" />
+<!-- End Wayback Rewrite JS Include -->
+
+<title>Asp 4.0 Theory Page</title>
+<body background="/web/19991109015201im_/http://www.imaxx.net/~kd9jq/images/gif/Gray_Textured.gif"><!-- BEGIN WAYBACK TOOLBAR INSERT -->
+
+
+<b><center>
+FREEWARE<br>
+Courtesy of KD9JQ<br>
+<p>
+A.S.P. Version 4.00 &copy; 1989-1996<br>
+Amplifier Simulation Program<br>
+<p>
+<font color="Red">Written by KD9JQ<br>
+Charles H. Reichert<br>
+<p>
+All Rights Reserved</font><br>
+<p>
+THEORY OVERVIEW<br>
+</center></b>
+<p>
+
+    This Program is a result of finding an "easier" way to Design RF Amplifiers
+    by a person with little or no Engineering background or the "HomeBrewer".<br>
+<p>
+    Circuit Modeling for Lowest Noise Figure usually requires knowing the
+    devices internal physical structure, or at the least the optimum Source
+    Reflection Coefficient for Lowest Noise.  Unfortunately, this data is not
+    easily available.<br>
+<p>
+    The aim in developing this particular program is to use S Parameters and
+    then convert them to Y Parameters which are now generally available from
+    the Vender Data sheets.  From these Y Parameters equations for optimizing
+    the Source Impedance (for FET's) have been developed and tested out on
+    numerous test Pre-Amps with results well within expected tolerances of
+    components and measurement tolerances excluding board layout variations.<br>
+<p>
+    In the case of Bipolar devices Standard Y Parameter Design Equations are
+    used. The measured Un-optimized Noise Figure at some Frequency in a 50 Ohm
+    system must be known for Bipolar Circuit Optimization.<br>
+<p>
+    This data is used to calculate the Base Spreading Resistance at the
+    operating frequency and then solving for the optimum Source Resistance and
+    Noise Figure.<br>
+ <p><p>
+
+                                   <b>BACKGROUND</b><br>
+<p>
+    In the early 70's, VHF/UHF Transcievers were just coming into their own.
+    Unfortunately many of the transceivers then and even today lack adequate
+    IF gain for weak signal work.  In order to make up for this inadequacy,
+    many Hams added one or two preamps to the front end.  This started many a
+    knock down fight over the air on how an other local ham's "dirty signal"
+    was all over the band.<br>
+<p>
+    This problem of course is simply strong signal overload causing intermods
+    in the front end, but trying to explain this to another Ham who just plucked
+    down hard cash for his super duper,high gain, low noise preamp just didn't
+    always work!<br>
+<p>
+    I've noticed a number of problems associated with adding preamps to the
+    front end which are as follows;<br>
+<p>
+    <b>1.</b> Excessive Preamp gain will overload the next stage and/or mixer causing
+    intermodulation distortion.  Unfortunately many commerial rigs still don't
+    use high signal handling front ends and mixers, along with proper impedance
+    terminations.<br>
+<p>
+    <b>2.</b> Many amplifiers designed for gain right at GMAX (Max unneutralized gain)
+    often leave very little room for mismatched load/source conditions.<br>
+<p>
+    <b>3.</b> Receiver front ends rely on a 50 ohm source for low noise source
+    impedance transformation, but many preamps do not act as a 50 ohm source to
+    the receiver, therefore instability may result.<br>
+<p>
+    <b>4.</b> On the other end, Preamps often rely on a 50 ohm resistive load for
+    proper operation.  Since receiver front ends seldom represent a 50 ohm load,
+    instability may again result.<br>
+<p>
+    <b>5.</b> Preamps are usually designed for maximum gain and minimum noise figure,
+    which means they are not necessarily being fully utilized for strong signal
+    handling.<br>
+<p>
+    <b>6.</b> The receiver AGC loop may not be adequate in some cases.  This is
+    evidenced by S-meter readings above S-0 not caused by instabilities.
+    If the AGC detector is of an RF type, then the AGC threshold may be crossed
+    causing premature AGC'ing.  The AGC detector AGC point should be
+    re-adjusted.  This is not practical except to people who like modifing
+    equipment or homebrewing. This in itself is not a Preamp problem but shows
+    an additional consequence of adding too much gain to the front end.<br>
+<p>
+    Designing an amplifier to meet all these conditions requires a lot of time
+    consuming math or luck!  Many Preamp "Contesters" have access to Noise
+    measuring equipment and "hand pick" devices for low noise.  Since
+    these amplifiers are "tweaked" to their max in a 50 ohm system, they may
+    or may not work properly in actual operating systems.<br>
+<p>
+    My goal was to work up a simple, interactive computer program to be used in
+    aiding, and at the same time, provide insight into amplifier design prior to
+    the actual fabrication of the circuit.<br>
+<p>
+    After researching numerous reference sources it became evident that most of
+    the modeling of devices was by way of its internal physical structure which
+    is not very practical to the average amateur.  Besides, most of the required
+    information is not readily available.  What is available are the
+    Manufacturer's Datasheets containing S-parameters and DC operating
+    conditions which can be utilized.<br>
+<p>
+    I have found that converting the S-parameters to Y-Parameters provides the
+    easiest way of working with Transistor Narrow Band Amplifier Design.
+    It is easier for the Lay Person to visualize parallel sources and loads
+    (Real,Imaginary) than trying to work with Stability Circles, Smith Charts,
+    etc.<br>
+<p><p>
+                         <b>FET OPTIMUM SOURCE EQUATIONS</b><br>
+<p>
+<b>S to Y Parameter conversion:</b><br>
+<p>
+Y11 = [((1+S22)(1-S11)+S12S21)/D]*1/ZO  =  (g11 + b11)&nbsp;&nbsp;<b>EQ.1</b><br>
+<ul>where D=((1+S11)(1+S22)-S12S21)  and ZO = 50 for 50 ohm system</ul><br>
+<p>
+Y12 = [(-2S12)/D]*1/ZO  =  (g12 + b12)&nbsp;&nbsp;<b>EQ.2</b><br>
+<p>
+Y21 = [(-2S21)/D]*1/ZO  =  (g21 + b21)&nbsp;&nbsp;<b>EQ.3</b><br>
+<p>
+Y22 = [((1+S11)(1-S22)+S12S21)/D]*1/ZO  =  (g22 + b22)&nbsp;&nbsp;<b>EQ.4</b><br>
+<ul>where gxx = Real part of Yxx and Bxx = Imaginary part of Yxx</ul><br>
+<p>
+    As one can see, this is a time consuming procedure easily processed by a
+    computer, as are many of the other equations yet to be covered.  Once the
+    parameters are converted we can proceed with the design.<br>
+<p>
+    The question "where to start?" has probably entered your mind.  I found by
+    picking a resistive load and starting from there works best.  But what value
+    should I use?  Since we're looking for an amplifier capable of using its
+    full output at a particular bias point then one can set the real part of
+    the load YL to the following criteria;<br>
+<p>
+GL = Pi*ID/VP^2  where ID = .18*IDSS  &amp;  VP=.8*VDS&nbsp;&nbsp;<b>EQ.5</b><br>
+<p>
+    By initially setting the Imaginary portion of the Load (BL) to -B22
+    (assuming reactive match) we then can solve for Yin where;<br>
+<p>
+Yin = Y11 - (Y12Y21)/(Y22+YL)  =  (Gin + Bin)&nbsp;&nbsp;<b>EQ.6</b><br>
+<ul>and YL =  (GL + BL)&nbsp;&nbsp;<b>EQ.7</b></ul><br>
+<p>
+    If the real part of the input admittance turns out to be negative for this
+    load, then the load resistance is automatically decreased in the program
+    until a positive real part is obtained.<br>
+<p>
+    The problem is determining the optimum source resistance for a particular
+    device.  Fortunately enough information is available to make use of
+    Y Parameters.<br>
+<p>
+    If we know Gin, then the source resistance (Rx) can be optimized for minimum
+    noise for this particular input admittance.  I use a technique that looks
+    similar to quarter wave stub matching of two impeadances.  In this case the
+    Impedances are the 50 ohm line and 1/Gin  (Rin).<br>
+<p>
+    There is an optimum transformation ratio that occurs when Rx/Rs = Rin/Rx.
+    This ratio occurs at a Q that minimizes input circuit losses due to the
+    tranformation ratio (not to be confused with the Inductor loaded Q) and is
+    defined by;<br>
+<p>
+Q = Rx^2 - Rs^2/2*Rx*Rs = Ri^2 - Rx^2/2*Ri*Rx&nbsp;&nbsp;<b>EQ.8</b><br>
+<ul>where:  Rs = 50 ohms   &amp;   Rin = 1/Gin</ul><br>
+<p>
+Now solving for Rx we get the familiar equation;<br>
+<p>
+Rx = SQRT(Rs*Ri)&nbsp;&nbsp;<b>EQ.9</b><br>
+<p>
+Now we add the Noise Generator Resistance of the Device known as Rn.<br>
+<p>
+<ul>where Rn = k/GM  &amp;  k = .8    for MESFETS / GaAsFETs    (1 Micron Gates)<br>
+                    k = .67   for JFETS<br>
+                    k = 1.25  for 1 or 2 Channel FETS<br>
+                   GM = The Real part of Y21<br></ul>
+<p>
+From the model I set up the following conditions for noise contributions
+(Assuming Room Temperature) with the following equation:<br>
+<p>
+Let F = 1 + A + B + C&nbsp;&nbsp;<b>EQ.10</b><br>
+<p>
+<ul>where A = (Rs+Rn)/Rx        (Loss's due to Noise Sources)<br>
+      B = Rx/(Ri+Rn)        (Loss's due to Mismatch)<br>
+      C = Rx/(Rp+Rx)        (Input Inductor Losses)<br>
+      F = Noise Factor</ul><br>
+<p>
+<ul>and  Rs = 50 ohm Source Noise Generator<br>
+     Rx = Source Transformed from Rs<br>
+     Rp = Inductor loss's<br>
+     Ri = Parallel Input Resistance of Device<br>
+     Rn = Equivalent Device Noise Resistance</ul><br>
+<p>
+    Setting F = 1 and assuming Rn &lt;&lt; Ri, Rp --&gt; infinity and taking the
+    input admittances magnitude then <b>EQ.10</b> then reduces to;<br>
+<p>
+(Rs+Rn)/Rx + Rx/Ri = 0  where Rx/Ri now = B&nbsp;(<b>EQ.10)</b>&nbsp;&nbsp;<b>EQ.11</b><br>
+<p>
+Therefore:<br>
+<p>
+|Rx/(Rs+Rn)| = |Ri/Rx|&nbsp;&nbsp;<b>EQ.12</b><br>
+<p>
+Solving for Rx(opt) yields;<br>
+<p>
+Rx(opt) = SQRT[(Rs+Rn)*Ri]&nbsp;&nbsp;<b>EQ.13</b><br>
+<p>
+    From the model we can see the Noise resistance is a portion of the input
+    admittance.  From <b>EQ.11</b> we see that the larger Ri is to Rx and
+    Rx is to (Rn + Rs), the less noise added to the input.<br>
+<p>
+    Once the optimized Source Resistance has been found, we then set Ys to;<br>
+<p>
+Ys = (1/Rx + -Bin)&nbsp;&nbsp;<b>EQ.14</b><br>
+<p>
+Now Yout = Y22 - (Y12*Y21)/(Y11+Ys)&nbsp;&nbsp;<b>EQ.15</b><br>
+<p>
+Now   YL = (GL + -Bout)&nbsp;&nbsp;<b>EQ.16</b><br>
+<p>
+    The process is now repeated with the new YL.  I've been able to quickly
+    reduce this process to three iterations for approximate designs, although
+    it is quite tedious by hand, even with a calculator.  A faster way of course
+    is by using a computer program to handle the calculations.<br>
+<p>
+    While this is going on, the program automatically adjusts the output Shunt
+    resistance to provide stable operation and a low output VSWR to the next
+    stage.<br>
+<p>
+Let:    RAC = 1/GL  (Initial Condition)<br>
+<p>
+<ul>where   RSH = Shunt Resistor<br>
+        RPO = Output Inductor Loss's<br>
+	RL' = Transformed Load from 50 ohms<br>
+	RO = ABS(1 / Gout)</ul><br>
+<p>
+Therefore:<br>
+<p>
+ RSH = 1/((1/RAC)-(1/RO)-(2/RPO))/2&nbsp;&nbsp;<b>EQ.17</b><br>
+<p>
+RAC' = 1/((1/RL')+(1/RPO)+(1/RSH))&nbsp;&nbsp;<b>EQ.18</b><br>
+<p>
+ RL' = 1/((1/RO)+(1/RSH)+(1/RPO))&nbsp;&nbsp;<b>EQ.19</b><br>
+<p>
+<p>
+    These Equations have been the basis used in developing the program and
+    do not reflect all equations and optimization routines used.<br>
+<p>
+    This brief description mainly explains the Theory used to arrive at a
+    simpler method of deriving the optimum Noise for a FET device.<br>
+<p>
+    The Equations do not account for the effect of low frequency FET operation
+    on noise figure due to Gate Widths.  To date no significant errors have
+    been noted.  This is most likely do to the fact that the S-Parameters are
+    measured at the operating frequency and include the Gate Width effect.<br>
+<p>
+<p>
+                                <b>REFERENCES</b><br>
+<p>
+<b>REF1</b>&nbsp;    MICROWAVES &amp; RF, FEBRUARY 1986<br>
+        Matching Techniques Yield Optimum LNA Performance<br>
+        Pgs. 87-90, By Jack D. Sifri<br>
+<p>
+<b>REF2</b>&nbsp;    DESIGNING WITH FIELD-EFFECT TRANSISTORS<br>
+        Siliconix Inc.  McGraw-Hill 1981    Pg. 190<br>
+<p>
+<b>REF3</b>&nbsp;    MOTOROLA RF DATA MANUAL<br>
+        Second Edition 1981  Pgs. 17-152 to 17-163<br>
+<p>
+<b>REF4</b>&nbsp;    SOLID STATE RADIO ENGINEERING<br>
+        (C) 1980 John Wiley &amp; Sons, INC.  Authors Krauss, Bostian, Raab<br>
+<p>
+<b>REF5</b>&nbsp;    HIGH FREQUENCY AMPLIFIERS<br>
+        (C) 1975 John Wiley &amp; Sons, INC.  by Ralph S. Carson<br>
+<p>
+<b>REF6</b>&nbsp;    IEEE ELECTRON DEVICES, VOL. ED-26<br>
+        Pgs. 1032-1037, JULY 1979<br>
+<p>
+<b>REF7</b>&nbsp;    IEEE TRANS. MICROWAVE THEORY AND TECH., VOL. MTT-24<br>
+        Pgs. 274-300, JUNE 1976<br>
+<p>
+<b>REF8</b>&nbsp;    IEEE J. SOLID STATE CIRCUITS, VOL. SC-11<br>
+        Pgs. 243-255, APRIL 1976<br>
+<p>
+<b>REF9</b>&nbsp;    IEEE TRANS. MICROWAVE THEORY AND TECH., VOL. MTT-23<br>
+        Pgs. 461-469, JUNE 1975<br>
+<p>
+<p>
+...
+
+</pre>
+<body>
+<html>
+
+<!--
+     FILE ARCHIVED ON 01:52:01 Nov 09, 1999 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:24:30 Jul 14, 2020.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  exclusion.robots: 0.324
+  exclusion.robots.policy: 0.309
+  LoadShardBlock: 751.815 (3)
+  RedisCDXSource: 258.356
+  PetaboxLoader3.datanode: 564.452 (4)
+  esindex: 0.012
+  PetaboxLoader3.resolve: 22.344
+  CDXLines.iter: 14.001 (3)
+  captures_list: 1027.771
+  load_resource: 310.176
+-->

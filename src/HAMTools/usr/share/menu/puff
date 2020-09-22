@@ -1,0 +1,6 @@
+?package(puff):needs="X11" \
+ section="Applications/Science/Electronics" \
+ title="puff" \
+ longtitle="Microwave CAD software" \
+ icon="/usr/share/pixmaps/puff.xpm" \
+ command="/usr/local/bin/puff"

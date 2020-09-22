@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Name=SNAPmax
+GenericName=Signals, Noise and Propagation
+TryExec=SNAPmax
+Exec=SNAPmax %F
+Icon=SNAPmax
+Terminal=false
+Type=Application
+Categories=Education;Math;Engineering;
+MimeType=application/SNAPmax;

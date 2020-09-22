@@ -1,0 +1,6 @@
+?package(SEDIF):needs="X11" \
+ section="Applications/Science/Electronics" \
+ title="SEDIF" \
+ longtitle="ACTIVE & PASSIVE FILTERS STUDY & DESIGN" \
+ icon="/usr/share/pixmaps/SEDIF.xpm" \
+ command="/usr/local/bin/SEDIF"

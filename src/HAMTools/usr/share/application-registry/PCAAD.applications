@@ -1,0 +1,7 @@
+PCAAD
+	command=/usr/local/bin/PCAAD
+	name=PCAAD
+	can_open_multiple_files=false
+	expects_uris=false
+	requires_terminal=false
+	mime_types=application/PCAAD;

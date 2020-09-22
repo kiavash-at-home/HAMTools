@@ -1,0 +1,255 @@
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  			YAGIMAX 3.0                      8/91
+
+                     By Lew Gordon, K4VX
+
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+Version 3.0 represents a complete revision of YAGIMAX from previous
+versions. YAGIMAX has now been available for about one year and was due
+for a "facelift". This new version allows the use of a mouse as well 
+as <ALT> and "hot keys" for pull down menus such as are used in 
+Microsoft's Word. Pull down help screens are available to assist the 
+new user. Version 3.0 is approximately 60 percent faster than all 
+previous versions due to the use of the Microsoft (R) Pro-Dev BASIC 
+compiler. The use of a Microsoft (R) Mouse (or compatible) is 
+recommended with version 3.0. Algorithms remain unchanged from 
+versions 2.16 to 3.10.
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+The YAGIMAX program represents my latest attempt at antenna modeling 
+software. It is based upon the assumption that the antenna is 
+monotapered. The algorithm used for YAGIMAX is not derived from MININEC
+as was the case with all versions of YAGINEC, but is based upon the
+sumption that correctly designed Yagi antennas have a sinusodial 
+current distribution which is well behaved. For correct results this 
+requires that the user input realistic dimensions when using YAGIMAX.
+
+If you are a previous user of YAGINEC, the first thing you will 
+observe is that YAGIMAX is exceedingly fast compared to YAGINEC.
+This is a result that the elements are not segmentized and
+massaged through Gaussian elimination with partial pivioting matrix 
+inversion techniques (the real time consumer in YAGINEC/MININEC), 
+but derived from the sinusodial current assumption mentioned above.
+
+To calculate the performance of an antenna using tapered element 
+construction, the TAPER program must be used to determine the
+monotaper equivalent lengths of each element. A file can be created
+by TAPER to transport the dimensions to YAGIMAX. The latest version
+of TAPER is 7.07 which is a complete revision from previous versions.
+TAPER 7.07 allows importing Yagi Optimizer files (YO) as well as
+YAGIMAX files. Both the original W2PV algorithm and the modified
+W2PV algorithm are available as well as the W6QHS mounting plate
+compensation algorithm. YAGIMAX files can be used to create a YO
+tapered file and conversely.
+
+Where YAGINEC will allow the user to model interlaced elements for
+several bands (up to a maximum of ten elements), YAGIMAX will not 
+provide as accurate results. This is because the current distribution 
+on an element somewhat longer, or shorter, than one half wavelength 
+will not have exact sinusoidal current distribution. With this in mind, 
+the computed performance of a Yagi over +/- 20 percent from its resonant 
+frequency may be inaccurate using YAGIMAX.
+
+The maximizing feature is not perfect, but can be used on an element
+by element basis to maximize either forward gain, or front to back.
+Each element change is cycled through the algorithm three times to
+provide a glimpse of what the VSWR is doing at preselected low and
+high frequencies. Each change is displayed on the screen for the user
+to observe. In many cases the user may want to check the list and
+manually re-enter a chosen dimension rather than accept the maximizing
+output. There will be some cases where a "runaway" optimization will
+occur. This can be halted by pressing the escape key. This can occur
+with two or three element designs.
+
+Although it is included as a choice for maximizing, the driven element's 
+length should never be used for optimization as it really has very little 
+effect upon a Yagis performance except for feedpoint impedance. Also 
+2 and 3 element Yagis can display some rather unusual (and unusable) 
+results when optimizing for forward gain using spacing adjustments. The 
+feedpoint impedance can proceed to values less than one ohm! YAGIMAX only
+calculates directivity, not true gain which must include losses. The 
+efficiencies of these very low feedpoint designs becomes very low.
+
+The results of YAGIMAX appear to be within 0.3 percent of those 
+obtained with NEC2 using ten segments or more for calculation. 
+The speed of YAGIMAX is about 50 times faster than YAGINEC using
+8 segments per element. As with YAGINEC the more elements in the 
+antenna, the slower the calculations.
+
+YAGIMAX will run in systems without a math co-processor but as with
+any math intensive program, much slower. A 33 element Yagi requires
+several minutes per frequency step using an 8 mHz machine with no 
+co-processor. The same antenna on a 20 mHz 80386 Gateway 2000 with
+an Intel 80387 co-processor performs 21 steps in 78 seconds. It even
+runs 2.5 times faster on machines using the new Cyrix FastMath 
+co-processor. 
+
+YAGIMAX 1.03 was the first general release of this program. As with 
+all my programming efforts, YAGIMAX is placed in the public domain. 
+It is not to be sold or used for commercial gain. While I have made 
+every effort to reduce bugs or other problems, I will not be 
+responsible for any problems encountered from using YAGIMAX. 
+
+VSWR plot will allow the user to move a frequency flag over the 
+plotted curve by using the UP/DN cursor keys. The frequency 
+represented by the cursor is displayed in the upper right
+hand corner.
+
+The "VIEW" of the Yagi shows the center of gravity (CG) of the 
+antenna.It assumes that all elements weigh the same and the boom 
+is uniform along it's length. The CG dimension is measured from
+the reflector end.
+
+Linear plotting of the results of Gain, F/B, and VSWR vs. frequency
+is provided. Those not familiar with the Smith Chart may find this 
+display more conventional and  understandable. However, if "off the
+wall"  frequency steps are selected, you may get an "off the wall"
+display! 
+
+E and H plane plotting in both free space and over perfect
+ground is provided. The algorithm used does not calculate the effect 
+of mutual coupling between the stacked antennas, but assumes they 
+are stacked sufficiently far apart to have minimal aperature overlap 
+and mutual interreaction. The high angle lobes will be much lower in 
+magnitude in actual practice over real earth as the reflection
+coefficient over real ground at the high angles drops drastically.
+
+Free space plotting of stacked Yagis in both polar and linear forms 
+uses array factor for the antenna based upon uniform spacing. 
+This feature allows inspection of the sidelobe levels of stacked 
+arrays for VHF/UHF applications in moonbounce, or where reduction 
+in the noise pickup from the sidelobes is critical. When using free 
+space H-plane stacking to examine the the sidelobe levels, a -13 dB 
+line may be toggled on and off by pressing <Z>. The -13 dB level 
+is the accepted point at which maximum stacking gain can be 
+achieved commensurate with sidelobe reduction. 
+
+The LINEAR plotting screen can be redimensioned to plot +/-  30 
+degrees to provide close-in examination of the immediate sidelobe 
+level. This feature is useful when plotting many element stacked 
+arrays in free space. Simply press <S> to toggle the scale from 
++/- 180 to +/- 30 degrees scale.
+
+With version 3.08 a "quasi" three dimensional plot is provided
+to EGA and VGA users. This feature allows a simultaneous view
+of both the E and H planes to inspect for "rabbit ear" side and 
+back lobes in the pattern at angles other than zero and 90 degrees.
+
+The Design Scale radius scaling algorithm described in Lawson's 
+Yagi Antenna Design pages 7-3 to 7-5 is used to provide an accurate 
+method of transferring the design of Yagi from one frequency to 
+another. 
+
+Versions beginning with 2.16 incorporate an empirically derived 
+algorithm to compensate for the frequency descrepancy between 
+NEC2 and YAGIMAX which occurs for large diameter/wavelength elements 
+such as are used in VHF/UHF Yagis. Actual NEC runs of several antennas 
+with varying element diameters were made and compared to YAGIMAX. 
+A second order correction to the self-impedance algorithm in YAGIMAX 
+was then made to compensate for the descrepancy. YAGIMAX now tracks
+NEC2 results very closely. 
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+The included .INP files SUPER10, SUPER15, and SUPER20 are the result 
+of stumbling on to an almost perfect Yagi design by continually 
+playing with the maximizing feature of YAGIMAX. I wish I had recorded 
+each step so a proceedure could be developed, but by the time I arrived 
+at the design I had no idea which order of maximizing I had used. I 
+plan to revise my current 6 element 15M Yagi which is at 170 feet to 
+this design this fall (1991). Try it you'll like it!
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+I have written a program NECPLOT which creates NEC input files from 
+YAGIMAX .INP files. In addition, the program plots graphically the 
+resulting output files from NEC. For those who have access to NEC2 
+and wish a copy of NECPLOT send $5 to address below to cover my
+expense in mailing.
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+All programs on this disk(s) were compiled by Microsoft (R) Basic 
+Professional Development System Version 7.0. This compiler generates 
+code that runs about 60 percent faster and is 25 percent smaller than 
+QuickBASIC 4.5. The programs were written on a Gateway 2000 80386/387 
+with color VGA and 8MB of RAM operating under MS-DOS 5.0.
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+General tips:
+
+To generate data for a 2 element Yagi where a director is used, simply
+enter the director length as a reflector and then place the driven
+element behind the director by entering the spacing as a negative number
+as in the example below:
+
+  Reflector             31.000                0             0.8750
+  Driven element        33.000          -9.5000             0.8750    
+ 
+The numbers will come out correctly.
+
+For a reliable <PRT SCREEN> copy of graphics data insure that the 
+transient and stay resident (TSR) program GRAPHICS.COM, which should be
+located either in your DOS sub-directory, or on one of your original 
+MS-DOS system floppy disks, has been loaded prior to loading YAGIMAX. 
+I load it from my AUTOEXEC.BAT file at startup.
+
+EGA/VGA monitors will probably require the monochrome graphics to allow
+<PRT SCREEN> to operate correctly. The color versions are much
+nicer to look at on the CRT, however. Changing from color to monochrome
+can be done at anytime by selecting the menu "Monitor".
+
+As of March 1, 1991, I have some new hope for Hercules Graphic
+users. The utilities on this disk SIMCGA.COM, SETCGA.COM, and 
+GRABBER.COM were sent to me by my good friend and antenna expert 
+Dick Bird, G4ZU/F6IDC. If you are using the HGA card type START and 
+the START batch file will load all of the necessary files into 
+memory for simulating CGA on almost any machine (even those with no 
+graphics card I am told!). Graphics hard copy can be helped by using 
+GRABBER.COM. If you read French, the documentation is on the 
+disk. As I do not have access to a Hercules graphics computer
+I cannot directly verify the above. You are on your own!
+
+Some users of EGA have encountered problems using <PRT SCR> to
+make a hard copy. It appears that placing the file EGAGRAF.COM 
+(included on this disk) in your AUTOEXEC.BAT file may clear up 
+this anomaly. The circles may come out somewhat eliptical, but 
+this also can usually be corrected in most modern printers using 
+a macro to reduce/increase line spacing prior to printing.
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+I have included the Yagi design program DL6WU-2 with my programs. 
+This program is based upon the results obtained by DL6WU
+from actual antenna range testing of Yagis. Although it is empirically
+derived, the results are quite close to those obtained by using
+mathematical modelling such as YAGIMAX. It is particularly useful 
+for VHF/UHF long boom designs. The algorithms and original interpretive 
+BASIC program DL6WU-1.BAS were produced by KY4Z and W6NBI. The version
+DL6WU-2 is my compiled version of the same program.
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+As of July 1, 1991, the programs HAIRPIN, GAMMA, and GAMMA2, are
+no longer included with YAGIMAX. Instead I have combined all three
+programs into a single program MATCH. In addition, MATCH contains 
+an algorithm for calculating the feed point impedance for folded 
+dipoles with unequal element diameters for VHFers.
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+Ken Wolff, K1EA, encloses following humorous paragraph with his CT 
+contest program which says it all! I share it with the user.
+
+   "Engineering (me) is very upset with Quality Assurance (me). Marketing
+has demanded a corporate Quality Awareness Program and sales is out in a
+bar drinking somewhere. Our CEO (me) has appointed a new Director of
+Corporate Quality and Customer Relations (me). We will be holding the
+first of our Quality Tiger Team meetings next week in preparation for
+a Quality Audit Week. Each of the developers and code auditors will be
+asked to prepare a Quality Improvement Plan. After all this important
+stuff is out of the way, I hope to have time to look at the code a
+little more carefully."
+
+Thanks Ken, I needed that! 
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+If you received your copy of YAGIMAX from a shareware dealer, or 
+someone else other than me, or via a BBS, you must send your $8.00 
+donation to the address below or your concience will bother you forever!
+
+If you enjoy these programs don't hesitate to send your cards and letters
+(& donations!) to the following address:
+
+Lew Gordon, K4VX
+P.O. Box 105
+Hannibal, MO 63401
+(314) 221-7730
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+

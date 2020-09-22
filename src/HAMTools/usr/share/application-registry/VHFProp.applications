@@ -1,0 +1,7 @@
+VHFProp
+	command=/usr/local/bin/vhfprop
+	name=VHFProp
+	can_open_multiple_files=false
+	expects_uris=false
+	requires_terminal=false
+	mime_types=application/VHFProp;

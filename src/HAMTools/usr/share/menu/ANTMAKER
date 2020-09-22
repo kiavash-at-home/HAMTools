@@ -1,0 +1,6 @@
+?package(ANTMAKER):needs="X11" \
+ section="Applications/Science/Electronics" \
+ title="ANTMAKER" \
+ longtitle="ACTIVE & PASSIVE FILTERS STUDY & DESIGN" \
+ icon="/usr/share/pixmaps/ANTMAKER.xpm" \
+ command="/usr/local/bin/ANTMAKER"

@@ -1,0 +1,7 @@
+SNAPmax
+	command=/usr/local/bin/SNAPmax
+	name=SNAPmax
+	can_open_multiple_files=false
+	expects_uris=false
+	requires_terminal=false
+	mime_types=application/SNAPmax;

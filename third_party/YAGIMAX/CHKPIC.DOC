@@ -1,0 +1,85 @@
+   ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+   ³                        CHKPIC.COM Version 1.00                        ³
+   ³                   Copyright 1987 de Keith P. Graham                   ³
+   ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+   ³   CHKPIC.COM est un utilitaire servant … identifier  un  fichier  qui ³
+   ³ contient des  graphiques  dont  vous  ignorez  la  provenance. Il est ³
+   ³ capable de reconnaŒtre une dizaine de formats diff‚rents. Le logiciel ³
+   ³ lit l'en-tˆte du fichier sp‚cifi‚ et compare les  renseignements  qui ³
+   ³ s'y trouvent  avec  l'en-tˆte  type  des  fichiers  graphiques  qu'il ³
+   ³ connait. La comparaison se fait non pas sur l'int‚gralit‚ du fichier, ³
+   ³ mais seulement sur les tous premiers octets de l'en-tˆte.             ³
+   ³                                                                       ³
+   ³   Les fichiers MacPaint proviennent de  diff‚rentes  sources  et  ont ³
+   ³ tellement de structures  diff‚rentes  et  variables  qu'il  est  trŠs ³
+   ³ difficile de les identifier avec certitude. Le  programme  CHKPIC  ne ³
+   ³ sait reconnaŒtre que les fichiers MacPaint ayant une en-tˆte de z‚ros ³
+   ³ binaires (binary zero headers), avec une  en-tˆte  valide  au  format ³
+   ³ MacBinaire (MacBinary), et seulement ceux ayant une en-tˆte MacPaint. ³
+   ³ Si le programme test‚ a une bonne en-tˆte MacBinaire, alors CHKPIC va ³
+   ³ afficher … l'‚cran le nom original de l'image, telle  qu'elle  a  ‚t‚ ³
+   ³ cr‚‚e sur un Macintosh. Ceci est trŠs important, afin de ne pas avoir ³
+   ³ plusieurs fois la mˆme image sous des noms  de  fichiers  diff‚rents. ³
+   ³ N'oubliez pas  aussi  que  certains  fichiers  sont  le  r‚sultat  de ³
+   ³ programmes de conversion et ne  sont  pas  des  fichiers  directement ³
+   ³ issus de MacPaint : par exemple les fichiers de conversion  issus  du ³
+   ³ c‚lŠbre programme OPTIKS, ou ceux provenant de FMAC.  Dans ce dernier ³
+   ³ cas, les images sauvegard‚es  au  format  MacPaint  ne  sont  pas  de ³
+   ³ v‚ritables images issues de MacPaint :  seules les donn‚es de l'image ³
+   ³ sont au bon format, mais pas l'en-tˆte qui est incorrecte.            ³
+   ³                                                                       ³
+   ³   CHKPIC identifie un fichier en proc‚dant par ‚limination. ll arrive ³
+   ³ parfois qu'il se trompe mais ceci est trŠs rare... Enfin,  nul  n'est ³
+   ³ parfait. Il se peut que dans certains cas, un fichier a une structure ³
+   ³ similaire … un autre type de fichier et  CHKPIC  croit reconnaŒtre un ³
+   ³ format. De toutes fa‡ons, lorsque CHKPIC identifie un fichier, il n'y ³
+   ³ a qu'une maniŠre d'en ˆtre certain : charger le programme  OPTIKS  et ³
+   ³ essayer de lire le fichier.                                           ³
+   ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+   ³   SYNTAXE : CHKPIC FILESPEC                                           ³
+   ³   ÍÍÍÍÍÍÍ                                                             ³
+   ³                                                                       ³
+   ³   o— FILESPEC est le nom du ou des fichiers que vous  voulez  tester. ³
+   ³ Naturellement, CHKPIC  accepte  l'emploi  des  caractŠres  g‚n‚riques ³
+   ³ (* et ?). Vous pouvez pr‚ciser aussi l'unit‚ ,ainsi  que  le  chemin. ³
+   ³ Par d‚faut, l'extension prise par le programme sera l'extension .MAC. ³
+   ³ Si le fichier n'a pas d'extension, vous devez entrer  le  point, mais ³
+   ³ sans mettre l'extension derriŠre.                                     ³
+   ³                                                                       ³
+   ³   CHKPIC * testera tous les fichiers d'extension  .MAC  pr‚sents dans ³
+   ³ le r‚pertoire actif. CHKPIC *. testera tous les  fichiers  qui  n'ont ³
+   ³ pas d'extension. CHKPIC *.* testera absolument tous les  fichiers  du ³
+   ³ r‚pertoire actif. CHKPIC *.MSP testera tous  les  fichiers  ayant  le ³
+   ³ format Microsoft Paint. CHKPIC *.IMG testera tous  les  fichiers  IMG ³
+   ³ et vous pr‚cisera s'ils viennent de GEM, de WIPS ou de ISF.           ³
+   ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+   ³   CHKPIC  sait … peu prŠs  identifier  correctement  les  formats  de ³
+   ³ fichiers suivants :                                                   ³
+   ³                                                                       ³
+   ³   - MacPaint                            - Microsoft Paint             ³
+   ³   - Gem Paint                           - Run Length Encoded          ³
+   ³   - Zsoft PC Paintbrush                 - OPTIKS                      ³
+   ³   - Basic Bload/Bsave                   - Datacopy Wips               ³
+   ³   - PC Paint 1.50 et 2.00               - IBM Image Support Facility  ³
+   ³                                                                       ³
+   ³   Certains types de fichiers graphiques ne poss‚dent pas une  en-tˆte ³
+   ³ identifiable et la seule fa‡on de savoir de quel genre de fichier, il ³
+   ³ s'agit, c'est de le reconnaŒtre par son extension, et d'essayer de le ³
+   ³ charger sous le programme graphique qu'on a cru reconnaŒtre.          ³
+   ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+   ³   Appelez-moi … PC-Rockland USA au  (914) 353-2176  pour  obtenir  la ³
+   ³ toute derniŠre version de ce programme. Comme je ne peux garantir une ³
+   ³ suivie de ce programme,  ce  n'est  pas  la  peine  de  m'envoyer  de ³
+   ³ l'argent. Je vous offre ce programme  …  la  condition  que  vous  ne ³
+   ³ changiez pas ce programme et/ou cette documentation. Vous  pouvez  me ³
+   ³ joindre parfois le week-end au (914) 623-4161.                        ³
+   ÆÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍµ
+   ³   Traduction fran‡aise r‚alis‚e  par  Serge  CLAIRî  pour  le  compte ³
+   ³ exclusif de PCompatibles Magazine, Editions SORACOM et de son serveur ³
+   ³ Arcades. Diffusion interdite sur disquette et autres serveurs.        ³
+   ÆÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍËÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍËÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍËÍÍÍÍÍÍÍÍÍÍÍÍÍÍµ
+   ³  Traduction:  º ÛÛ Ûß           º   Editions SORACOM   º MINITEL 3615 ³
+   ³  ÍÍÍÍÍÍÍÍÍÍ   º İ  ÛÜompatibles º    La Haie de Pan    º code MHZ  et ³
+   ³ CLAIRî SîRGî  º    informatique º      35170 BRUZ      º code ARCADES ³
+   ÔÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÊÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÊÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÊÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¾
+

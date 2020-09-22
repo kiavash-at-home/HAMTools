@@ -1,0 +1,6 @@
+?package(post-puff):needs="X11" \
+ section="Applications/Science/Electronics" \
+ title="post-puff" \
+ longtitle="Calculate K and D from puff" \
+ icon="/usr/share/pixmaps/post-puff.xpm" \
+ command="/usr/local/bin/post-puff"

@@ -1,0 +1,6 @@
+?package(VHFProp):needs="X11" \
+ section="Applications/Science/Electronics" \
+ title="VHFProp" \
+ longtitle="Signal Analysis for VHF Amateur Bands." \
+ icon="/usr/share/pixmaps/VHFProp.xpm" \
+ command="/usr/local/bin/vhfprop"

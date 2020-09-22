@@ -1,0 +1,126 @@
+\b{oard} {.puf file for PUFF, version 2.0}
+d      0     {display: 0 VGA or PUFF chooses, 1 EGA, 2 CGA, 3 One-color}
+o      0     {artwork output format: 0 dot-matrix, 1 LaserJet, 2 HPGL file}
+t      0     {type: 0 for microstrip, 1 for stripline, 2 for Manhattan}
+zd   50.000  Ohms {normalizing impedance. 0<zd}
+fd    5.000 GHz   {design frequency. 0<fd}
+er   10.200       {dielectric constant. er>0}
+h     1.270 mm    {dielectric thickness. h>0}
+s    25.400 mm    {circuit-board side length. s>0}
+c    19.000 mm    {connector separation. c>=0}
+r     0.200 mm    {circuit resolution, r>0, use Um for micrometers}
+a     0.000 mm    {artwork width correction.}
+mt    0.000 mm    {metal thickness, use Um for micrometers.}
+sr    0.000 Um    {metal surface roughness, use Um for micrometers.}
+lt     0.000   {dielectric loss tangent.}
+cd     5.8E+7   {conductivity of metal in mhos/meter.}
+p     5.000       {photographic reduction ratio. p<=203.2mm/s}
+m     0.600       {mitering fraction.  0<=m<1}
+\k{ey for plot window}
+du  0   {upper dB-axis limit}
+dl  -20   {lower dB-axis limit}
+fl  4.5   {lower frequency limit. fl>=0}
+fu  5.5   {upper frequency limit. fu>fl}
+pts 51   {number of points, positive integer}
+sr 1   {Smith-chart radius. sr>0}
+S   41   {subscripts must be 1, 2, 3, or 4}
+S   11
+\p{arts window} {O = Ohms, D = degrees, U = micro, |=parallel}
+clines 55O 90D
+clines 66O 90D
+{Blank at Part c }
+{Blank at Part d }
+{Blank at Part e }
+{Blank at Part f }
+{Blank at Part g }
+{Blank at Part h }
+{Blank at Part i }
+{Blank at Part j }
+{Blank at Part k }
+{Blank at Part l }
+{Blank at Part m }
+{Blank at Part n }
+{Blank at Part o }
+{Blank at Part p }
+{Blank at Part q }
+{Blank at Part r }
+\s{parameters}
+   f              S41              S11
+  4.50000   0.17061 -107.8   0.98534  162.2
+  4.52000   0.18975 -110.6   0.98183  159.4
+  4.54000   0.21198 -113.7   0.97727  156.3
+  4.56000   0.23792 -117.0   0.97128  153.0
+  4.58000   0.26835 -120.7   0.96332  149.3
+  4.60000   0.30418 -124.9   0.95261  145.1
+  4.62000   0.34649 -129.5   0.93805  140.5
+  4.64000   0.39647 -134.8   0.91805  135.2
+  4.66000   0.45527 -140.9   0.89035  129.1
+  4.68000   0.52365 -147.8   0.85193  122.2
+  4.70000   0.60142 -155.8   0.79893  114.2
+  4.72000   0.68643 -165.0   0.72720  105.0
+  4.74000   0.77363 -175.4   0.63364   94.6
+  4.76000   0.85498  173.2   0.51866   83.2
+  4.78000   0.92153  161.3   0.38831   71.3
+  4.80000   0.96723  149.3   0.25391   59.3
+  4.82000   0.99174  137.6   0.12826   47.6
+  4.84000   0.99978  126.7  2.1E-0002   36.7
+  4.86000   0.99803  116.7  6.3E-0002 -153.3
+  4.88000   0.99247  107.3   0.12247 -162.7
+  4.90000   0.98728   98.5   0.15898 -171.5
+  4.92000   0.98478   90.1   0.17381 -179.9
+  4.94000   0.98578   81.7   0.16805  171.7
+  4.96000   0.98985   73.3   0.14215  163.3
+  4.98000   0.99537   64.6  9.6E-0002  154.6
+  5.00000   0.99955   55.5  3.0E-0002  145.5
+  5.02000   0.99846   45.9  5.6E-0002  -44.1
+  5.04000   0.98752   35.9   0.15749  -54.1
+  5.06000   0.96270   25.4   0.27058  -64.6
+  5.08000   0.92206   14.9   0.38705  -75.1
+  5.10000   0.86691    4.6   0.49847  -85.4
+  5.12000   0.80146   -5.1   0.59805  -95.1
+  5.14000   0.73125  -14.1   0.68211 -104.1
+  5.16000   0.66132  -22.2   0.75010 -112.2
+  5.18000   0.59523  -29.5   0.80356 -119.5
+  5.20000   0.53492  -35.9   0.84490 -125.9
+  5.22000   0.48109  -41.5   0.87667 -131.5
+  5.24000   0.43368  -46.6   0.90107 -136.6
+  5.26000   0.39220  -51.1   0.91988 -141.1
+  5.28000   0.35602  -55.1   0.93448 -145.1
+  5.30000   0.32445  -58.8   0.94590 -148.8
+  5.32000   0.29686  -62.1   0.95492 -152.1
+  5.34000   0.27267  -65.2   0.96211 -155.2
+  5.36000   0.25141  -68.0   0.96788 -158.0
+  5.38000   0.23264  -70.6   0.97256 -160.6
+  5.40000   0.21600  -73.0   0.97639 -163.0
+  5.42000   0.20120  -75.3   0.97955 -165.3
+  5.44000   0.18799  -77.5   0.98217 -167.5
+  5.46000   0.17614  -79.5   0.98436 -169.5
+  5.48000   0.16549  -81.4   0.98621 -171.4
+  5.50000   0.15587  -83.3   0.98778 -173.3
+\c{ircuit}
+  97   0  a
+ 184   0  shift-up
+ 208   4  down
+  98   4  b
+ 205   7  right
+  14   5  Ctrl-n
+ 200   4  up
+  14   2  Ctrl-n
+ 200   1  up
+ 184   0  shift-up
+ 184   0  shift-up
+ 208   1  down
+ 208   2  down
+ 200   1  up
+  14   3  Ctrl-n
+  14   1  Ctrl-n
+ 200  10  up
+  14   8  Ctrl-n
+  49   8  1
+ 208   9  down
+  14   1  Ctrl-n
+  14   3  Ctrl-n
+ 208   4  down
+ 208   5  down
+  14   7  Ctrl-n
+  52   7  4

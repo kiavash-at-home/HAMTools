@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Name=VHFProp
+GenericName=Signal Analysis for VHF Amateur Bands.
+TryExec=VHFProp
+Exec=vhfprop %F
+Icon=VHFProp
+Terminal=true
+Type=Application
+Categories=Education;Math;Engineering;
+MimeType=application/VHFProp;

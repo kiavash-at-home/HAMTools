@@ -1,0 +1,6 @@
+?package(SNAPmax):needs="X11" \
+ section="Applications/Science/Electronics" \
+ title="SNAPmax" \
+ longtitle="Signals, Noise and Propagation" \
+ icon="/usr/share/pixmaps/SNAPmax.xpm" \
+ command="/usr/local/bin/SNAPmax"

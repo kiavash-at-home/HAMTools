@@ -1,0 +1,6 @@
+?package(RASCAL):needs="X11" \
+ section="Applications/Science/Electronics" \
+ title="RASCAL" \
+ longtitle=" Interactive Design of Reflector Antennas" \
+ icon="/usr/share/pixmaps/RASCAL.xpm" \
+ command="/usr/local/bin/RASCAL"

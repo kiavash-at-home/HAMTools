@@ -1,0 +1,6 @@
+?package(HEAD_DOS):needs="X11" \
+ section="Applications/Science/Electronics" \
+ title="HEAD" \
+ longtitle="Helical Filters and Design Software" \
+ icon="/usr/share/pixmaps/HEAD_DOS.xpm" \
+ command="/usr/local/bin/HEAD_DOS"

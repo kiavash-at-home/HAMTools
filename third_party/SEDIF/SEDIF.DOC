@@ -1,0 +1,92 @@
+
+S . E . D . I . F .    
+
+                                                                      
+SOFTWARE PARA EL ESTUDIO Y DISE¥O DE FILTROS PASIVOS Y ACTIVOS     
+ACTIVE & PASSIVE FILTERS STUDY & DESIGN                 
+                                                                          
+Version 2.0 - December 92                        
+                                                                          
+  
+
+
+
+
+ABSTRACT.
+
+        This is a new packet of software destinated to the design,
+analysis and simulation of pasive and active filters. It is mainly
+directed to engineering education, but this is not an obstacle to be a
+perfect system of aid in the filter design needed in industry. The
+main characteristic of this new tool is based on the different proposed
+alternatives in the design of passive filters, for classic approximations.
+
+Note: This is not a commercial software, so it has not been fully tested
+      and may still have some bugs hidden inside.
+
+
+
+
+LIST OF FILES.
+
+        The original floppy disk must contains these five files ...
+
+              ... INSTALL.EXE : Installation utility.
+              ... SEDIF.EXE   : Main executable file.
+              ... SEDIF.OVR   : Overlays file.
+              ... POL.EXE     : Auxiliar executable file.
+              ... SEDIF.DOC   : This file.
+
+
+
+
+INSTALLATION.
+
+        There is an installation utility called INSTALL in the original
+disk. After typing INSTALL, chose the source and the destination
+directory, and the software will be installed.
+
+
+
+
+
+
+
+HARDWARE REQUIREMENTS.
+
+        The minimum hardware requeriments needed to run SEDIF are:
+
+              - A PC compatible computer with a 80X86 microprocessor.
+              - 640 Kbytes of RAM.
+              - 600 Kbytes in a hard or floppy disk.
+              - VGA monitor card.
+
+        No mathematical coprocessor is required but with it important
+improvements in calculation time will be obtained.
+
+
+
+
+ADDRESS.
+
+        This program has been designed, writen in Pascal, typed,
+debugged and tested by the Signal Group of the Telecommunications
+Engineering School of the Basque Country University.
+        If you want to contact with us, please write or telephone to the
+following address:
+
+
+  Signal Group Of AUTOMATICS, ELECTRONICS & TELECOMMUNICATIONS DEPARTMENT
+                     Of The BASQUE COUNTRY UNIVERSITY
+
+                  TELECOMMUNICATIONS ENGINEERING SCHOOL
+
+                     c/. Alameda Urquijo s/n
+                         E-48013  Bilbao
+                             [SPAIN]
+
+                 Telephone : (07-34-4) 427 80 55
+                 Fax       : (07-34-4) 441 40 41
+
+
+

@@ -1,0 +1,6 @@
+        This sofware may be used for the design, analysis and simulation of
+passive and active filters in cascade. The use of this software is described
+in the article " A New Educational Packet for Passive and Active Filter 
+Design", by J. Riuz, E. Aramendi and A. Ubierna, CAEME Software Volume 1,
+num. 3, 1993, pp. 229-242.
+

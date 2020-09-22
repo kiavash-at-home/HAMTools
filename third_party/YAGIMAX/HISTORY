@@ -1,0 +1,168 @@
+History of YAGIMAX Versions:
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴�
+1.00 (2/15/90) Started designing new and faster math code to replace YAGINEC.
+1.01 (2/27/90) First version with a few bugs. Only released to two people.
+1.02 (3/3/90) This version corrected a few minor bugs and added a bypass 
+     feature for VSWR frequencies.
+1.03 (3/8/90) This is basically the same as 1.02 but with the VGA capability 
+     added.
+1.04 (3/20/90) made a couple of minor corrections and added a moving cursor
+     for the VSWR frequency plot. Only a few disks released of this version.
+1.05 (3/22/90) This version allows graphically viewing the physical antenna
+     and added EGA to the VGA capability.
+1.06 (3/28/90) This version added Gain, F/B/ and VSWR linear plots which
+     provides a more conventional type of display. 
+1.07 (3/31/90) This version corrected a math error which I found after
+     being prompted by correspondence from W5PAQ. Results from this 
+     version of YAGIMAX will differ slightly from previous versions by 
+     about 0.3 percent. Sorry about that! 
+2.01 (4/2/90) This new generation has the added feature of polar
+     plotting of the E-plane antenna pattern. In EGA and VGA all
+     screen text is in the 43 line mode.
+2.02 (4/5/90) Adds H-plane plotting capability in both free space and
+     above perfect ground.
+2.03 (4/9/90) At suggestion of W5PAQ: When calculating Gain, F/B, and
+     impedance, a hard copy is now allowed when shortcutting the process
+     by using <ESC>. No graph of these data is allowed unless the
+     routine is allowed to proceed the full page, however. 
+2.04 (4/15/90) This version adds linear pattern plotting per request of 
+     K2GAL and others. (only 2 copies released)  
+2.05 (4/17/90) At the request of K2GAL the capability for plotting free
+     space stacked antennas has been added. This version also has a
+     slightly modified algorithm to allow YAGINEC and YAGIMAX to track
+     more closely. Runs made with this version will have slightly
+     different results from older versions.
+2.06 (4/21/90) (1)This version corrects a small error in the maximizing
+     routine which occurs when the dimension must be lengthened rather
+     than shortened. This was a result of transporting the routine from
+     YAGINEC 7.01 and omitting one step. (2) The angle steps are doubled 
+     when the antenna has over 20 elements or is over 5 W/L above ground.
+     The math code was made "tighter" in this version which speeds up the
+     calculations, particularly when the antenna is stacked, or over
+     ground. (only 2 released)
+2.07 (4/25/90) After more discussions with K2GAL, the stacking algorythm
+     was modified to multiply the pattern of a single Yagi by the
+     array factor of isotropic point sources. The results obtained by 
+     this are different that those of 2.05/2.06 which multiplied the 
+     current contributions (both real and imaginary) by the array factor
+     and then summed them to derive gain. Which is more accurate in the 
+     real world? Take your pick! (only sent to K2GAL)
+2.08 (5/2/90) Version 2.07 still not correct per discussions with K2GAL.
+     Found problem with free space stacking algorithm and I think that
+     this version may be the correct one. Also this version provides
+     E-plane stacking in free space. 
+2.09 (5/14/90) HOORAY!! Finally corrected the stacking algorithm which 
+     was plagueing previous versions thanks to Hank Kasper, K2GAL, who
+     took the time and effort to manually grind out the numbers and 
+     send them to me. I think we finally have it correct. Thanks Hank.
+     The EGA/VGA modes are now in the 80 by 43/50 text mode which may
+     help some of the EGA/VGA users. The number of Yagi elements has 
+     been extended to 38/45 for EGA/VGA. A small mod was also made to 
+     default the value of the frequency increment step per request 
+     of W5PAQ. 
+2.10 (5/23/90) This version is the same as 2.09 except for the scale
+     change feature when using linear plotting.(K2GAL)
+2.11 (5/31/90) Lawson's radius scaling algorithm is incorporated to
+     provide a more accurate means of changing frequencies for a 
+     design. (W5PAQ) In addition, Pressing <Z> when using linear
+     plotting toggles a -13 dB line.(K2GAL)
+2.12 (6/2/90) Corrected a problem which only can occur when using
+     the MAXIMIZING feature. When the VSWR at one of the adjacent 
+     frequencies goes above 100:1, an illegal function call may occur.
+     (The program attempts to take square root of a negative number). 
+     I inadvertently discovered this when optimizing a design where 
+     the first and second directors actually came to a crossover 
+     spacing! Not usually encountered in practice.
+2.13 (6/6/90) Adds dimensions to VIEW feature. (10 el or less)   
+2.14 (7/5/90) Corrects (hopefully) a problem some EGA users have 
+     encountered is graphics displays. This version is same as
+     2.13 except for this EGA mod.
+2.15 (7/26/90) This version is virtually identical to 2.14 except
+     the user can select whether YAGIMAX is normalized more closely
+     to the results obtained with NEC-2 code, or closer to MININEC
+     code as was done with previous versions from  2.05 on. (K2GAL)
+     A glitch when saving to a directory where no .INP files exist is
+     corrected.(W5PAQ)     
+2.16 (8/18/90) This version has been normalized to match NEC2 results
+     and compensate for large diameter elements. (K2GAL & LU8EBH)
+2.17 (9/8/90) Further refined NEC2 normalizing to a second order
+     correction. It now tracks within +/- 0.5% of NEC2.(K2GAL)
+2.18 (10/8/90) Fixed minor problem when plotting a design which 
+     exhibits a split front lobe.(K2GAL)	
+2.19 (11/15/90) Identical to 2.18 except provides the option of 
+     keeping the same element spacing when performing a design 
+     scale to a new frequency.
+2.20 (11/22/90) The center of gravity arrow in the VIEW plot now
+     provides the dimension from the reflector end of the boom.
+     When entering dimensions by keyboard in NEW DESIGN, the 
+     Escape <ESC> key reverts back to the beginning menu as long 
+     as any dimensions (except reflector position) remain zero. 
+     When entering POLAR plot, "E-Plane" and "1" antenna are 
+     defaulted by hitting <ENTER>.
+2.21 (1/1/91) This version allows EGA/VGA COLOR users to select 
+     graphics in black and white, or color, from within the program. 
+     This provides the user the ability to view the plot in color 
+     while allowing him/her the option to make a hard copy from 
+     b & w without exiting the program and rebooting. (TNX N7OCN)
+2.22 (2/10/91) This version is virtually the same as 2.21 except
+     to prompt the user after a maximize run to see if he wishes to
+     replace the old dimension with the new maximized dimension.
+     Versions up to 2.22 were all compiled using Microsoft 
+     QuickBASIC 4.5. Version 2.22 was compiled using Microsoft
+     Basic Professional Development System 7.0 which results in
+     a more compact program which runs approximately 60% faster 
+     than the previous versions.
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴횼ew Version컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴�
+3.01 (3/1/91) This version is completely changed in style and
+     format. It features a topline menu which is <ALT> key and
+     mouse driven. Help screens are available and "hot" function
+     keys are available for various functions. The algorithms
+     and mathematical calculations remain the same as versions
+     2.17 to 2.22. YAGIMAX is now one year old and was in need
+     of a facelift.
+3.02 (4/30/91) Added monitor self determination feature to 
+     eliminate the need to query the user as to what type of
+     monitor was is use. (CGA/EGA/VGA)
+3.03 (5/17/91) Fixed an editing bug incurred upon hitting <ENTER> 
+     too many times. Created an keyboard subroutine to save 
+     program space. No mouse cursor after printing results is 
+     fixed. 
+3.04 (5/21/91) When performing Design Scale, or editing any 
+     dimension, the program now inhibits previous results such
+     as print, Smith charts, and Display Results until another 
+     Gain, F/B, and Impedance run is performed with the new
+     dimensions. 
+3.05 (6/5/91) Corrected a scrolling off the screen problem when
+     maximizing exceeds 20 steps. Tightened up the maximization
+     tolerance for less granuality. Fixed a bug which shows up 
+     occasionally when too many steps are made during maximizing. 
+     Fixed maximizing problem with a 2 element design as a 
+     director/driven element.
+3.06 (7/2/91) As per correspondence with LU8EBH the maximizing
+     feature remains in "maximize" and utilizes the same frequencies
+     unless recycled through the top line menu. Also the VSWR center
+     frequency can be changed without repeating the entire set of
+     frequencies. Linear plots of the H-plane over perfect
+     ground are now on the right side of the plot with positive
+     elevation angles!
+3.07 (7/19/91) Provides double clicking of mouse for file selection.
+     Flicker reduction routine added when switching between text
+     and graphics modes.
+3.08 (7/30/91) Adds a 3 dimensional plotting capability to the
+     graphics options for EGA/VGA users. Speeded up the graphics 
+     algorithm somewhat. (Only given to W9GCW)
+3.09 (8/1/91) Fixed bug when maximizing after making a plot. Corrected 
+     the <ESC> key when maximizing. Changed order of 3-D plotting for 
+     clarity. Fixed a bug discovered when first plotting a H-plane
+     over perfect ground then next running Gain, F/B, and VSWR vs.
+     frequency which produced negative gain and zero F/B. Probably has
+     been there from the first! The left/right keys will toggle the
+     menu boxes similiar to the tab key. The <ALT> key will exit the
+     dimensions screen in addition to the <ESC> key. 
+3.10 (8/7/91) Added "Save Results" to Options menu to allow the Gain,
+     F/B, and Impedance results to be saved to disk file for future 
+     reference. 
+3.11 (9/26/91) The ability to add or subtract to the number of elements 
+     with an existing design has been added per my visit with Georges, 
+     F1BBI, in Paris in early September.
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴�

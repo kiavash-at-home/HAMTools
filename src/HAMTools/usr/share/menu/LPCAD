@@ -1,0 +1,6 @@
+?package(LPCAD):needs="X11" \
+ section="Applications/Science/Electronics" \
+ title="LPCAD" \
+ longtitle="ACTIVE & PASSIVE FILTERS STUDY & DESIGN" \
+ icon="/usr/share/pixmaps/LPCAD.xpm" \
+ command="/usr/local/bin/LPCAD"

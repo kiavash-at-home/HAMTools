@@ -1,0 +1,19 @@
+The files on this disk are compressed and archived to allow 
+all of the programs and antenna files to be shipped on a 
+single 720K floppy disk. 
+
+For example: To install these programs and archived utility 
+files from drive B to drive C, insert this disk in your 3.5" 
+drive and enter:
+
+        	 INSTALL B C         <ENTER>
+              (or enter the appropriate drives.)
+
+A sub-directory labeled YAGIMAX will be created on that drive
+and all files will be copied or un-archived to it. 
+THERE ARE NO CHANGES TO YOUR AUTOEXEC.BAT OR CONFIG.SYS FILES. 
+
+If you are a single 720K floppy drive user, I recommend 
+that you find a friend who has a hard drive and install the 
+programs. Then copy the programs and files to two 720K disks.
+

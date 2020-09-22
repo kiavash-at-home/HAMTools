@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="Windows-1252" ?>
+<XML_DIZ_INFO>
+<MASTER_PAD_VERSION_INFO>
+    <MASTER_PAD_VERSION>1.10</MASTER_PAD_VERSION>
+    <MASTER_PAD_INFO>Portable Application Description, or PAD for short, is a data set that is used by shareware authors to disseminate information to anyone interested in their software products. To find out more go to http://www.asp-shareware.org/pad</MASTER_PAD_INFO>
+</MASTER_PAD_VERSION_INFO>
+<Company_Info>
+        <Company_Name>Tyndar Press</Company_Name>
+        <Address_1>P.O. Box 236</Address_1>
+        <Address_2 />
+        <City_Town>Montchanin</City_Town>
+        <State_Province>DE</State_Province>
+        <Zip_Postal_Code>19710</Zip_Postal_Code>
+        <Country>USA</Country>
+        <Company_WebSite_URL />
+<Contact_Info>
+        <Author_First_Name>Crawford</Author_First_Name>
+        <Author_Last_Name>MacKeand</Author_Last_Name>
+        <Author_Email>tyndar@juno.com</Author_Email>
+        <Contact_First_Name />
+        <Contact_Last_Name />
+        <Contact_Email />
+    </Contact_Info>
+<Support_Info>
+        <Sales_Email />
+        <Support_Email />
+        <General_Email />
+        <Sales_Phone />
+        <Support_Phone />
+        <General_Phone />
+        <Fax_Phone />
+    </Support_Info>
+</Company_Info>
+<Program_Info>
+        <Program_Name>SNAPmax501</Program_Name>
+        <Program_Version>5.01</Program_Version>
+        <Program_Release_Month>10</Program_Release_Month>
+        <Program_Release_Day>01</Program_Release_Day>
+        <Program_Release_Year>2001</Program_Release_Year>
+        <Program_Cost_Dollars />
+        <Program_Cost_Other />
+        <Program_Type>Freeware</Program_Type>
+        <Program_Release_Status>Major Update</Program_Release_Status>
+        <Program_Install_Support>No Install Support</Program_Install_Support>
+        <Program_OS_Support>MS-DOS</Program_OS_Support>
+        <Program_Language>English</Program_Language>
+        <Program_Change_Info />
+        <Program_System_Requirements>486, Pentium preferred</Program_System_Requirements>
+        <Program_Specific_Category>Home/Hobby</Program_Specific_Category>
+        <Program_Categories>Amateur Radio, Eductation, Electrical Engineering</Program_Categories>
+<File_Info>
+        <Filename_Versioned>snapz501.zip</Filename_Versioned>
+        <Filename_Previous />
+        <Filename_Generic />
+        <Filename_Long />
+        <File_Size_Bytes />
+        <File_Size_K>255</File_Size_K>
+        <File_Size_MB />
+    </File_Info>
+<Expire_Info>
+        <Has_Expire_Info>N</Has_Expire_Info>
+        <Expire_Count />
+        <Expire_Based_On>Days</Expire_Based_On>
+        <Expire_Other_Info />
+        <Expire_Month />
+        <Expire_Day />
+        <Expire_Year />
+    </Expire_Info>
+        <Includes_JAVA_VM>N</Includes_JAVA_VM>
+        <Includes_VB_Runtime>N</Includes_VB_Runtime>
+        <Includes_DirectX>N</Includes_DirectX>
+</Program_Info>
+<Program_Descriptions>
+<English>
+        <Keywords>HF radio propagation CCIR noise analysis signal-noise digital</Keywords>
+        <Char_Desc_45 />
+        <Char_Desc_80>HF radio propagation, signal-noise ratio &amp; circuit quality.</Char_Desc_80>
+        <Char_Desc_250 />
+        <Char_Desc_450 />
+        <Char_Desc_2000>SNAPMax v5.01 calculates 1.5 to 45 MHz HF/MF radio propagation, including signal strength, signal-noise ratio and circuit quality, as well as MUF, LUF and FOT, and saves any three paths for future reference. Transmitter and receiver locations can be input either by call prefix or by latitude and longitude, and many can be selected by name too. Path loss analysis enables users to select different or better times, routes and frequencies, and gives a graphic breakdown of all noise sources. Other inputs are antenna gain, adjusted for take-off angle, and modulation schemes including digital modes, for assessing circuit quality, including multipath delay. The program supports long path, antipodean enhancement, and chordal hop.  WWV ionospheric storm indexes (A or K) are used to determine polar path auroral losses, also MUF depression during storm events. E layer paths are assessed and ground-wave coverage is also calculated. Noise data for most major countries world-wide is provided, as is a simple graphic of probable noise levels across HF bands for any location. An expanded low frequency scale (2-12 MHz)  improves low band displays for NVIS etc. 
+
+MUF is determined using the Fricker (BBC) algorithms, losses being determined by George and Bradley&apos;s method using an internal world-wide vertical absorption map. An approximate MF algorithm is used for top-band. Gyro-frequency is also mapped, as are terrestrial reflection points to take correct account of reflection from ground or oceans. More detail is to be found in Crawford MacKeand&apos;s book &quot;The Friendly Ionosphere&quot;, also from Tyndar Press, and detailed operating descriptions are included with the zipped file for SNAPMax. Finally, SNAPMax501 supersedes shareware SNAPMax3.63 and is now FREEWARE for any non-commercial uses. 
+
+Crawford MacKeand  WA3ZKZ, VP8CMY, ex-G4ARR</Char_Desc_2000>
+</English>
+</Program_Descriptions>
+<Web_Info>
+<Application_URLs>
+        <Application_Info_URL />
+        <Application_Order_URL />
+        <Application_Screenshot_URL />
+        <Application_Icon_URL />
+        <Application_XML_File_URL />
+    </Application_URLs>
+<Download_URLs>
+        <Primary_Download_URL />
+        <Secondary_Download_URL />
+        <Additional_Download_URL_1 />
+        <Additional_Download_URL_2 />
+    </Download_URLs>
+</Web_Info>
+<Permissions>
+        <Distribution_Permissions />
+        <EULA />
+</Permissions>
+</XML_DIZ_INFO>

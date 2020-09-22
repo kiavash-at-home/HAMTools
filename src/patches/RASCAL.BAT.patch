@@ -1,0 +1,10 @@
+--- RASCAL.BAT	1995-06-04 23:25:00.000000000 -0700
++++ RASCAL.BAT	2020-08-14 16:52:30.000000000 -0700
+@@ -34,6 +34,6 @@
+ goto NEXT
+ 
+ :END
+-end /w02
++REM end /w02    REM removed due to insensitive image
+ cls
+ echo on

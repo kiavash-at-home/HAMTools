@@ -1,0 +1,246 @@
+
+
+
+                              HOW SNAPMax WORKS
+
+
+INTRODUCTION
+Calculations in SNAPMax start with your inputs, and for each output of
+the two hundred or so in a typical output screen, proceed through a long
+sequence of calculation steps, finally placing the result in the right
+place in the display.  The main menu enables you to set the various input
+quantities for the local receiving and remote transmitting stations, but
+we will here largely ignore the mechanics of presentation and trace the
+program's operation in developing the displayed signal's path, its
+strength and finally its edge over the prevailing noise levels.
+
+Calculations start with the sub-routine <geometry>, which establishes a
+trigonometric great-circle description of the path. Next <solar> uses this
+information to find out where solar energy is actually falling on the
+relevant parts of the ionosphere at the time and date of the QSO. Then
+<muffr> uses Fricker's code to calculate maximum usable frequency (MUF),
+and <propmode> determines the mode (E layer or F layer) likely to prevail.
+At this point we call <noise> to retrieve the 1 MHz CCIR noise zone value
+and convert it for the frequency in use; <noise> then also finds the
+appropriate man-made noise and calculates any galactic noise contribution.
+All this information is now pulled together by <hfsignal> and <evaluate>.
+The various loss factors are calculated, together with antenna gain, to
+give signal strength, and combined with noise results for signal-to-noise
+ratios. The <scan> routine determines time and frequency for each call to
+this sequence of calculations and then displays the results in map format.
+
+Now it is time to look at the internal workings of these fundamental
+sub-routines in turn and see what factors are actually taken into account
+in the entire process, and to some extent, how they inter-relate.
+
+PATH CALCULATION
+Dedicated sub-routines <countries> and <extract.site> obtain latitude and
+longitude of your selected end points from the SNAP.QTH file or from the
+screen input.
+
+<geometry> Spherical geometry determines the path; a very tedious process,
+but the trigonometrical functions are grist to the computer's mill. The
+subroutine <geometry> starts with the latitudes and longitudes that you
+input, either from call sign prefixes which SNAPmax looks up, or directly
+as geographical co-ordinates. These are converted from degrees to radians
+(and back and forth as needed) and used to determine the great circle
+distance. SNAPMax then locates the "intermediates"  (or "control points"
+as in the CRPL (US NBS) methods) for path evaluation and uses F-layer
+altitude from <f.height> to find maximum hop length. Ray elevation angles
+and magnetic latitudes are also established for later use.
+
+<f.height> uses in-built maps to determine F-layer heights (displayed in
+mode CC) from local time, date and latitude at each intermediate. E-layer
+height does not vary greatly and is assumed to be constant at 110 km.
+
+
+BASIC PARAMETERS
+Three main input modules handle the other inputs required for calculation.
+
+<date.time> has the obvious function of setting up the time of day and
+period in the seasons for the path. It allows the use of either a date and
+time input by the user or the computer's internal date/time.
+
+<flux.freq> asks for the solar flux, (or alternatively sunspot number),
+the solar A index, (or alternatively the K index), and the frequency,
+whereever this is not forthcoming automatically from a frequency scan.
+Most of the screens scan the HF spectrum from 2 - 50 MHz (or from 2 - 12
+MHz) automatically, but the Band-opening and Single Calculation screens do
+need you to select a frequency.
+
+<sta.param> first requests your selection of transmitter power and a
+decision on the receive location noise category (Very Quiet, Quiet Rural,
+Suburban, Urban). Then it permits selection of the antennas at both ends
+of the route (Three element beam, Dipole, or Vertical) and, except for the
+vertical, allows the selection of an installed height up to 300 ft.
+
+<solar> Date and time are used to calculate solar absorption coefficients,
+and then absorption factors, using solar zenith angles, allowing for the
+high latitude winter anomaly which disturbs the neat pattern of these
+events. The sun's ultra-violet radiation ionizes the D, E and F layers,
+while other emissions cause such effects as polar auroras. Auroral
+activity causes severe attenuation on polar routes, so SNAPmax calculates
+probable auroral ring position and depth, based on the local time, solar A
+or K index, and historical data. The great circle path is analysed to
+determine what proportion lies on the oval, and when and where. The
+results modify the D layer absorption coefficient used in the <hfsignal>
+sub-routine.
+
+
+SIGNAL CALCULATION
+<muffr> This fairly long routine embodies Fricker's code as previously
+mentioned, although somewhat modified. Your inputs first determine local
+time at each of the "control points". (To locate these exotic places, run
+the program in single calculation CC mode and look at the first display
+page.) Required next is the critical frequency which is essentially the
+MUF for rays going straight up from the transmitter. F layer height is
+used at each control point and a modified "secant law" works out the MUF
+for actual ray angles. SNAPmax examines two likely paths so both MUFs are
+determined. Lastly, the critical frequency and MUF are modified on the
+basis of the prevailing A (or K) factor to allow for the significant
+reductions which are associated with the onset of ionospheric storms.
+
+<propmode> is the next call, and this evaluates the positions of the E
+layer control points and then the E layer critical frequency and MUF.
+These values and data from <muffr> are then used to select the possible
+paths. SNAPmax also allows for E layer cut-off, where a usable F layer is
+invisible because of intervening E layer ionization. In a simplification
+which was thought appropriate, paths with reflection from both E and F
+layers are not evaluated. Review showed that these were fairly few and
+far between, but it is a limitation which can be borne in mind.
+
+<skipdist> is a very short sub-routine which establishes the minimum
+possible F layer hop or skip distance, regardless of the path being
+evaluated. This can be seen in the single calculation (CC) display.
+
+<evaluate> calls the signal sub-routines and then compares signal levels
+and signal-to-noise ratios to find out which is the controlling path.
+
+<hfsignal> All this information is now pulled together, first to find the
+probable received signal level, and then to determine the signal-to-noise
+ratio. Received signal strength depends on transmitted power, distance
+loss, absorption losses, reflection losses mainly at intermediate earth
+points, antenna gains and feeder losses, and over-MUF loss for signals
+above the calculated maximum usable frequency. These subroutines,
+handling the basic path and a path with one further hop, first look at
+signal frequency/MUF ratio, and then calculate the Over-MUF loss and
+the probability of an extant path, the classical MUF being the maximum
+frequency which is likely to be available 50% of the time. A Weibull error
+curve is used, (beta = 3), which appears to correspond well with
+actuality. Slant distance is then calculated and used with a modified
+version of Rawer's curves to find the "spreading" or distance loss, which
+is applied to transmitter power.
+
+Absorptive attenuation (loss in the lowest or D layer) is found from the
+absorption factors determined in <solar> using a map based correlation by
+George and Bradley. This also allows for gyro-frequency effects in which
+free electron resonances absorb signal energy at lower frequencies.
+Ionospheric, land and sea reflection losses are added, the land vs sea
+decision being made from an internal map.
+
+Losses due to auroral zone activity are combined with the regular D layer
+attenuation in the <solar> sub-routine. There is potential for signal gain
+due to antipodal focusing, which is included to an optional extent. It
+depends on the existence of a relatively smooth undisturbed F layer and
+allows for the convergence of all possible great circle paths to your
+station from a transmitter at your antipodal point on the other side of
+the earth. The <noise> routine is called from here, and signal-to-noise
+ratio is worked out, as well as signal strength. Finally, a probable
+signal delay is determined, for multipath evaluation. For digital modes,
+where there are two possible paths with comparable signal strengths, the
+delay is compared with the baud rate, and potentially affected times and
+frequencies are flagged.
+
+<gyro> reads gyro-frequencies for the control points from an internal map;
+they are used by <signal> in the calculation of absorption loss from the
+solar absorption factors.
+
+<noise>, using date and local time for the receiving site, selects
+appropriate "noise grades" from tables extracted from CCIR 322 for a large
+number of possible operating sites. These were chosen to cover the
+countries with the largest amateur populations, and include all of the
+USA, Canada and Australia, many European nations, and a selection of other
+locations world-wide. If a particular location is not represented, the
+necessary data can be entered by anyone with access to the CCIR 322 maps.
+As a last resort, a world-wide approximation is provided.
+
+For frequencies below about 3 MHz, a separate sub-routine <mfsignal>
+is used to calculate signal strength, and for a range of transition
+frequencies an interpolation is used.
+
+This data, for 1 MHz, is adjusted by SNAPMax algorithms for frequency and
+bandwidth, interpolated for time and season. Man-made noise is not as well
+characterized, but is predicted from CCIR curves, as also is galactic
+noise. The man-made noise contribution depends slightly on antenna height;
+a minor adjustment is made for the greater immunity of high antennas to
+local sources. Galactic noise on the other hand, must pass through the
+ionosphere, and there is a low cut-off frequency calculated, related to
+the critical frequency.
+
+<snr.bandwidth> provides bandwidth and baud rate for signal quality
+calculations.
+
+<antenna.gain> almost always positive, is based on ELNEC analyses of a
+dipole, a three-element beam, and a quarter-wave vertical. Comparing
+SNAPmax results, band by band, remember that we consider these as quite
+large and effective antennas on say 80 meters, and merely rather ordinary
+antennas on 15 meters!
+
+Forward gain, often quoted as the maximum for the best lobe, may be
+something else entirely at the actual ray angle. Horizontal antenna gain
+is modified for antenna height above earth, ground reflection effects
+being thereby included.  Nulls in the gain at larger antenna heights are
+to some extent filled in by re-radiation etc., so the height factor
+adjustment is limited to -25 dB. The vertical antenna is assumed to be at
+ground level. All gains are in dBi, relative to a theoretical uniform
+radiator, and over earth rather than in free space. Numbers are therefore
+larger than the commonly used dBd gains relative to a dipole, and quite a
+lot larger than the corresponding free space values. It may be surprising
+to find that at some angles a dipole over good ground can show a gain as
+great as 8.1 dBi.
+
+Antenna height affects not only antenna gain but also feeder losses, and
+these are allowed for, assuming that both stations use RG-8U or similar
+coaxial cable.
+
+
+PATH GAIN EXAMPLE
+In a wire circuit from transmitter to receiver, we could just add up all
+these losses and gains to get from the transmit level to the receive level
+in dBm. In the radio case however, an interesting constant couples
+free-space (characteristic resistance 377 ohms) to the antenna, going from
+transmitter output in dBm to a free-space signal which is in dB referred
+to 1 microvolt/meter. Next the path losses and gains are summed. Another
+conversion takes us from a free-space signal to the induced level in an
+isotropic receiving antenna, also frequency dependent, and we finally add
+receiving antenna gain. The example (14.0 MHz, 24 July 1998, 18:26 GMT,
+to run it press XZ in the main menu) shows how it works.  Accuracy to a
+tenth of a dB is very certainly NOT implied!! But additional figures do
+help in finding one's sources of error. (Add them up and you will find
+minor discrepancies of 0.1 dB or so due to rounding!)
+
+
+    Transmit power 14 MHz        50.7  dBm  (120 watts)
+    (Signal at 1 km. = xmit power + xmit antenna gain (7.0 dB) + 74.8)
+    Signal at 1 km from xmtr.   132.6  db ref 1uV/m
+
+    Distance loss                91.6  dB
+    Absorption loss              42.1  dB
+    Auroral zone loss             0.6  dB
+    Over-MUF loss                 0.0  dB
+    Reflection losses             7.5  dB
+
+    (Recv location sig = sig at 1 km. - total losses)
+    Recv. location signal        -9.4  dB ref 1 uV/m
+    (Recv sig = recv loc sig + recv ant gain - 20 log F MHz - 77.2)
+    Receive Antenna gain          7.0  dB
+    Received signal            -102.5  dBm
+
+
+FURTHER READING
+If you would like to know more about any of these calculations, my book
+"The FRIENDLY IONOSPHERE", available from Tyndar Press, P.O. Box 236,
+Montchanin, 19710 USA provides both details and extensive references.
+
+73 de Crawford MacKeand WA3ZKZ, VP8CMY, ex-G4ARR  19 Sept 2001
+

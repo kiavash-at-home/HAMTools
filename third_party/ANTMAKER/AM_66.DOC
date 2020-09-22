@@ -1,0 +1,1188 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                         * * * * * * * * * * * * * * * *
+                         *                             *
+                         *  A N T E N N A   M A K E R  *
+                         *                             *
+                         *   Antenna Design Programs   *
+                         *                             *
+                         * * * * * * * * * * * * * * * *
+
+
+
+                         Copyright 1994, ALC Electronics
+
+                           By: John K. Agrelius, KM6HG
+
+                       Protected by Federal Copyright Laws
+
+           Permission granted for non-commercial use and distribution.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                           A N T E N N A   M A K E R
+                           =========================
+
+
+
+
+         The programs in this package are intended to assist the average
+    Amateur Radio Operator with the design and construction of some of the
+    most common antennas in use today. Several antennas have been built using
+    these programs and excellent results have been reported. Just read all the
+    documentation thoroughly and follow the instructions and you'll have the
+    personal satisfaction of building your own antennas.
+
+         We do recommend that you use other sources of information such as the
+    ARRL Handbook for Radio Amateurs, the ARRL Antenna Book, the VHF Handbook
+    for Radio Amateurs and All About Cubical Quads, just to mention a few.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                   Disclaimer
+                                   ----------
+
+
+         ALC Electronics distributes freeware and shareware programs and data
+    files without charging a fee.
+
+         In no case do we intentionally violate any copyright request or
+    convention.
+
+         We remind the purchaser that in the case of shareware, author's
+    rights are important. If you continue to use a program you must abide by
+    an author's request for registration and fee payment. This supports and
+    encourages the author to improve existing software and develop new
+    software products.
+
+         ALC Electronics and it's distributors cannot assume liability or
+    responsibility for any loss or damage arising from the use of these
+    programs. This product is used with this understanding by user.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            Warranty and Liability
+                            ----------------------
+
+
+
+         ALC Electronics does not warrant that the functions contained in
+    these programs will meet your requirements or that the operation of these
+    programs will be uninterrupted or error free.
+
+         In no case will ALC Electronics be held liable for damages direct,
+    indirect or incidental resulting from any defect or omission in the Users
+    Manual, the Disk, or any other related items and processes, including, but
+    not limited to, any loss of income, anticipated profit or other
+    consequential damages.
+
+         This statement of limited liability replaces all other warranties or
+    guarantees, expressed or implied, including warranties of merchantability
+    and fitness for any purpose. ALC Electronics neither assumes any other
+    warranty or liability nor authorizes any other person to assume any other
+    warranty or liability for it, in connection with the use of this product.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                   CONTENTS
+                                   ========
+
+
+
+              Inverted Vee Antennas ...................... Page 1
+
+              Cubical Quad Antennas ...................... Page 3
+
+              Coax Antenna Traps ......................... Page 7
+
+              Inverted Vee Diagrams ...................... Page 9
+
+              Cubical Quad Diagrams ...................... Page 10
+
+              Coax Trap Diagrams ......................... Page 13
+
+              Other Shareware Programs ................... Page 14
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  I N V E R T E D   V E E   A N T E N N A S
+                  =========================================
+
+                         By: John K. Agrelius, KM6HG
+
+
+
+         The Inverted Vee Antenna (sometimes called a Drooping Dipole) is
+    basically a center fed dipole with the ends lower than the feed point. The
+    characteristic impedance of this antenna at the feed point will vary with
+    the height above ground, the apex angle and surrounding objects. It will
+    generally be close enough to 50 ohms that it can be fed directly with 50
+    ohm coax. The apex angle (at the feed point) should be somewhere between
+    90 degrees and 120 degrees with 110 degrees as a good starting point. It's
+    not too critical, just don't make it less than 90 degrees. Also, don't be
+    afraid to use dog legs near the ends of the antenna if you don't have
+    enough real estate. Just try to keep the feed point in the clear and as
+    high as possible. This will improve your radiation pattern and your
+    radiation angle.
+
+
+                             Running the Program
+                             -------------------
+
+         The program is quite simple to use. Just enter the Design Frequency
+    and the Height above ground. The Frequency will be used to calculate the
+    dimensions and the Height will be used to determine the approximate feed
+    point impedance for your antenna. When the calculations are done and the
+    dimensions are displayed you'll have 4 Choices:
+
+
+             #1 - This will Restart the Program.
+             #2 - This will Recalculate with a New Antenna Height.
+             #3 - This will Print the Design Specifications of your Antenna.
+             #4 - This will Quit the Program and Return to the Main Menu.
+
+
+                            Building Your Antenna
+                            ---------------------
+
+         The support for the antenna should be made of wood, fiberglass, PVC
+    or some other non-metallic material. A 3 or 4 foot piece of PVC pipe on
+    top of a metal mast works OK. An all wooden mast would be better but isn't
+    very practical for high antennas. You can use a small piece of plexiglass,
+    maybe 3" X 5" X 1/4", at the feed point, attached to the PVC pipe for the
+    antenna connections. Just drill a 1/4" hole near each corner, at one end
+    of the plexiglass. This will be used for the legs of the antenna. You
+    should also drill a couple of holes in the middle of the plexiglass near
+    the other end to be used for mounting it to the mast. Strip the insulation
+    off the end of one leg of the enameled copper wire for about 6 inches. Run
+    about 4 inches of this end of the wire through one of the corner holes and
+    making a loop, wrap it back on itself and solder the connection. Do the
+    same with the other leg of the antenna. Refer to FIGURE 1.
+
+         Connections between the antenna and the coax are made at the solder
+    joint of each leg. Separate the shield from the center conductor of the 50
+    ohm coax for about 4 inches. Use some silicone glue to weather proof the
+    coax where the shield and center conductor separate. Solder the shield to
+
+    Page 1
+
+
+
+
+
+
+    one leg of the antenna and solder the center conductor to the other leg.
+    Refer to FIGURE 1.  NOTE - A good quality current balun could be used in
+    place of the plexiglass to reduce feedline radiation.
+
+         One thing you need to keep in mind is that the 4 inches of coax and
+    shield become part of the antenna. This extra length was lost when you
+    looped each leg through the plexiglass so it should balance out. BUT be
+    sure that in the beginning you cut the legs about a foot or two LONGER
+    than they need to be. You'll need to adjust the length of the legs for the
+    lowest VSWR. You can always cut off the extra length when you're done.
+    When adjusting the antenna, be sure to add or subtract equal amounts from
+    each leg. Also, you'll need insulators for the ends of the antenna and to
+    support any dog legs. You can use plexiglass or some PVC pipe with a hole
+    drilled in each end.
+
+         One final note - A good quality Current Balun is the best way to
+    connect the antenna to your coaxial cable. It will improve the radiation
+    pattern and cut down on RF radiated by the feedline.
+
+
+                              Antenna Adjustment
+                              ------------------
+
+         With the antenna in position, check the VSWR with your SRW Meter.
+    First take a reading at the Design Frequency and write it down. Now check
+    the reading above and below the Design Frequency. If the VSWR is Higher at
+    the Higher frequency then it's obviously resonant at a lower frequency, so
+    you need to shorten the ends of the antenna. When the antenna is
+    shortened, the resonant frequency will go up. Remember, you must shorten
+    the antenna by the same amount on each leg. If the VSWR is Higher at the
+    Lower frequency then you'll have to lengthen the antenna. Continue to
+    adjust the antenna until the VSWR is at it's lowest reading at the Design
+    Frequency. The Approximate VSWR on the printout is exactly that, so don't
+    rely on it to much. The antenna is influenced by Height above ground (and
+    who knows where that is), the Apex Angle, any Surrounding objects and
+    probably other things we don't even know about yet. If the VSWR is less
+    than 2:1 across the entire band then it should work fine.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Page 2
+
+
+
+
+
+
+                  C U B I C A L   Q U A D   A N T E N N A S
+                  =========================================
+
+                         By: John K. Agrelius, KM6HG
+
+
+
+         The Cubical Quad Antenna is basically a directional beam antenna made
+    out of wire loops. The loops are usually square and are approximately one
+    wavelength long, with the reflector slightly larger and the director(s)
+    slightly smaller. It has more gain per element than a Yagi, it is less
+    susceptible to static noise and best of all the characteristic impedance
+    is close enough to 50 ohms that it can be feed directly with 50 ohm coax.
+    The major disadvantage is that it's pretty bulky for HF and quite a chore
+    to build. But, it's ideal for VHF. In fact, I'm using a 5 element Quad on
+    2 meters at my QTH. It has great gain, a good front to back ratio, it
+    covers the entire band and the VSWR is flat at the Design Frequency.
+
+
+                             Running the Program
+                             -------------------
+
+         The program is quite simple to use. Just enter the Design Frequency
+    and the Number of Elements. The Frequency will be used to calculate the
+    dimensions and the Number of Elements will be used to determine the
+    Theoretical Gain. When the calculations are done and the dimensions are
+    displayed you'll have 4 Choices:
+
+
+             #1 - This will Restart the Program.
+             #2 - This will Recalculate with a New Number of Elements.
+             #3 - This will Print the Design Specifications of your Antenna.
+             #4 - This will Quit the Program and Return to the Main Menu.
+
+
+
+         In the next few paragraphs I'll go through the process of building a
+    vertically polarized 4 element, 2 meter (146 MHz) Cubical Quad. It's not
+    difficult but the dimensions are critical and you need to take your time.
+    The same basic techniques apply to the other bands, the only difference
+    would be that the size of almost everything would change proportionally.
+
+
+                            Building Your Antenna
+                            ---------------------
+
+         The support for the antenna should be made of wood, fiberglass, PVC
+    or some other non-metallic material. I used 2" X 2" pine for the boom and
+    1/2" wood dowel for the spreaders. The wire loops were made of number 18
+    enameled copper wire (for HF I would use number 12 copperweld). You'll
+    also need a couple of pieces of 1/8" plexiglass about 1" X 2", a couple of
+    muffler clamps that will fit your mast and a piece of aluminum tubing or
+    PVC pipe about 18" long. That's it..
+
+         Take the 2" X 2" pine and using the dimensions from the printout,
+    cut the boom. CAUTION - The dimensions are the MINIMUM length of the boom,
+    you'll have to add a little just to be safe. I added an additional 24"
+    because I mounted the boom to the mast behind the reflector so the antenna
+
+    Page 3
+
+
+
+
+
+
+    was not affected by the mast. This makes the total boom length about 64"
+    (40.2" + 24"). Now, take the wood dowel and using the dimensions from the
+    printout, cut two wood dowels per element. CAUTION - Again, the dimensions
+    are the MINIMUM length necessary to make the wire loops. I added an
+    additional 2" to each spreader. This makes the Reflector spreaders 32.7"
+    (30.7" + 2"), the Driven Element spreaders 31.2" (29.2" + 2") and the
+    Director spreaders 29.7" (27.7" + 2"). Using a drill press, drill a small
+    hole 1" from the end of each spreader. These holes will be used to run the
+    wire through, making the square loops. Take one of the 32.7" spreaders and
+    one of the 31.2" spreaders and using a saw, cut a slit on one end of each
+    spreader up to the hole you just drilled. Using care, make the slits wide
+    enough to slide the plexiglass into them. Drill an 1/8" hole near each end
+    of both pieces of plexiglass. Press the plexiglass into the slits, center
+    it and drill another 1/8" hole through the wood dowel and the plexiglass
+    1/2" from the end of the dowel. Refer to FIGURE 3. Attach the plexiglass
+    to the wood dowel with a small screw and some Elmers glue.
+
+         Now, using the drill press, drill a 1/2" hole 1" from the front end
+    of the boom. With the dimensions from the printout, drill a second hole
+    12.4" from the first hole, and so on, until all four holes are drilled.
+    These will be the holes for the horizontal spreaders. Rotate the boom 90
+    degrees on the drill press and measure 1/2" back from the middle of each
+    hole and mark it. Drill the other four holes for the vertical spreaders.
+    You'll also want to drill a couple of holes for mounting the antenna to
+    the mast. I used a muffler clamp and it seemed to work OK. You may have a
+    better way, especially if it's a horizontally polarized antenna. Drill the
+    two holes for the clamp about one foot from the rear end of the boom.
+    Remember, if the beam is vertically polarized then the holes for the clamp
+    must be drilled horizontally through the boom. You'll also need to drill a
+    small hole near the end of the boom to attach the support arm.
+
+         You can now insert the spreaders in the holes on the boom. I hung the
+    boom from the ceiling with some wire to keep it in the clear. Starting at
+    the rear of the boom, insert the long 32.7" spreader (with the plexiglass
+    insulator) into the hole. Moving toward the front of the boom, insert
+    the 31.2" spreader (with the plexiglass insulator) into the next hole.
+    Make sure the plexiglass insulators are both on the same side of the boom.
+    Continuing toward the front of the boom, insert two of the 29.7" spreaders
+    in the next two holes. You should now have 4 horizontal spreaders lined up
+    with the two shortest in the front of the boom and the longest at the
+    rear. Both plexiglass insulators should be on the same side. Using plenty
+    of Elmers glue, center each spreader and glue them in place. Be sure to
+    align the spreaders so that they are all parallel and make sure the holes
+    for the square wire loops are aligned properly. After the glue dries, do
+    the same for the vertical spreaders. Let the glue dry and put at least 2
+    coats of spar varnish on everything and let it dry over night.
+
+         You're now ready to string the wire loops through the cross-bars.
+    Using the dimensions from the printout, measure and cut the enameled wire
+    to length. CAUTION - Again the dimensions are for the exact length needed,
+    so you should add a little extra. I cut the directors one inch longer
+    (78.4" + 1") for a total of 79.4 inches. The Driven Element and the
+    Reflector need to be cut 4 inches longer. The extra length will be needed
+    for adjustment of the antenna. So, the Driven Element should be 86.5"
+    (82.5" + 4") and the Reflector should be 90.7" (86.7" + 4"). Now strip off
+    about 2 inches of enamel from each end of the Director wires and about 6"
+    of enamel from the Driven Element wire and Reflector wire. Feed one of the
+    Director wires through the holes on the end of each spreader at the front
+
+    Page 4
+
+
+
+
+
+
+    of the boom. Pull the wire tight making a square loop, overlap the two
+    ends by 1" and solder the connection. Do the same for the next Director.
+    Now take the Driven Element wire and feed it through each of the spreaders
+    with the ends of the wire terminating at the plexiglass insulator. Run
+    equal amounts of wire through the holes in the insulator, fold the wires
+    back and wrap each one around itself a couple of times. Point the ends of
+    the wires toward the front of the boom and solder the connection. Do the
+    same for the Reflector. You're going to need a shorting stub on the
+    Reflector to adjust the antenna. This can be made from a short piece of
+    copper wire. Cut a 2 1/2" piece of number 12 copper wire and bend the ends
+    over, making a small loop in each end. This will slide over the two ends
+    of the Reflector wires at the insulator. Push it all the way down to the
+    insulator for now, making the Reflector loop as short as possible. Refer
+    to FIGURE 4.
+
+
+                              Antenna Adjustment
+                              ------------------
+
+         We're now ready to hook up the feedline, mount the antenna and make
+    some adjustments. The hard part is over. For VHF you should use low loss
+    cable like RG-213, for short runs you can get away with RG-8X. Separate
+    the center conductor from the shield for about 1 1/2". Twist the length
+    of exposed shield and tin the wire. Strip back 1/2" of insulation from the
+    center conductor and tin the wire. Bend a small loop in the end of both
+    the shield and center conductor. Connect the center conductor to one of
+    the ends of the Driven Element loop close to the insulator and the shield
+    to the other end of the loop the same distance from the insulator and
+    solder the connections. Using electrical tape, attach the coax to the
+    spreader and the boom, routing the coax down the boom through the
+    Reflector loop and out the rear of the antenna. You can now mount the
+    antenna to the mast but be careful, it's pretty bulky and fragile. This is
+    a good time to call on one of your Ham friends, they're always eager to
+    help with antennas. Refer to FIGURE 6 so you can understand the mounting
+    method using the Antenna Support Arm. With the antenna mounted in
+    position, hopefully well away from surrounding objects, you can hook up
+    the other end of the coax cable to your SWR meter and check the VSWR.
+    First take a reading at the Design Frequency and write it down. If the
+    VSWR is below 1.5 : 1 at the Design Frequency you might want to leave it
+    alone and get some signal reports from a few friends. Rotate the antenna
+    while listening to a weak station. You should see a big difference as you
+    point the beam in different directions. If the VSWR is too high, first
+    recheck all the dimensions, especially the Driven Element. The total
+    length of the Driven Element should be very close to the dimensions on the
+    printout. For our antenna, at 146 MHz., it should be about 82.5". That
+    includes the length of coax that was stripped back. Measure from where the
+    coax shield separates from the center conductor, all the way around the
+    spreaders and back to where the center conductor and shield separate. That
+    is the total length of the Driven Element. If that measures OK, then you
+    need to adjust the stub on the Reflector for the lowest VSWR. As a last
+    resort, you may need to move the coax connection at the feed point. If the
+    VSWR is Higher at a Lower frequency then you need to make the Driven
+    Element Longer.  Keep the Feed Point the same distance from the insulator
+    for each connection to the coax. Remember, the antenna is influenced by
+    the Height above ground and Surrounding Objects, so keep it as high as
+    possible. Remember to solder the Reflector Shorting Stub when finished.
+
+         One final note - When building a Cubical Quad with only two elements,
+
+    Page 5
+
+
+
+
+
+
+    the characteristic impedance of the antenna will be well above 50 ohms.
+    Their are several ways to compensate for this. Two of the easiest ways are
+    to either decrease the spacing between the Driven Element and the
+    Reflector (about one half of what the printout recommends) or to use a 1/4
+    wavelength piece of 75 ohm coax as a linear transformer to feed the
+    antenna with. The rest of the feedline would still be 50 ohm coax.
+    Remember, we're talking about an electrical 1/4 wavelength (246 divided by
+    the Frequency times the Velocity Factor). For HF, the best way is to use a
+    Balun. In fact, you should always use a good Current Balun with any HF
+    antenna that uses coaxial cable as feedline.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Page 6
+
+
+
+
+
+
+                             C O A X   T R A P S
+                             ===================
+
+                         By: John K. Agrelius, KM6HG
+
+
+
+         Coaxial Antenna Traps are antenna traps using coaxial cable. It's a
+    great way to make traps. They are inexpensive to make and work quite well.
+    With the inherent capacitance in coax all you have to do is wind it around
+    a form to create some inductance and Bingo.. you have a resonant circuit.
+    The trick is to make it resonant at the Design Frequency. That's what the
+    Coaxial Trap Design Program does.
+
+
+                             Running the Program
+                             -------------------
+
+         The program is quite simple to use. Just select your Coax Type and
+    enter the Form Diameter and the Design Frequency. When the calculations
+    are done and the dimensions are displayed you'll have 5 Choices:
+
+
+             #1 - This will Restart the Program.
+             #2 - This will Recalculate with a New Form Diameter & Frequency.
+             #3 - This will Recalculate with a New Frequency.
+             #4 - This will Print the Design Specifications of your Trap.
+             #5 - This will Quit the Program and Return to the Main Menu.
+
+
+                             Building Your Traps
+                             -------------------
+
+         The Form for your traps should be some type of round non-metallic
+    material. When I made my 40/75 meter Trap Dipole I used 3" ABS, which has
+    an outer diameter of 3.5". My Trap Design Frequency was 7.2 MHz. and my 75
+    meter frequency was 3.9 MHz. If you choose a Trap Design Frequency that's
+    a little on the low side, then the coax will be a little longer than you
+    actually need, so you'll have a safety margin. Let's go through it step by
+    step and build a 40/75 meter Trap Dipole like mine. You'll need to make
+    printouts for a 40 meter Dipole (Inverted Vee), a 75 meter Dipole and a
+    Trap for 40 meters.
+
+         The first thing you need to do is to build your antenna for the
+    Highest frequency (40 meters), let's say 7.2 MHz. Using the Inverted Vee
+    Program, the antenna would be 32.45 feet on each leg. Get your 40 meter
+    antenna adjusted for the lowest VSWR. Now you can build your traps. I used
+    RG-58C which was 5 Turns around my 3.5" Form and had to be 59.5" long (for
+    7.2 MHz). The width of the 5 Turns would be .97 inches, so I made my Form
+    4 inches long. That gave me an extra 1.5" on each end of the Form. I
+    drilled a 1/4" hole about 1/2" from each end of the two Forms. The holes
+    were used to connect the Form to the antenna. Remember, the 59.5 inches of
+    coax is the length of the shield. It's no longer coaxial cable where the
+    center conductor and shield are separated. I added 2 inches and cut the
+    coax to 61.5 inches. Separate the shield from the center conductor for 1
+    inch at each end of the 2 pieces of coax and tin the shield and the center
+    conductor. Wrap the coax around the Form (not too tight) and tape it off
+    neatly with electrical tape.  You can run the tape in through the form and
+
+    Page 7
+
+
+
+
+
+
+    back over the coax. Don't cover up the ends of the coax. Now, take the
+    shield from one end and the center conductor from the other end and solder
+    them together. Refer to FIGURE 7. You may need some extra wire, I used
+    copper braid. Do the same with the other Trap.
+
+         You can now hook the Traps to the ends of the 40 meter antenna.
+    Replace the insulators at the end of each leg with the Traps. Any extra
+    wire, including the ends of the coax, that will be used to make the
+    connection, will become part of the antenna and must be subtracted from
+    the total length of the 40 meter antenna. I connected the center conductor
+    to the 40 meter side of the antenna and the shield to the 75 meter side.
+    Now you need to add the wire to the 75 meter side of the Trap to make your
+    75 meter antenna. This is the tricky part. There's no way to determine
+    precisely just how much wire you'll need. That's because the amount of
+    inductance in the Trap will be different at different frequencies, it will
+    change with the Form diameter, the type of coax used, etc. Besides, the
+    length of the ends of the antenna will also be affected by it's proximity
+    to ground. All we know for sure, is that the overall length of the antenna
+    will be shorter than a full length dipole for 75 meters. If you subtract
+    the length of the coax (59.5") from the length of one leg of the 75 meter
+    antenna (718.8"), this will give you 659.3". We also have to subtract the
+    length of the 40 meter leg to get our starting point. So, 659.3" - 389.4"
+    = 269.9" or about 22.5 feet. That's what we'll start with, and maybe a
+    little extra to be safe. Remember, it's easier to cut off extra antenna
+    wire than it is to stretch it, so always make it longer than you need.
+    Hook the 22.5 feet of wire to the 75 meter end of the Trap and solder the
+    connections on the Trap. Do the same for the other leg. Refer to FIGURE 8.
+
+
+                           Antenna Trap Adjustment
+                           -----------------------
+
+         With your SWR meter connected, check the VSWR at 7.2 MHz. The VSWR
+    should be very close to what it was as a 40 meter dipole (before the Traps
+    were added). Check the SWR Above and Below the Trap Design Frequency. If
+    the VSWR is better at a Lower frequency then you'll have to shorten the
+    coax on the Trap. It doesn't take much to make a difference. I only had to
+    take off 1/2" from each Trap. Just take a sharp knife and cut a slit down
+    through the shield and separate the center conductor from the shield a
+    little at a time and recheck the VSWR. If cutting the coax shorter makes
+    the VSWR worse, then there's a problem. Check all the dimensions, if
+    everything seems OK then you'll have to try again with a longer piece of
+    coax. This shouldn't happen but something could cause a problem, like the
+    Form material, weird coax or something else we're not aware of. Once
+    you've got a reasonable VSWR on 40 meters, you can check the antenna on 75
+    meters. You'll probably have to shorten the ends to get it resonant at 3.9
+    MHz. My antenna only needed a little less than 16 feet added to each Trap
+    to work on 75 meters but every installation is different. Don't forget to
+    seal the ends of the coax with some RTV. Have Fun and Good DX, John.
+
+
+
+
+
+
+
+
+
+
+    Page 8
+
+
+
+
+
+
+                              Inverted Vee Diagrams
+                              ---------------------
+
+
+
+                                 _______________
+                                |      1/4"   v |
+                               *|*O<- Holes ->O*|*
+            Wire Loop ------->* | *     |     * | *
+                             *  |*      |      *|  *
+                             * *|       |       |* *
+         Solder Joint ---->X    |       V       |    X
+                         *   s  |       O       |  c   *
+                       *       s|               |c       *
+     Antenna Leg --->*          |s             c|          *
+                   *            |  s    O    c  |            *
+                 *              |    s     c    |              *
+               *        Shield ------->s c<------- Center        *
+             *                  |      |X|      | Conductor        *
+           *    Plexiglass ---->|      |X|      |                    *
+         *                      |______|X|______|                      *
+                                       |X|
+                      50 Ohm Coax ---->|X|
+                                       |X|
+                                       |X|
+                                       |X|
+
+
+                       FIGURE 1 - Inverted Vee Connections
+
+
+
+    _________________________________________________________________________
+
+
+
+                                        _
+                       Plexiglass ---->|_|*
+                                    *  | |  *
+                                  *    | |    *
+                   PVC Pipe ---------->| |      *
+                              *        |-|        *
+                            *          |X|          *
+             Left Leg --->*            |X|            *<--- Right Leg
+                        *              |X|              *
+                      *                |X|                *
+                    *   Metal Mast --->|X|                  *
+                  *                    |X|                    *
+  Insulator --->O                      |X|                      O
+              x                        |X|                        x
+  String -->x                          |X|                          x
+          +                            |X|                            +
+          |                            |X|                            |
+  Pole -->|                            |X|                            |
+          |                            |X|                            |
+  ------------------- Ground ----------------------- Ground ---------------
+
+
+                   FIGURE 2 - Typical Inverted Vee Installation
+    Page 9
+
+
+
+
+
+
+                              Cubical Quad Diagrams
+                              ---------------------
+
+
+                          _______
+                         |       |
+            1/8" Hole ------>O   |
+                         |       |
+                         ----------------------------------------
+                        (    O<--- 1/8" Hole         Wood Dowel
+                         ----------------------------------------
+                         |       |
+            1/8" Hole ------>O   |<---- Plexiglass
+                         |_______|
+
+
+                             FIGURE 3 - Insulators
+
+
+
+    _________________________________________________________________________
+
+
+
+
+                                 *                          *
+                               *                            *
+                             *                              *
+                           *<------- Reflector Loop ------->*
+                         *                                  *
+                       X<---------- Solder Joint ---------->X* * X * * * * *
+                   * *                                     * *   *
+             ____*__  *                                   * _ *  *
+            |   *   |*                                    *| |*  *
+    Hole ------>O* *|                                      |*|   *
+            |       |                                      | |   *
+            ----------------------                        /| |\  *   Reflector
+           (    O             <------ Wood Dowel ------->( | | ) *<-- Shorting
+            ----------------------                        \| |/  *     Stub
+            |       |<------------ Plexiglass ------------>| |   *
+    Hole ------>O* *|                                      |*|   *
+            |___*___|*                                    *|_|*  *
+                 *    *                                   *   *  *
+                   * *                                     * *   *
+                       X<--------- Solder Joint ----------->X* * X * * * * *
+                         *                                  *
+                           *<------ Reflector Loop -------->*
+                             *                              *
+                               *                            *
+
+            Front View                                  Side View
+
+
+                       FIGURE 4 - Reflector Shorting Stub
+
+
+
+
+
+    Page 10
+
+
+
+
+
+
+                            Cubical Quads (continued)
+                            -------------------------
+
+                                    .\\ .
+                                .     \\     '   .
+                           .           \\            '   .
+                      .                 \ __                 '   .
+                _._______________________|  |_______________________'_
+                - -----------------------|\\|-----------------------.-
+                 '    .                  | \\                  .  '
+                           '    .        |  \\            .  '
+                                     '   |. |\\      .  '<---- 2nd Director
+                                         |  | \\.  '              Loop
+                                    .\\ .|  |
+                                .     \\ |  |'   .
+                           .           \\|  |        '   .
+                      .                 \|  |                '   .
+                _._______________________|  |_______________________'_
+                - -----------------------|\\|-----------------------.-
+                 '    .                  | \\                  .  '
+                           '    .        |  \\            .  '
+                                     '   |. |\\      .  '<---- 1st Director
+                                         |  | \\.  '              Loop
+                                    .\\ .|  |
+                               .      \\ |  |'   .
+    Driven                .            \\|  |        '   .
+    Element   |      .                  \|  |                '   .
+    Feed ---> ||.________________________|  |________________________'_
+    Point ---> |-------------------------|\\|------------------------.-
+                '   .                    | \\                  .  '
+                        '   .            |  \\            .  '
+                                '   .    |  |\\      .  '<---- Driven Element
+                                        '|  . \\.  '              Loop
+                                  .  \\. |  |
+                             .        \\ |  | '   .
+                        .              \\|  |         '   .
+   Reflector |     .                    \|  |                 '   .
+   Shorting  ||._________________________|  |_________________________'_
+   Stub ---> \|--------------------------|\\|-------------------------.-
+               '   .                     | \\                   .  '
+                       '   .             |  \\            .  '
+                               '   .     |  |\\      .  '<---- Reflector
+                                       ' | .  \\.  '              Loop
+                                         |  |
+                                         |  |
+                                         |  |
+                                        *|  || \ <------- Muffler Clamp
+                                        *|  || /
+                                         |  |
+            Muffler Clamp ------> *--| \ |  |
+                                  *\\| / |  |
+                                    \\   |  |<------ Boom
+                                     \\  |  |
+                                      \\ |  |
+           Antenna Support Arm ------> \\|  |
+                                        \|__|*
+
+
+                         FIGURE 5 - Top View of 4 El. Quad
+    Page 11
+
+
+
+
+
+
+                            Cubical Quads (continued)
+                            -------------------------
+
+
+
+
+
+                      ||
+                      ||
+                      ||
+                      ||                __
+     Reflector /----->||               |  |
+              / ______||_______________|__|__________________
+             /             Muffler    _|__|_              __ |
+     Cross  /-------->()   Clamp -->(O_ __ _O)           /O/ |<---- Boom
+           /    ______  _______________|__|_____________/ /__|
+          /           ||               |  |            / /
+     Bar /----------->||               |  |           / /
+                      ||               |  |          / /
+                      ||               |  |         / /
+                      ||               |  |        / /
+                      ||   Mast ------>|  |       / /<----- Support Arm
+                                       |  |      / /
+                                       |  |     / /
+                                       |  |    / /
+                                       |  |   / /
+                                       |  |  / /
+                                      _|__|_/ /
+            Muffler Clamp  -------->(O_|__|/O/
+                                       |  / /
+                                       | /_/
+                                       |  |
+                                       |  |
+                                       |  |
+                                       |  |
+
+
+                               FIGURE 6 - Support Arm
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Page 12
+
+
+
+
+
+
+                               Coax Trap Diagrams
+                               ------------------
+
+
+
+                                |    Coax     |
+                                |<----------->|
+                                |    Width    |
+
+                    ____________(X)(X)(X)(X)_______________
+                   |            |X||X||X||X|               |
+                   |            |X||X||X||X|               |
+                   |            |X||X||X||X|<--- Coax      |
+                   |            |X||X||X||X|               |
+                   |            |X||X||X||X|               |
+                   |            sc |X||X||X|         c<------ Center Conductor
+                   |          s  c |X||X||X|       c       |   (to 40 M Side)
+       1/4" Hole ---->O     s   cc***********ss  c      O  |
+                   |      s        |X||X||X| s c           |
+      Coax Shield ----->s          |X||X||X|sc             |
+    (to 75 M Side) |               |X||X||X||X|            |<---- Coil Form
+                   |               |X||X||X||X|            |
+                   |               |X||X||X||X|            |
+                   |               |X||X||X||X|            |
+                   |_______________|X||X||X||X|____________|
+                                   (X)(X)(X)(X)
+
+
+                               FIGURE 7 - Coax Trap
+
+
+
+    _________________________________________________________________________
+
+
+
+                                        _
+                       Plexiglass ---->|_|*
+                                    *  | |  *
+                                  *    | |    *
+                   PVC Pipe ---------->| |      *
+                              *        |-|        *<---- 40 M Side
+                            *          |X|          *
+                          *            |X|            *
+          40 M Trap --->#              |X|              #<--- 40 M Trap
+                      *                |X|                *
+                    *   Metal Mast --->|X|                  *<---75 M Side
+                  *                    |X|                    *
+  Insulator --->O                      |X|                      O
+              x                        |X|                        x
+  String -->x                          |X|                          x
+          +                            |X|                            +
+          |                            |X|                            |
+  Pole -->|                            |X|                            |
+          |                            |X|                            |
+  ------------------- Ground ----------------------- Ground ---------------
+
+
+                          FIGURE 8 - Typical Trap Dipole
+    Page 13
+
+
+
+
+
+
+
+
+
+
+
+               O T H E R   S H A R E W A R E   P R O G R A M S
+               ===============================================
+
+
+         Included in this software package are some of the best Public Domain
+    programs related to Amateur Radio that are available today. Following is a
+    brief description of these programs.
+
+
+                               Antenna Programs
+                               ----------------
+
+         The HF Antenna Design program in the Sub Menu is Ariel Vers. 1.7 by
+    J. Scott Hedspeth, WB4YZA. It's an excellent program that will design a
+    wide variety of HF antennas, T-Matches for the antennas and has some other
+    handy utilities.
+
+         The UHF/VHF Yagi Design program is ANTDL6WU by K1DPP, W1JOT and
+    WA2TIF. It's also an excellent program and will design Yagis with up to 48
+    elements.
+
+         The J-Pole Antenna Design program is by Marv Hayes, NF6G. It's a
+    handy little program that will design a J-Pole antenna.
+
+         The Gamma Match Design program is by N6BV and will let you design
+    Gamma Matches for antennas.
+
+         All of these guys are in the Callbook and would appreciate any
+    support you could give them. They've done a great job, so let's encourage
+    them to develop some more software for Amateur Radio.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Page 14
+
+
+

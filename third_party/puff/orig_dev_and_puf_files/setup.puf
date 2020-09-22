@@ -1,0 +1,46 @@
+\b{oard} {.puf file for PUFF, version 2.1}
+d      0     {display: 0 VGA or PUFF chooses, 1 EGA}
+o      1     {artwork output format: 0 dot-matrix, 1 LaserJet, 2 HPGL file}
+t      0     {type: 0 for microstrip, 1 for stripline, 2 for Manhattan}
+zd   50.000  Ohms {normalizing impedance. 0<zd}
+fd  500.000 MHz   {design frequency. 0<fd}
+er    4.300       {dielectric constant. er>0}
+h   1.500 mm      {dielectric thickness. h>0}
+s   200.000 mm    {circuit-board side length. s>0}
+c   160.000 mm    {connector separation. c>=0}
+r     0.010 mm    {circuit resolution, r>0, use Um for micrometers}
+a     0.000 mm    {artwork width correction.}
+mt    0.035 mm    {metal thickness, use Um for micrometers.}
+sr    2.000 Um    {metal surface roughness, use Um for micrometers.}
+lt    2.0E-0002   {dielectric loss tangent.}
+cd    5.8E+0007   {conductivity of metal in mhos/meter.}
+p     5.000       {photographic reduction ratio. p<=203.2mm/s}
+m     0.600       {mitering fraction.  0<=m<1}
+\k{ey for plot window}
+du   10           {upper dB-axis limit}
+dl  -10           {lower dB-axis limit}
+fl  100           {lower frequency limit. fl>=0}
+fu  1000          {upper frequency limit. fu>fl}
+pts 200           {number of points, positive integer}
+sr    1           {Smith-chart radius. sr>0}
+S    11           {subscripts must be 1, 2, 3, or 4}
+S    21
+\p{arts window} {O = Ohms, D = degrees, U = micro, |=parallel}
+{Blank at Part a }
+{Blank at Part b }
+{Blank at Part c }
+{Blank at Part d }
+{Blank at Part e }
+{Blank at Part f }
+{Blank at Part g }
+{Blank at Part h }
+{Blank at Part i }
+{Blank at Part j }
+{Blank at Part k }
+{Blank at Part l }
+{Blank at Part m }
+{Blank at Part n }
+{Blank at Part o }
+{Blank at Part p }
+{Blank at Part q }
+{Blank at Part r }

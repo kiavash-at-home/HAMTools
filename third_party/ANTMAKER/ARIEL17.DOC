@@ -1,0 +1,136 @@
+                                
+
+                             A R I E L   ver 1.7á
+
+                     (c)1992,93 J Scott Hedspeth <WB4YZA>
+
+
+    Disclaimer
+
+        This program is offered as FreeWare.  No claims are made.  The 
+        author assumes no responsibility for anything, for any reason, 
+        etc, etc, etc...
+        
+    Distribution
+
+        Disassembly and/or modification is prohibited.  Source code
+        is not available to the public.  ARIEL may be freely copied 
+        and distributed provided this document file is included in its
+        entire, unmodified state.  NO fees may be charged for ARIEL
+        except for duplication and handling fees not to exceed $1.00US.
+
+    Registration
+
+        There is none.  I tried ShareWare with version 1.5.  What I made
+        in registration fees PLUS 25 cents would buy me a cup of coffee,
+        and it took more than one cup to write this program.
+        
+        So, if you want to send me something, the old offer still stands.
+        That is $5.00 in cash, stamps, bus tokens, rubbles, pesos, or any-
+        thing of near-equivalent value.  If you don't want to send me 
+        anything, take a kid fishing or go feed the ducks.
+        
+        I will continue to update ARIEL as the mood hits me and as I
+        learn new programming tricks.
+
+        This is the full-blown program, registration doesn't unlock any 
+        hidden features.  I don't believe in CrippleWare. 
+
+    Purpose
+
+        Ariel was written with two purposes in mind.  First was to
+        provide a basic design program for high frequency (HF) antennas.  
+        Second was an attempt by the author to gain some experience 
+        with Borland's Turbo Pascal v6.0 <tm> programming language.
+
+        Ariel will only design antennas below 30 MHz <my appologies
+        to K4PKV>.  Inputs of "letters" when the program asks for 
+        "numbers" will produce crashes.  Holding the <enter> key down 
+        will scroll the display off the screen. 
+        
+        >>>>> Supply valid inputs and you will get valid outputs. <<<<< 
+        
+        If you find a bug in the program, please contact me providing 
+        as much information as possible.  However, if you feed it garbage 
+        and it throws up on your feet, don't come crying to me.  
+        Enough said.
+
+        Some basic knowledge of antenna theory, general math and wire
+        antenna construction techniques is recommended.  Most of the 
+        antenna designs in this version have been constructed, analyzed 
+        and tested by the author.  On-air testing was done on either 21 
+        or 28 MHz.  All analysis was done using NOSC's MININEC v3.0,
+        K6STI's MN v1.65 / v2.05 and W7EL's ELNEC v2.21.  These programs
+        allow modeling of antenna arrays including different types of
+        terrain and ground conductivity as well as supporting structures.
+
+        The primary purpose of this program is to provide a dimensional
+        starting point for the construction of various HF antennas.  It
+        is recommended that the more complex arrays be modeled by one of
+        the above programs and fine tuned to your individual location.
+
+        No provisions are made for hard copy print outs.  You will have
+        to use the "print screen" function on your computer if you want
+        a paper copy to work from.  It may not print the IBM graphic
+        characters used for the antennas but will give you a working
+        copy of the dimensions and associated text information.  
+
+        The print screen function has produced "actual" copies on the
+        following printers when properly configured for extended 
+        graphics characters:
+
+                HP Deskjet
+                HP Laserjet
+                Epson LQ series
+
+        No plans are made to add hard copy at this time.
+
+        As a bonus <and because I ran out of antennas I could draw with
+        standard ASCII graphics> I have included some basic RF related
+        calculation utilities.  These include finding the impedance of
+        a quarter-wave matching section, solving LCF calculations, solar
+        flux conversions and open-wire transmission line dimensions.
+    
+    General Information
+
+        The current version is available on the WB4YZA BBS <2400/8/N/1> 
+        at 704-284-4854 in File Area #7 - Antennas & Propagation Files.  
+        This is an open BBS with no ratios and no fees.  All users welcome.
+
+        The author may be contacted via: 
+        
+           WB4YZA BBS:
+
+                <C>omment to the Sysop at Main Menu prompt
+
+           Mail:
+
+                Scott Hedspeth
+                Rt 4 Box 227
+                Mocksville, NC 27028
+
+           CompuServe: 
+
+                Scott Hedspeth - 71042,3277
+
+       All comments are welcome.
+
+
+    History
+
+        v1.0    15 October 1992 - Initial release - FreeWare
+
+        v1.1 - v1.4  Changes in preparation for v1.5  
+                     not released to public
+
+        v1.5    15 November 1992 - Second release
+                                   Addition of more antennas 
+                                   Addition of antenna related calculations
+                                   Released as ShareWare
+
+        v1.6    01 January 1993  - Compressed code
+                                   Corrected gramatical errors
+                                   Updated antenna descriptions
+                                   Back to FreeWare
+
+        v1.7    20 August 1993   - Improved accuracy of some calculations

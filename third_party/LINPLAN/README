@@ -1,0 +1,22 @@
+   HARDWARE REQUIREMENTS:
+
+   1.  IBM XT, AT or compatible computer with minimum 640 kbytes of RAM.
+   2.  Hard disk.
+   3.  EGA, CGA, VGA, Hercules or compatible graphics video adapter.
+   4.  Dot matrix printer (optional).
+   5.  Math coprocessor is highly recommended.
+
+   NOTE TO USERS: 
+
+   In order to install and run the program, it is recommended that you have:
+   1. At least 2 Mbytes of available hard disk space; and
+   2. The following parameters in your CONFIG.SYS file:
+                          FILES=20
+                          BUFFERS=20
+   Reset the computer if you modified your CONFIG.SYS file.
+
+   It is assumed that DOS, Version 2.1 or above, has been started, and 
+   that the DOS Chkdsk command shows at least 530 kbytes free in memory.  
+
+   Note that if you use the Hercules graphics adapter, you must run
+   the MSHERC.COM program before attempting to display any graphics.

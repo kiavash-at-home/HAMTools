@@ -1,0 +1,932 @@
+
+
+
+
+          Signals, Noise and Propagation --- S N A P max v.501
+          =====================================================
+
+                  Crawford MacKeand  WA3ZKZ/VP8CMY
+                  TYNDAR PRESS, Montchanin DE, USA.
+
+
+
+                            CONTENTS
+                            ========
+
+             Subject                                 Page
+             -------                                 ----
+
+             Introduction                             2
+             Shareware Version                        2
+             Design Philosophy                        2
+             Running SNAPmax                          3
+
+             Typical SNAP Main Menu Appearance        3
+             Main Menu Options                        4 - 6
+             Presentation Menu Options                6
+             Set-Up Menu Options                      7
+
+             Noise Maps                               8
+             Display Screens                          8
+             Signal Level Calculations                10
+
+             Path Gain Example                        11
+             Ground Wave Signals                      11
+             Descriptions of Aux. and Utility Files   12 - 13
+             References                               14 - 15
+
+
+
+                           N O T I C E
+                          =============
+
+       This program is available from freeware sources, and also from
+       Tyndar Press, P.O. Box 236, Montchanin DE 19710  USA. Programs
+       SNAP501.EXE, SNAP501.INI, and others listed in file README.501
+       may be used, and may be copied and distributed freely, if they
+       are completely unmodified, for personal non-commercial amateur
+       use only. No warranty of any sort is expressed or implied; the
+       user is presumed to understand the  limitations & inaccuracies
+       inherent in such programs. These programs are Copyright (c) by
+       Crawford MacKeand 1992,1994,1995,1996,1997,1999 & 2001 and may
+       not be sold or rented or otherwise disposed of by way of trade.
+          For all other uses please contact the author directly.
+
+
+       References in the following text to SNAPxxx.EXE etc. should be
+       read as referring to the version number actually provided. You
+       would read SNAPxxx.INI as SNAP501.INI if you had that version.
+
+
+
+                                         1
+
+
+       FREEWARE VERSION
+       ----------------
+
+       You are encouraged to distribute this program to your friends as
+       freeware. To do so, delete file SNAPxxx.INI and give them everything
+       else. SNAPmax will generate a new .INI file on user request.
+
+
+       INTRODUCTION
+       ------------
+
+       "SNAPmax" is designed to be flexible and yet easy to use, presenting
+       the probable workability of an ionospheric radio path between any two
+       sites, and ground wave to local sites, using algorithms from many
+       sources. The MUF code is by R. Fricker of BBC Overseas Services, and
+       SNAPmax itself builds on the basis of my earlier program, SNAP which
+       was inspired by KD6SC's program DX-DOS.BAS. His ideas for screen
+       layout are used and are gratefully acknowledged. SNAPmax was coded and
+       compiled in Microsoft QuickBASIC (TM).
+
+       The analysis uses the angle of ray elevation, to obtain realistic gain
+       values for some typical antennas at those ray angles, and path
+       attenuation values based on the NBS Monograph 80 (Ionospheric Radio
+       Propagation, Kenneth Davies, Dover), K. Rawer's classic analysis, and
+       a number of other sources. For farther Northern (and Southern) users,
+       I also include a unique determination of probable auroral losses. To
+       this mixture, I have added my algorithms for the CCIR noise maps,  so
+       that a signal to noise ratio can be presented for each time and
+       frequency, taking into account atmospheric, man-made and galactic
+       components of statistically expected noise levels for season and time
+       of day. Both F layer and E layer paths are calculated, and this latest
+       version also includes some ground wave calculations from CCIR 386-2.
+
+
+       DESIGN PHILOSOPHY
+       -----------------
+
+       SNAPmax uses a design concept more familiar in cost estimating for
+       engineering projects than elsewhere. It holds that any known trend
+       should be included, with the basis that, while some inputs will be
+       underestimated in their contribution to the final answer, others will
+       similarly be overestimated. Thus the sum of the estimates will be
+       better than the individual parts.
+
+       The use of SNAPmax will be, I believe, mainly in "nowcasting". This
+       is the prediction of the goodness of any given circuit today, based
+       on today's best data. Broadcasters and commercial users are often
+       more interested in forecasting what will happen next month or even
+       next year, so that they can best plan frequency and equipment
+       utilization. (And ionospheric physicists are often interested in
+       "hindcasting", where the question might be "I wonder why that route
+       didn't work out the way we thought it would!"). I don't think that
+       long term forecasting is too useful to most amateurs (although major
+       contest stations certainly can and do work this way.)  Rather, when
+       we go into the shack we want to know what is open (and maybe why!)
+
+
+
+
+                                         2
+
+
+       The 'analysis' presentation is, I think, unique to SNAPmax in telling
+       you quickly why a given route will or will not give good signals, as
+       it will show the contributors to path loss, path probability where you
+       are well over the maximum usable frequency, and relative importance of
+       noise sources.  I hope that, where a path appears to be closed, this
+       may help you select another time or a more appropriate frequency.
+
+
+       RUNNING SNAPmax
+       ---------------
+
+       SNAP is DOS based, and although Windows (TM) is not needed, it will of
+       course run under Win95 or Win98 very satisfactorily. For preference,
+       use a Pentium or 486. A 386 will work, but XTs are much too slow. SNAP
+       can run monochrome, but it is not recommended, as too much information
+       is lost to the viewer. To run SNAPmax, load a disk or directory with
+       SNAPxxx.EXE SNAP.QTH & SNAPxxx.INI which MUST be filed in the same
+       disk or directory. The ONLY renameable file is SNAPxxx.EXE (which may
+       be called SNAP500.EXE, SNAP501.EXE  etc. to distinguish the release
+       versions.) If you name it SNAP.EXE then enter SNAP<CR>, and after a
+       personalized introductory screen the display will resemble that shown
+       below. To run SNAP for an initial demonstration, just press <SPACE>.
+
+       ----------------------------------------------------------------------
+       |                                                                    |
+       |               S N A P m a x   from   W A 3 Z K Z                   |
+       |  SIGNALS, NOISE and PROPAGATION  - by -  Crawford MacKeand (V.xx)  |
+       |                                                                    |
+       |  D T    Date   Time GMT                15 Feb  1999    01:39       |
+       |  S (N)  Solar Flux & A Index           188             15          |
+       |  P      Power & Required Bandwidth     120    Watts    500  Hz     |
+       |         Receive Noise Level            Suburban        R           |
+       |         Antenna Types, Local & Remote  3 El Beam       Dipole      |
+       |                                                                    |
+       |  L      Local (Receiver) Name        Your Call                     |
+       |         Local Site Location          40  North   100  West         |
+       |  R (C)  Remote (Transmitter) #1      London (G)                    |
+       |         Remote Site Location         51.5  North   .1    West      |
+       |                                                                    |
+       |  Mode   Signal-noise ratio (S-Units) shown vs frequency and time.  |
+       |  B      Bandwidth & signal/noise for modulation type vs freq/time  |
+       |  H      Hard copy is OFF             W Write to Memory is OFF      |
+       |  E      Enter set-up, default and information menu                 |
+       |                                                                    |
+       |      Press option letter, or <SPACE> to compute, X to exit.        |
+       |                                                                    |
+       ----------------------------------------------------------------------
+
+          ***************************************************************
+          *                                                             *
+          *  At first start-up enter 'E' to go to the set-up menu, and  *
+          *  then an 'O' to enter your call and location, and for your  *
+          *  local noise map values.  Finally an 'S' will save to disk. *
+          *  A more comprehensive set-up is accessed with keys E and O. *
+          *  You may also set the computer time offset from  GMT (UTC). *
+          *                                                             *
+          ***************************************************************
+
+
+                                         3
+
+
+       Site selection is normally by call sign prefix, but US states are
+       also included in the form 'STDE' for Delaware, 'STOH' for Ohio etc.
+       [Keyboard entries may be either upper or lower case.]  Latitude and
+       longitude can also be used.  To exit from SNAPmax enter X (twice).
+
+       The following notes describe how all other possible options can be
+       used from this screen.  But use 'E' menu options as noted in the
+       previous paragraph to insert your call and location before making
+       real use of the program.  SNAPmax can thereafter use your own local
+       noise figures instead of an approximation.
+
+       [Noise data for the ten call districts of the continental  U.S.A.,
+       for Alaska and Hawaii, for the eight Canadian areas, and for some
+       other countries listed below is imbedded in SNAPmax].
+
+
+       MAIN MENU OPTIONS
+       -----------------
+
+       F   Frequency.
+       This is only required for the Band Opening and Analysis screens, and
+       is only shown when required, but a new value can be entered and shown
+       at any time using the F key.
+
+       D   Date & Time GMT.
+       This screen will initially ask if you want to make a change (enter
+       SPACE), or retain present time [computer clock based] by pressing
+       ENTER <CR>. If you want to change, you can enter Year, Month, Date,
+       Hour and Minute in turn. For each one, you are told the present value
+       in memory, and offered the opportunity of retaining it by pressing
+       ENTER. [Many users do not set their computer clocks to GMT (UTC),
+       and a time zone adjustment option is stored in file SNAPxxx.INI,
+       modifiable from the Set-Up screens.]
+
+       T  Time.
+       This short cut entry allows you to change time only. It also allows
+       you to retain the computer time used for previous computations, so
+       that continual resetting is not necessary if you have a series of
+       calculations to make.
+
+       S  Solar Flux.
+       On entering S, you can select a new value for the 10.7 cm Solar Flux
+       and also for the A Index or the K Index, all of which are available
+       from WWV at 18 minutes past each hour and from a number of sites on
+       the Internet. SNAPmax uses the A (or K) index to make an appropriate
+       correction to Maximum Usable Frequency (MUF) for ionospheric storm
+       conditions. (If you don't know the A Index leave it as 12. Or if
+       conditions seem better, you might set  A = 2; if bad, say A = 25).
+       For reliability, use recent K values.
+       [Sunspot Number can be used instead of flux. See the next entry.]
+
+       N  Sunspots.
+       If you prefer to enter Sunspot Number, then enter N instead of S. You
+       will be asked for Sunspot Number, and this will be converted to Flux.
+       The Sunspot Number is presented for verification on returning to the
+       Main Menu, but only on first returning. The A or K index can also be
+       entered for the storm level.
+
+
+                                         4
+
+
+       P  Power.  (Required Bandwidth).  Receive Noise Level
+          Antenna Types and Heights, Local and Remote.
+       You can enter a transmitter power from 1 to 500,000 Watts. [This large
+       value is allowed for the benefit of broadcast SWL users.] The required
+       bandwidth is set automatically when the modulation is selected. [See
+       entry B below]. Your local noise situation can be selected here. It is
+       displayed as Urban, Suburban, Quiet, etc., as also is a label for the
+       atmospheric noise table in present use.
+
+       The antenna types precalculated are the three most popular ones,
+       3 Element Beam, Dipole & Vertical. (Other options such as isotropic
+       antennas may also be selected from the Set-Up (EO) screens, where
+       you can also enter your own antenna gain values and display the dB
+       gain values for your entries and for internally calculated antennas.
+       The vertical is presumed to be ground mounted; for the others any
+       height from 10 to 300 ft. may be selected. Internal calculations
+       also allow for feeder loss, assuming use of RG-8 coaxial cable.
+
+
+       L  Local Site Name.      Typically, your call sign.
+          Local Site Location.  Geographic co-ordinates.
+       If you enter L, you are asked to enter a call prefix. Enter your
+       choice and it will be shown, with its name, prefix and location. You
+       can enter "Q" instead of a prefix; you will then be asked to enter
+       Latitude and Longitude (degrees). If you enter an incorrect prefix,
+       you are shown the available list with the same initial character. You
+       can also ask for this list to be displayed from the "E" entry below.
+
+       Using the "L" option, the local atmospheric noise calculation is very
+       approximate. (More detail below. This condition is flagged by a red
+       color for the indicator.) For the default local site, I don't display
+       your prefix as I assume you know it very well! But it reminds you that
+       you are in normal mode with full noise data.
+
+
+       R   Remote Site Name.
+       (C) Remote Site Location.
+       These are similar to the local entry. The remote prefix is always
+       shown. If you enter "Q" for the prefix, you'll be asked to provide
+       Latitude and Longitude in degrees.  If both sites are selected to be
+       the same, inadvertently or for NVIS (Near Vertical Incidence)
+       propagation, remote latitude and/or longitude will be increased by
+       0.1 deg to give a calculable minimum path for a zero length entry.
+
+       You can save details of up to three remote sites, and these can be
+       selected by pressing C to select any of them in turn. Only the active
+       site is saved at any one time, the others are protected in SNAPxxx.INI
+       A fourth "site" provides a ground wave calculation for local contacts.
+
+
+       M  Mode of Presentation.
+       Entering M will take you to a new menu, where you can select from a
+       number of choices for the presentation, either with a pointer or by
+       entering a keyboard code.
+       [A description of the mode entry menu will be found on page 6.]
+
+
+
+
+                                         5
+
+
+       H  Hard copy.
+       This is a toggle and will give hard copy on any standard printer from
+       the main sky-wave propagation screens.
+
+
+       B  Bandwidth and Modulation.
+       Entry from this screen allows you to select your operating mode, those
+       available being PSK, CW, RTTY, TOR, SSB, AM, FM, and BCAM. The required
+       band width is automatically entered, as also are the signal-noise
+       requirements for Good, Median and Fair signals. As in the main scan
+       modes, probable multi-path conditions are flagged for digital work.
+       The set-up data for this mode is also saved separately.
+
+
+       E  Set-up, default and information.
+       The set-up screen provides a variety of options which are fully
+       described below on page 7.
+
+
+       X  Exit to SYSTEM.
+       You get a second chance if you hit X by accident as in order to exit
+       from the program two consecutive X's must be entered!
+
+
+       <SPACE>  Compute.
+       Press the SPACE bar to start any calculation.
+
+       [This completes the option list for the Main Menu itself.]
+
+
+       PRESENTATION MODE OPTIONS
+       -------------------------
+
+       The following choices can be selected with the pointer or by entering
+       the code letters shown. To use the pointer, step through the menu
+       by pressing either the <SPACE> bar or the up/down arrow keys, and
+       then select the entry by pressing the ENTER key. Or you can just
+       enter the two letter code shown. The main screens are in two parts
+       to handle all 24 hours of the day, although hard copy is not so
+       divided. (To escape between parts, press ENTER instead of SPACE.)
+
+       QC  The goodness of the circuit for the selected modulation scheme
+       (RTTY, SSB, CW etc.) is displayed as "G" (Good) "M" (Median) or "P"
+       (poor) against time and frequency.
+
+       SN  A signal-noise 'map' against time and frequency is plotted.
+       Signal-to-Noise ratio is in S-Units (6dB).
+
+       DN  The same as SN, but with Signal-to-Noise ratio in units of 10 dB.
+
+       SS  A similar 'map' is plotted, but for signal-strength against time
+       and frequency.  Signal is in S-Units of 6 dB with S9 defined as a
+       level of -73 dBm in the receiver. [S0 is therefore -127 dBm.]
+
+       DS  The same as SS, but with signals in units of 10 dB.
+
+       BO  The Band Opening screen, providing Good, Median, Poor and Closed
+       status for 15 sites preselected from the ER set-up menu.
+
+                                         6
+
+
+       CC  The 'analysis' mode gives many calculated values for noise, signal
+       strength etc., both graphically and in tables, so you can see for
+       yourself that the results make sense. It examines the two most likely
+       paths for MUF, attenuation etc.
+
+       NF  Presents noise levels vs. freq. for your time and location.
+
+       LF  Switches the frequency basis for the scans from  2 - 50 MHz (the
+       default range) to 2 - 12 MHz, for low band use, such as NVIS etc.
+
+       CH  Toggles "chordal hop" mode. Transequatorial paths are typical,
+       usually transiting the dark side of the earth. SNAPmax emulates a low
+       attenuation "whispering gallery" path in which repeated reflection
+       from a non-spherical ionosphere replaces many lossy earth reflections.
+
+       LP  A toggle that selects the "long path" round the world.
+
+       (This completes the option list from 'M' entry in the Main Menu).
+
+
+       SET-UP MENU OPTIONS
+       -------------------
+
+       The following options are offered.
+
+       D  Return to the default values in SNAPxxx.INI. This is the best way
+       to restore full use of noise map data after using the main menu 'L'
+       option. (Though you could more laboriously use 'O'!)
+
+       P  Select the presentation mode you want to use for start-up default.
+
+       C  Update the default file. This option, taking the present screen
+       data, saves it as a new default set in SNAPxxx.INI; especially useful
+       to update one of the three saved remote sites. [Remember that only the
+       active site can be saved .... the others are protected.]
+
+       F  Read a file of background information, including reference list.
+
+       O  Set up the default options. You need your callsign, geographical
+       latitude and longitude, a noise map code, [see "Noise Maps" below],
+       time zone adjustment to GMT [or UTC if you prefer!], and some other
+       data, for which you'll normally accept default values provided.
+       [A 'basic' option provides a simple set-up to get started.]
+
+                 ----- Some tips for the set-up procedure. ----
+
+             Normally you will likely use internal antenna gain values. Press
+             ENTER (or key in INT) to select internal values. However you can
+             enter your own antenna gain data. Key in NEW to access an entry
+             screen, which accepts your dB gain data at 24 elevation angles
+             from 1 to 90 deg, for remote and/or local antennas. Internal and
+             external values can be used in any combination. Press REM to use
+             external remote values, LOC for local values or EXT for both.
+             Enter ISO for isotropic antennas in both locations. An entry
+             PRN will display all values, your own or internally calculated.
+             Minimum elevation angle is something you must decide on. In a
+             small backyard, 7 - 10 degrees may be appropriate. From a
+             headland overlooking the ocean, 1 degree maybe!
+
+                                         7
+
+
+             Next select whether your printer requires a form feed, and what
+             character you want to use for FOT print-over.
+
+             And finally the clock adjustment for GMT as already mentioned.
+
+             To complete the set-up you have the opportunity to save to
+             SNAPxxx.INI or make your escape to try again if necessary.
+
+
+       N  If you are located outside the USA or the other most populous
+       countries provided internally, then you will want to enter your
+       atmospheric noise values from the CCIR maps as published in CCIR
+       Report 322, also in the book by Saveskie. [See the references below.]
+       A total of 24 values is required, normally between 20 and 100 dB, one
+       from each map. These are noise values for your location at 1 MHz, and
+       should be entered in the order in which the maps are printed.  It
+       helps to have made a list on paper before entering this option! Values
+       are saved in SNAPxxx.INI with the usual escape option.
+
+       L  Obtain a list of countries. You will be asked to input the first
+       character of the prefix.
+
+       R  Remote countries list for band-openings accepts 15 prefixes for
+       saving to SNAPxxx.INI.  You do have to ensure that the prefixes you
+       enter already exist in SNAP.QTH, and this can be checked out first
+       with the 'L' facility.
+
+       X  Exit. Returns to the main menu without action.
+
+       (This completes the option list from 'E' entry in the Main Menu).
+
+
+       NOISE MAPS
+       ----------
+       Noise data for many sites has been extracted from the CCIR maps and
+       tabulated in the data files used by the 'noise' sub-routine. These
+       sites in the United States are the FCC call areas, 1 through 0, Alaska
+       & Hawaii, and for Australia and Canada they are your prefix areas.
+
+       The Set-Up option change entry requests simple codes which are noted
+       on the set-up page. The countries available are, as well as the above
+       CE, CX, DL, EA, F, G, GM, GW, HB, I, JA, KP4, OH, ON, PY, TI, UA, VP8,
+       ZL and ZS. You can also enter the code letter "R" which will give an
+       approximate noise map for the Rest of the world. [It uses one basic
+       set of data (for US call area W1) and modifies it for latitude].  Code
+       L selects a table which you have entered as a default selection, as
+       described above. Until you have saved your own data in SNAPxxx.INI,
+       this option remains closed.
+
+       The R code is principally used if you select a new local site from
+       the Main Menu, usually for some temporary interest. Your own more
+       accurate noise conditions will be re-instated if you use option D
+       in the set-up menu [or work your way through options O or B or just
+       exit and start over.
+
+
+
+
+
+                                         8
+
+
+       DISPLAY SCREENS
+       ---------------
+       The simplest screen "QC", shows circuit quality "Good, Median, Poor"
+       for the selected signal mode, based on signal-to-noise ratios needed
+       by the different modulation schemes. However, to see the fundamental
+       features of 'SNAPmax'  use "SN", for signal to noise ratio, and that
+       using S-unit values is the distributed default. All you need to do to
+       see a sample screen on startup, is to press <SPACE>. The screen
+       display is very simple although it does contain a lot of data.
+
+       This description refers to the signal-noise screens, but the signal
+       screens are very similar. [But note that the Lowest Usable Frequency
+       or LUF is not going to be the same in both. In SNR screens, it means
+       that the SN ratio is better than -6 or -10 dB. In signal screens, it
+       means the predicted level is above -6 or -10 dB ref. S0, where S0 is
+       -127 dBm at the receiver input.)
+
+       A blank space says that there is not likely to be enough signal for a
+       useful QSO. A dot (.) says that signal/noise ratio is up to 1 S-Unit
+       below noise. A number in any space, and its associated display color
+       in that space will show by how many S-Units, (which are arbitarily set
+       at 6 dB each), your desired received signal will exceed your local
+       noise level. A plus sign (+) indicates that predicted signal level is
+       more than 9 S-Units over noise.
+
+       A star (*) shows that this signal [the level being indicated only by
+       the color] is above the Maximum Usable Frequency or MUF and is
+       probably present only 10 days in the month. A dash (-) shows signals
+       probable on 5 days of the month. MUF is, as usual, defined as the
+       maximum operable frequency on 15 days of the month, while the FOT
+       (abbreviated from the French term 'Frequence optime du travail'),
+       which is about 0.8 x MUF is defined as likely to be operable on 27
+       days of the month. (90%)  FOT is shown by a magenta background if a
+       signal is likely to be present, or a narrow magenta stripe if no
+       signal is predicted.
+
+       Colors are white S7-9+, light cyan S4-6, blue S2-3 and black S0-1.
+       In the QC screen, signals above the MUF are shown in red/brown.
+
+       If signals are as strong as they may be if you are using the program
+       for BC SWLing, you can select main menu option M and then option DN
+       (or DS) in the presentation menu for 10 dB steps above a 0 dB base,
+       instead of 6 dB S-Units.
+
+       The screens give circuit performance for each hour of a 24 hr. day, at
+       frequencies from 2 to 50 MHz, or optionally (LF) from 2 - 12 MHz.  The
+       S/N ratio or signal displayed is the better of the two most probable
+       paths. [For digital signals, if the two paths give signals within 10
+       dB of each other and the probable delay is large enough to cause
+       decoding problems, then a green background shows this as a possible
+       multipath condition.]
+
+       The program takes into account changing MUF and antenna gains etc. as
+       the number of hops changes, & likewise the elevation angles. As well
+       as showing LUF and MUF, these screens will flag whether any paths or a
+       majority of paths at the given GMT hour are propagated via the E layer
+       by displaying 'e' or 'E' respectively at the end of the line.
+
+
+                                         9
+
+
+       The 'analysis' screen provides more data on both paths, with MUF, foE,
+       foF2, the number of hops, skip distance, probable circuit availability
+       in terms of MUF, and a breakdown of noise sources and path attenuation
+       factors.  To avoid confusion, although all calculations appear for
+       zero probability paths, the symbols for signal-to-noise and s-n ratio
+       (dB), are shown in a distinctive red-brown color, and over-MUF loss is
+       displayed. The E layer cut-off for F layer paths will likewise show
+       up with a similar color change. Two color strip pages depict signal-
+       noise, noise make-up and signal loss, including the Good, Median and
+       Poor SN ratios for the selected modulation scheme.
+
+       The Band Opening screen also inserts target values for signal-noise
+       ratio against which the Good, Med. etc. decision is made. Potential
+       multipath problems are flagged with a green background. If a path
+       may be Open at frequencies above MUF, instead of Good, Med., Poor
+       flags it shows a small magenta field with % chance of a signal.
+       [The data line color will still give a clue on the possible SNR!]
+
+       The signal-to-noise levels chosen for Good, Median & Poor are given in
+       the table below. Most data is from CCIR. [G3PLX states that Good PSK31
+       needs 14 dB SNR in a 31 Hz bandwidth.] SNAPmax interprets 'Closed' as
+       no copy and 'Poor' in digital modes as 5% Character Error Rate (CER).
+
+                     MODE        Good   Median  Poor   Closed   Bandwidth
+
+                      FM          40 dB   35     30      25      15000 Hz
+                      BC AM       45      35     25      15       9000
+                      AM          34      24     14       4       6000
+                      SSB         32      22     12       2       2600
+                      RTTY        26      18     10       2        500
+                      TOR         23      13      3      -7        500
+                      CW          17       7     -3     -13        250
+                      PSK31       14      11      8      -2         31
+
+       The RTTY signal is 45 Baud narrow shift [170 Hz], TOR assumes a link
+       at 100 Baud, and CW is 8 Baud (20 wpm)
+
+
+       SIGNAL LEVEL CALCULATIONS
+       -------------------------
+
+       Received signal levels are detailed in the 'analysis' screens, and
+       depend on the transmitted power, distance loss, absorption losses,
+       reflection losses mainly at intermediate earth points, and over-MUF
+       loss for signals above the calculated maximum usable frequency.
+       [If you try to check the calculations against the NBS method, you will
+       find that the distance loss calculation is not exactly the same, being
+       based on the slant range calculations of K. Rawer.]
+
+       There are also losses in the auroral zone, depending on ionospheric
+       disturbances, and antipodal focusing gains, which depend conversely on
+       a smooth undisturbed F layer.  Antenna gains are also included. It may
+       be surprising to see the real antenna gains. Forward gain is often
+       quoted as the maximum of the best lobe, and in practice the ray angle
+       required may be something else entirely. Calculations are based on a
+       summation of several ELNEC models to allow for gain changes due to the
+       antenna height above earth, assumed to be of medium conductivity and
+       flat. The vertical antenna is assumed to be at ground level.
+
+                                         10
+
+
+       You cannot just add up all these losses and gains to get from the
+       transmit level to the receive level in dBm, but must apply the proper
+       constants to go from antenna input to free-space signal in dB with
+       reference to 1 microvolt / meter, then the sum of the losses and
+       gains, and finally another conversion from space-signal to the induced
+       level in an isotropic receiving antenna, which is also frequency
+       dependent. The references by Rawer and David & Voge give much more
+       detailed explanations. Here's an example at default conditions as
+       distributed, 14.2 MHz, 21 July 1993, 0030 GMT, so you can see how it
+       works. (Accuracy to 3 decimal places is NOT implied!!)
+
+       PATH GAIN EXAMPLE
+       -----------------
+
+           Transmit power                50.791  dBm
+           (Signal at 1 km. = transmit power + transmit antenna gain + 74.8)
+           Signal at 1 km from xmtr.    126.310  db ref 1uV/m
+
+           Distance loss                 95.221  dB
+           Absorption loss                8.247  dB
+           Auroral zone loss              3.416  dB
+           Over-MUF loss                  0      dB
+           Reflection loss               11.816  dB
+
+           (Recv location sig = sig at 1 km. - total losses)
+           Recv. location signal          7.608  dB ref 1 uV/m
+           (Recv sig = recv loc sig + recv ant gain - 20 log F MHz - 77.2)
+           Received signal              -83.489  dBm
+
+
+       GROUND WAVE SIGNALS
+       -------------------
+
+       Beyond the skip zone, signals are returned from the ionosphere, but
+       between your station and the near edge of the skip zone [if indeed it
+       there is one in a given situation], ground-wave propagation holds, and
+       this obeys quite different rules. It depends very much for instance on
+       the earth conductivity between transmitter and receiver. Propagation
+       data for ground wave signals is from CCIR 368 which assumes short
+       [less than 0.1 wavelength] vertical antennas and 1 kW power.
+
+       The CCIR curves for medium conductivity ground have been converted to
+       algorithmic form and included in SNAPmax. [Results would be much
+       enhanced over sea water and much poorer over a desert.] A screen can
+       be accessed by calling up remote site #4 from the main menu with 'C',
+       and displays the signal-to-noise ratio from 2 to 28 MHz, for distances
+       in km. depending on the power and antenna selection.
+
+       Antenna gain is not the same as for sky wave operation. SNAPmax uses a
+       quarter-wave vertical antenna [quite an antenna on 80 meters!] as the
+       default case. If you select a dipole or 3 element beam instead, you
+       will see why verticals are used for ground-wave work. If you check out
+       the effect of cross-polarizing the antennas, you find an intermediate
+       result. The propagation loss with the use of horizontally polarized
+       antennas is approximately 50 dB, compared with vertical polarization.
+       In the mixed case, we are dependent on both the propagation losses and
+       on cross-polarization losses at the antenna. Even a dipole in the real
+       world has some vertical component, and a study with ELNEC showed that
+
+                                         11
+
+
+       with a reasonably imperfect location with guy wires, masts etc., 25 dB
+       cross-polarization loss would be a fair estimate.
+
+       Note that the frequencies above 12 MHz are derived from a different
+       set of CCIR curves, and may not be as reliable as lower frequency
+       data. This is indicated by the color change on the frequency scale.
+       The Site #4 selection will only access the ground wave calculation and
+       cannot be used for any other purposes.
+
+
+       DESCRIPTIONS OF THE AUXILIARY AND UTILITY FILES
+       -----------------------------------------------
+
+       SNAP.QTH
+       --------
+       A random access file of prefixes, latitudes, longitudes and country
+       names. The prefix contains up to four alphanumeric characters, and
+       the country name may have up to 24 ASCII characters. (But note that
+       any entry with more than two adjacent spaces, i.e. Spratly   Island
+       will have the extra spaces removed automatically after entry. Which
+       minor quirk eased my life in writing the program!) To update, use
+       the special editor SNAPQTH.EXE.
+
+
+       SNAPQTH.EXE
+       -----------
+       SNAPQTH.EXE is a purpose-built editor making it easy to add, modify
+       or delete entries. It must be in the same directory and on the same
+       disk [in the same folder if you speak Windows!] as SNAP.QTH, and
+       operation is very straightforward and menu driven. It will not allow
+       any entries not meeting the limitations required by SNAPmax, and flags
+       out-of-limits entries. It also lets you try again if you blew it with
+       any entry. New entries are placed first in empty (deleted) slots and
+       secondly at the end of the file.
+
+       [If you ever conclude that your SNAP.QTH needs complete rework, you
+       can start over with the two files described below, though they are
+       mainly included for compatibility with SNAP27 & earlier versions.]
+
+
+       SNAP.DAT
+       --------
+       A sequential file of prefixes followed by latitude, longitude and
+       name. A typical series of entries will appear as shown.
+
+              "G",51.5,.1,"England"
+              "YV",10.5,67.5,"Venezuela"
+              "ZD8",-8,14.3,"Ascension Is."
+              "STOH",40,83,"Ohio"
+              "WASH",38.9,77,"Washington DC"
+
+       It can be inspected, modified or added to, with an editor such as
+       E88.EXE or the Norton Editor. A word processor would have to produce
+       an ASCII file with no format characters. Only disk space limits
+       countries you can add to this file. The maximum space for a country
+       name etc. is 24 chars. Any more are truncated and will be lost.
+
+
+
+                                         12
+
+
+       Where they don't clash, old and new prefixes are both there. A few
+       major cities, e.g. "NYNY" and "LOND" are there, and all US states are
+       included in the format "STDE" for Delaware, 'STOH' for Ohio, [ST + US
+       Post Office Dept. standard State abbreviations.]
+
+       [SNAP.DAT file is for reference only, and is NOT used by SNAPmax. It
+       was however up-dated in May 1999.]
+
+
+       REFILE.EXE
+       ---------
+       If you inadvertently delete SNAP.QTH, or would like to build your own
+       for some reason, use the information in the previous paragraph. Or
+       starting with SNAP.DAT included, run REFILE in the same disk and
+       directory. It converts SNAP.DAT to SNAP.QTH and allows you to read the
+       new file. It will also read SNAP.QTH at any time. You may never use
+       REFILE, but as I wrote it to help in the sequential to random data
+       file conversion, here it is.
+
+
+       SNAPxxx.INI
+       ----------
+       This little file will contain your preferences for starting up SNAP.
+       These include [not necessarily in order]:-:
+
+            o the minimum ray elevation angle
+            o the selection of Form Feed or not for your printer
+            o time adjustment from your computer time to GMT
+            o the default frequency (used in the 'analysis' and
+                'band opening' screens)
+            o the antenna description for your own station
+            o selector for internal, external, isotropic antennas
+            o the height of your antenna, and a descriptor code.
+            o the antenna descriptions for the remote stations, and
+                the heights of their antennas.
+            o the assumed power of the remote stations
+
+            o the local station description (usually your call sign)
+            o the noise area code, described above under 'Noise Maps'
+            o latitude and longitude for your site
+            o prefixes for the remote sites (don't change them here!)
+            o the names for the default remote sites
+            o latitudes and longitudes for the default remote sites
+
+            o the default 10.7 cm solar flux (100 as distributed)
+            o the default A index (12 is the historical average)
+            o default modulation systems, SSB, CW, RTTY etc.
+
+            o display name for man-made-noise level
+            o basis level for selected man-made-noise level
+
+            o the 15 prefixes selected for the band opening screen.
+                They can be changed from SNAP.
+            o 24 entries for your local atmospheric noise base. [The
+                negative values in distribution and default files tell
+                SNAPxxx.EXE that no data has yet been entered.]
+            o 48 entries for your own antenna dB gains vs. elevation.
+
+
+                                         13
+
+
+            o antipodal focusing % [set at 25 initially].
+            o default start-up mode entries.
+            o a series of numbers used internally by SNAPmax.
+
+       If the file is damaged, it will normally tell you quite clearly!
+       You should delete it and replace it with the distribution copy.
+
+
+
+       The book "The FRIENDLY IONOSPHERE" by Crawford MacKeand describes
+         many basic mechanisms of SNAPmax. It is readily available from
+             Tyndar Press, P.O. Box 236, Montchanin, DE 19710 USA
+
+
+       REFERENCES
+       ----------
+       Electromagnetic Waves and Radiating Systems, Edward C. Jordan
+          Prentice-Hall, NY, 1950
+       Short-Wave Radio and the Ionosphere, T.W. Bennington, Iliffe,
+          London 1950
+       Calculation of Sky-Wave Field Strength, K. Rawer, Wireless Engineer
+          London,  Nov. 1952  p287-300
+       Compendium of Technical Regulations, CCIF, CCIT, CCIR of the
+          International Telecommunications Union, "The Red Book",
+          Automatic Telephone & Electric Ltd., Liverpool, 1956
+       The F-Region during Magnetic Storms, Maeda K.I. &  Sato T.
+          Proc. I.R.E.   Feb. 1959  p232-239
+       Handbook for CRPL Ionospheric Predictions based on Numerical
+          Methods of Mapping (Handbook 90),  U.S. Dept. of Commerce,
+          National Bureau of Standards, Washington DC 1962
+       Radio Wave Propagation and the Ionosphere, Al'pert, Y.L,.
+          Consultants Bureau NY 1963 (trans from Russian)
+       A New Ionospheric Reduction Factor [Multipath], Salaman R.K.,
+          I.R.E. Trans. Commun. Syst. CS-10, 1962
+       International Radio Consultative Committee, International
+          Telecommunications Union, Geneva, Report #322 1964 (NTIS
+          Document PB 255 060, US Dept. of Commerce, Springfield VA)
+       Ionospheric Radio Propagation, Kenneth Davies, Dover, NY 1966
+          (National Bureau of Standards, Monograph 80, 1965)
+       Propagation des Ondes, David P. & Voge J., Eyrolles Editeur,
+          Paris, France 1966. (in French, see 1969 trans.)
+       Predicting Long-Term Operational Parameters of High-Frequency
+          Sky-Wave Telecommunication Systems,  Barghausen A.F.,
+          Finney J.W., Proctor L.L. & Schultz L.D.  ESSA Tech. Report
+          ERL 110-ITS 78   NTIS N70-24144 Springfield Va., 1969
+       The Radio Communication Handbook, Radio Society of Great Britain,
+          (RSGB)  London 1968
+       Oblique Ionospheric Radiowave Propagation, AGARD Conference
+          Proceedings (13), Technivision Services, Slough, England
+          1969 (various papers)
+       Propagation of Waves, David P. & Voge. J., Pergamon Press
+          Oxford, England, 1969 (trans. 1966 Propagation des Ondes)
+       Interim Method for Estimating Sky Wave Field Strength and Transmission
+          Loss at Frequecies between the Approximate Limits of 2 and 30 MHz.
+          CCIR - Report 252-2, New Delhi 1970
+       The Teleprinter Handbook, Radio Society of Great Britain, London 1973
+       Radio Wave Propagation, Armel Picquenard, (Philips Technical
+          Library), MacMillan, London 1974
+
+                                         14
+
+
+       REFERENCES (continued)
+       ----------------------
+       Ground Wave Propagation Curves for Frequencies between 10 KHz and
+          10 MHz, CCIR - Recommendation 368-2 Geneva 1974
+       Bandwidth, Signal-to-Noise Ratio and Fading Allowances in Complete
+          Systems, CCIR - Recommendation 339-5 Kyoto 1978
+       On the Propagation of Short Waves over Long Distances -- Predictions
+          and Observations, Hortenbach K.J. & Rogler F., Telecommunication
+          Journal 46/6 1979  p320-329
+       Radio Propagation Handbook, Peter N. Saveskie, Tab Books (No. 1146),
+          Blue Ridge Summit PA 1980
+       HF Antennas for All Locations, L.A. Moxon, G6XN, Radio Society of
+          Great Britain, London 1982
+       Ionospheric Radio Waves, Davies K., Blaisdell/Ginn, Waltham MA. 1969
+       The Shortwave Propagation Handbook, George Jacobs and Theodore
+          J. Cohen, CQ Publishing, Inc., Hicksville NY 1982
+       MINIMUF: A Simplified MUF-Prediction Program for Microcomputers
+          R.B. Rose, QST, Dec. 1982, ARRL, Newington CT
+       Planning & Engineering of Short Wave Links, Braun G. Siemens/Wiley
+          London, 1986
+       Ionospheric Radio Propagation Model and Predictions, Rush C.M.
+          IEEE Trans. on Antennas & Propagation AP-34 (9) Sept 86  p1163-70
+       Radiowave Propagation,  ed. Hall M.P.M  &  Barclay L.W.,  Peter
+          Peregrinus Ltd. (IEE) London, 1989 (various papers)
+       Ionospheric Radio, Kenneth Davies, Peter Peregrinus Ltd. (IEE)
+          London 1990
+       The Ionosphere: Communications, Surveillance and Direction Finding,
+          McNamara L.F., Krieger Publ., Malabar FL 1991
+       Radio Auroras, Charlie Newton, G2FKZ, RSGB, London 1991
+       ELNEC, (Program) Roy W. Lewallen, W7EL, Beaverton OR 1991
+       MINIPROP PLUS, (Program and Manual) Sheldon C. Shallon, W6EL
+          Software, Los Angeles, CA 1992
+       HF Communications, Science and Technology,  John M. Goodman
+          Van Nostrand Reinhold, New York 1992.
+       ARRL Handbook and ARRL Antenna Handbook, ARRL, Newington CT
+       Propagation, R.R.Brown NM7M, WorldRadio  May 1994, Sacramento CA
+       HF Channel Simulator Tests of Clover, Peter Reynolds, KE4BAD
+          QEX, Dec. 1994, ARRL, Newington CT
+       The New Shortwave Propagation Handbook, Jacobs G.(W3ASK), Cohen T.J.
+          (N4XX) & Rose R.B. (K6GKU), CQ Communications Inc. Hicksville NY
+          1995 (extensive update of 1982 publication.)
+       Radio System Design for Telecommunications, Freeman, R.L., John Wiley
+          and Sons, NYC 1997
+
+                    -----------oooooOOOooooo------------
+
+
+      While no software support is offered for this 'FREEWARE' program,
+       technical questions and comments will be welcomed by the author,
+         Crawford MacKeand, WA3ZKZ, VP8CMY, at the mailing address of
+             Tyndar Press, P.O. Box 236 Montchanin DE 19710, USA
+
+           73 and enjoy using SNAP. Thanks for your interest and support.
+
+             Crawford MacKeand WA3ZKZ, VP8CMY, ex-G4ARR  20 Aug 2001
+
+
+                                     END OF FILE
+
+                                         15
+
+

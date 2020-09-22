@@ -1,0 +1,3 @@
+{s-parameter device file for a voltage source}
+ s11    s21   s22 
+ 1 0    1 0  1 180  

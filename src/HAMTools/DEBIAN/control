@@ -1,0 +1,41 @@
+Package: hamtools
+Priority: optional
+Section: Electronics
+Installed-Size:
+Maintainer: Abandonware
+Architecture:
+Version:
+Provides: rf-tools-msdos
+Depends: dosbox, xdotool, libxmu-headers, libgtk2.0-0, x11-common
+Homepage: http://sss-mag.com/rftopics.html
+Description:  Collection of abandonware/shareware/free RF Tools
+ This package includes:
+ .
+ ANTMAKER: Antenna Maker for common antennas 6.0;
+ .
+ ASP: Amplifier Simulation Program 4.0;
+ .
+ HEAD: Helical Filters and Design Software;
+ .
+ LINPLAN: CAD for Linear and Planar Antenna Array of Various Radiating Elements;
+ .
+ LPCAD: Log-Periodic Antenna Design 2.3;
+ .
+ PCAAD: Personal Computer Aided Antenna Design 2.1;
+ .
+ Post-PUFF: Post-Puff reads the PUFF file and calculate K and D;
+ .
+ PUFF: Microwave CAD software 2.1;
+ .
+ RASCAL: Interactive Design of Reflector Antennas;
+ .
+ SEDIF: Active and Passive Filter Design;
+ .
+ SNAPmax: Signals, Noise and Propagation;
+ .
+ VHFProp: Signal Analysis Program for the 6m through 23cm Amateur Bands;
+ .
+ YAGIMAX: Yagi-Uda antenna simulation.
+ .
+ All are copyright to their respective owners.
+ 

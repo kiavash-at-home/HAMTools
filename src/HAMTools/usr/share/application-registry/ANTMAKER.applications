@@ -1,0 +1,7 @@
+ANTMAKER
+	command=/usr/local/bin/ANTMAKER
+	name=ANTMAKER
+	can_open_multiple_files=false
+	expects_uris=false
+	requires_terminal=false
+	mime_types=application/ANTMAKER;

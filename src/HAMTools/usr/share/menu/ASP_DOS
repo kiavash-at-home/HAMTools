@@ -1,0 +1,6 @@
+?package(ASP_DOS):needs="X11" \
+ section="Amplifier Simulation Program" \
+ title="ASP" \
+ longtitle="Helical Filters and Design Software 4.0" \
+ icon="/usr/share/pixmaps/ASP_DOS.xpm" \
+ command="/usr/local/bin/ASP_DOS"

@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Name=HEAD
+GenericName=Helical Filters and Design Software
+TryExec=HEAD_DOS
+Exec=HEAD_DOS %F
+Icon=HEAD_DOS
+Terminal=false
+Type=Application
+Categories=Education;Math;Engineering;
+MimeType=application/HEAD_DOS;

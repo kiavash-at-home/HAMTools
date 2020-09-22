@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Name=LINPLAN
+GenericName=CAD for Linear and Planar Antenna Array of Various Radiating Elements
+TryExec=LINPLAN
+Exec=LINPLAN %F
+Icon=LINPLAN
+Terminal=false
+Type=Application
+Categories=Education;Math;Engineering;
+MimeType=application/LINPLAN;

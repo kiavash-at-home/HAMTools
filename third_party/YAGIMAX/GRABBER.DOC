@@ -1,0 +1,220 @@
+
+
+
+
+
+
+                     GRABBER.COM  Ver. 2.20
+                     ----------------------
+                  Le programme capteur d'‚cran
+                       pour  IBM PC/XT/AT
+                 et carte couleur graphique CGA
+
+
+
+                DOCUMENTATION ET NOTES TECHNIQUES
+                        21 Novembre 1987
+
+
+
+                      Copyright (C) 1987 de
+                        Gerald A. Monroe
+                      Tous droits r‚serv‚s.
+
+
+
+
+
+
+
+GRABBER est actuellement un programme livr‚ en Shareware.
+
+Cela signifie que vous avez la chance de pouvoir l'utiliser et
+l'‚valuer avant de vous d‚cider … l'acqu‚rir.  Si vous trouvez
+qu'il r‚pond … votre attente, alors vous ˆtes encourag‚ … nous
+envoyer votre contribution de 5 dollars (adresse plus bas).
+
+Je pense que c'est une somme raisonnable, pour  un  utilitaire
+unique et performant que vous recevrez complet. Je suis sur et
+certain que vous trouverez trŠs utile d' avoir un tel logiciel
+sous la main : pour les nombreuses donn‚es d' un tableur, pour
+des colonnes de chiffres, ou pour des ‚crans de jeux...
+
+Si vous appr‚ciez mon programme GRABBER,  il sera certainement
+le premier fichier … figurer dans votre AUTOEXEC.BAT. Ainsi, …
+tout moment, sous dos ou sous une autre application,  il  sera
+toujours prˆt … vous rendre service... Naturellement,  il  est
+compatible avec la plupart des logiciels  du  commerce  et  en
+particulier avec SideKick de Borland. N'oubliez-pas de charger
+GRABBER avant tout autre programme.
+
+Utilisateurs, envoyez votre contribution de 5 dollars … :
+
+			Jerry Monroe
+			1241 Bunts Road
+			Lakewood, Ohio 44107
+
+
+Si vous avez des questions ou des commentaires  concernant  le
+programme GRABBER.COM, laissez un message par modem pour Jerry
+Monroe sur Norm Henke's PC-Ohio BBS au (216) 381-3320.
+
+
+GRABBER.COM -- Documentation et Notes Techniques      Page 2 sur 4
+
+
+
+PARTIE I
+========
+
+
+GRABBER.COM, version 2.20, est un utilitaire r‚sident, capteur
+d'‚crans pour IBM PC et v‚ritables compatibles.
+
+Sont n‚cessaires :  IBM PC, XT, AT ou ordinateur compatible et
+                    une unit‚ de disque, une carte CGA, MS-DOS
+                    ou PC-DOS version 2.0 ou sup‚rieure.
+
+Contrairement aux autres programmes capteurs d'‚cran dont j'ai
+eu vent, GRABBER sauve tous les textes & les ‚crans graphiques
+produits par la carte CGA en fichiers ex‚cutables, d'extension
+COM. Les images sauvegard‚es sont lanc‚es au prompt du Dos, en
+tapant leur nom de sauvegarde.  Il n'est pas n‚cessaire, comme
+dans d'autres programmes de concurrents, d'aller sous le Basic
+interpr‚t‚ pour charger ces ‚crans.
+
+Pour installer le programme, tapez GRABBER d: au prompt du Dos.
+Si vous ne pr‚cisez l'unit‚, GRABBER sauvera les ‚crans sur le
+lecteur et dans le r‚pertoire actif lorsque la touche d' appel
+sera actionn‚e. Si vous pr‚cisez une unit‚ correcte, alors les
+images seront sauvegard‚es en fichiers ex‚cutables sur l'unit‚
+que vous avez d‚sign‚e.
+
+GRABBER ne reconnait les noms de sous r‚pertoire donn‚s sur la
+ligne de commande. Les utilisateurs de Dos en version 3.10  ou
+sup‚rieure pourront utiliser la commande externe SUBST. Voir …
+ce sujet les commentaires dans vore manuel Dos.
+
+Contrairement aux pr‚c‚dentes versions de GRABBER, la  version
+2.20 vous permet de pr‚ciser un nouveau lecteur … tout moment.
+Il suffit de taper une nouvelle ligne de commande au prompt du
+Dos, et le nouveau paramŠtre remplacera l'ancien.
+
+
+GRABBER.COM -- Documentation et Notes techniques      Page 3 sur 4
+
+
+
+DŠs que GRABBER est r‚sident en m‚moire, il prend le  contr“le
+du clavier, attendant la touche d'appel pour entrer en action:
+CTRL - ou CTRL 1. Ces deux combinaisons de touche ont un usage
+fort diff‚rent, expliqu‚ en d‚tail plus loin.  Lorsqu'il a d‚-
+tect‚ une touche d'appel GRABBER commence par cr‚er un fichier
+programme d'extension COM contenant le texte actif ou l' image
+graphique dans le chemin par d‚faut ou celui d‚fini avant.Puis
+le contr“le est rendu au Dos ou alors … l'application en cours
+suivant le cas.
+
+Si une capture d'‚cran est demand‚e par une touche d'appel, et
+qu'une erreur est d‚tect‚e par l'‚criture du  fichier  COM, le
+programme vous le signale par trois bips sonores. Ces messages
+sonores vous signalent que l'image n'a pas ‚t‚ sauv‚e, et vous
+pouvez corriger l'erreur et retenter une sauvegarde.  Pourquoi
+une erreur ?.. Peut-ˆtre que le disque est plein, ou avez-vous
+tenter d'‚crire sur un disque prot‚g‚ en ‚criture ou un disque
+en mauvais ‚tat, ou non format‚, ou qu'il n' y a pas de disque
+dans l'unit‚... A vous de v‚rifier...  (Si GRABBER signale une
+erreur lorsqu'il ‚crit sur le  disque  dur, il  se  peut  tout
+simplement que vous n'avez pas de disque dur...)
+
+Comme nous l'avons d‚j… vu, GRABBER a deux  touches  d'appel :
+CTRL - et CTRL 1. Pour capturer des images texte et la plupart
+des images graphiques, utilisez CTRL -
+
+Dans certains cas o— on d‚sire une capture graphique,il faudra
+mieux utiliser CTRL 1. Par exemple la capture d'‚crans en mode
+graphique sous Lotus 1 2 3 version 1 et 1A*. Ce logiciel ainsi
+que d'autres rencontr‚s par l'utilisateur emploient des routi-
+nes d'am‚lioration vid‚o afin de manipuler  l'affichage  ‚cran
+sans utiliser les interruptions PC habituelles.
+
+En mode ordinaire (CTRL -), GRABBER fait appel au BIOS IBM PC,
+afin de d‚terminer le mode ‚cran (texte ou graphique)... Ainsi
+il connait la taille du fichier … cr‚er.  Comme  presque  tous
+les logiciels informent le BIOS vid‚o  du  mode  ‚cran, CTRL -
+donne habituellement le r‚sultat escompt‚...
+
+Les versions de Lotus 1 2 3 mentionn‚es ci-dessus n' informent
+pas le BIOS vid‚o quand elles passent en mode graphique. Ainsi
+en utilisant CTRL - l'‚cran sauv‚ ne donne rien de bon... Mais
+si vous utilisez CTRL 1, GRABBER ne regarde pas le BIOS vid‚o,
+et suppose le mode graphique moyenne r‚solution, avec couleur
+(Video Mode 4).
+
+En r‚sum‚, utilisez CTRL - avec Lotus 1 2 3  pour les versions
+2.0 et sup‚rieures. Pour les versions 1 et 1A, utilisez CTRL 1
+en mode graphique et Ctrl - en mode texte.
+
+
+GRABBER.COM -- Documentation et Notes techniques      Page 4 sur 4
+
+
+PART II
+------------
+
+
+Les ‚crans cr‚‚s avec le logiciel GRABBER.COM sont  nomm‚s  de
+fa‡on s‚quentielle SCREEN_A.COM, SCREEN_B.COM, SCREEN_C.COM...
+Le premier nom de fichier cr‚‚ sera toujours SCREEN_A.COM  dŠs
+lors que vous venez d'allumer l'appareil et lorsque vous cr‚ez
+la 27 Šme image de suite (juste aprŠs SCREEN_Z.COM)...  FaŒtes
+trŠs attention, car lorsque le compteur  d'images  de  GRABBER
+vient de cr‚er l'image Z, il sait que c'est la fin de l'alpha-
+bet et il remet ce compteur … A.  Si vous n'avez pas pris soin
+de renommer la pr‚c‚dente image SCREEN_A.COM , il va l'effacer
+et la emplacer par la nouvelle image...
+
+Supposez que vous avez cr‚‚ un graphe … bande avec Lotus 1 2 3
+et captur‚ l'image sur disque en changeant le nom en GRAF.COM.
+Si vous entrez au prompt du Dos la commande GRAF /F l'image va
+presque imm‚diatement s'afficher … l'‚cran. (/F sera vu un peu
+plus loin). Le programme GRAF vide le buffer clavier et attend
+qu'une touche soit frapp‚e. DŠs que vous tapez sur une touche,
+le mode vid‚o et la palette en cours avant  le  chargement  de
+GRAF seront recharg‚s, et le curseur va r‚apparaŒtre  dans  le
+coin sup‚rieur gauche de l'‚cran effac‚.
+
+Lorsque vous faŒtes appel … GRABBER par une des touches, il va
+comparer le mode vid‚o actif avec le mode vid‚o, n‚cessaire  …
+l'affichage de l'image capt‚e. Si les modes sont diff‚rents le
+programme effacera l'‚cran pendant une demi seconde (en fait 8
+cycles d'horloge systŠme) avant d'afficher l'image. Cette tech-
+nique ‚limine les effets dits "de neige" d–s au changements de
+palette et d'‚cran de la carte CGA.
+
+Si le mode est identique (par exemple, vous ˆtes en mode texte
+80 colonnes et vous demandez l'affichage d'une image  en  mode
+texte 80 colonnes), alors l'image va s'afficher … une  vitesse
+telle qu'elle sera affich‚e avant que vos doigts n'aient quit-
+t‚s la touche ENTREE. Surtout si elle est  charg‚e  depuis  un
+disque dur ou virtuel...
+
+Il y a des situations o—  l'utilisateur  d‚sire  afficher  une
+image … l'‚cran et retourner imm‚diatement sous  le  Dos, sans
+avoir … frapper une touche. C'est pourquoi il y a l'option /F.
+Dans l'exemple ci-dessus, la commande GRAF /F ex‚cute l' affi-
+chage de l'image, mais le curseur de MS-DOS est  imm‚diatement
+plac‚ tout en bas … gauche, sur la derniŠre ligne d'‚cran puis
+le prompt de MS-DOS r‚apparaŒt... Naturellement, cette m‚thode
+ne restaure pas le mode vid‚o original... Dans cet exemple, l'
+‚cran reste en mode graphique alors qu'un mode texte est peut-
+ˆtre d‚sir‚. L'option /F est sans doute moins gˆnante, et plus
+appropri‚e pour les images en mode texte qu'en graphique.
+
+
+ÕÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍËÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍËÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍËÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¸
+³  Traduction:  º ÛÛ Ûß           º   Editions SORACOM   º MINITEL 3615 ³
+³  ÍÍÍÍÍÍÍÍÍÍ   º ÛÛ Û ompatibles º    La Haie de Pan    º code MHZ  et ³
+³ CLAIRî SîRGî  º İ  ÛÜ  Magazine º      35170 BRUZ      º code ARCADES ³
+ÔÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÊÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÊÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÊÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¾
+

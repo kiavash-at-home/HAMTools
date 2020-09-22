@@ -1,0 +1,598 @@
+                    A.S.P. Version 4.00 (C) 1989-1996
+                      AMPLIFIER SIMULATION PROGRAM
+
+
+                     Written by KD9JQ  Charles H. Reichert
+              955 Concord Lane   Hoffman Estates, Il. 60195
+
+                           All Rights Reserved   
+
+                              INTRODUCTION
+
+    This program designs single stage common emitter or common source transistor
+amplifiers used for narrow band weak signal service.  Many combinations of
+design are easily obtained by use of different Automatic or Interactive Design
+Routines.  The main goal of this program is to provide functional amplifiers
+for Radio Communications.
+
+    For the Contest minded person, a Utility program has been provided to "zero"
+in on that optimum operating condition for maximum gain and minimum noise figure
+of a particular device.  The designer is reminded that although this design may
+be possible with resistive 50 ohm loads, it may not work in the real world.
+
+    Although originally designed for FET, GaAsFET's, IGFET devices, the program
+will work with Bipolars.  This program currently does not handle Large Signal
+devices.  Some small signal devices with low input/output impedances may look
+like Large Signal devices to the optimization routines N1 - N6 and may cause
+some inaccuracies.  The Y4 option can be used as an alternative!
+
+    Results of the program and the actual amplifier can vary if proper layout
+techniques are not adhered to!  Numerous test amplifiers using the following
+transistors have yielded close correlation to the program;
+
+        MRF904   3N211   3SK124  3SK205
+
+    Through use of this program the you will quickly gain insight as to how to
+properly design an Amplifier, even if one is not schooled in Transistor Design.
+The documentation will contain some personal insights on how to vary design
+parameters to meet different user criterias.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                 Pg. 2
+			   
+                             DOCUMENTATION
+
+The Program Window will first pop up.  Press Return F1 for the Device Library,
+F2 to make a Data File for a new device and F3 for a schematic representation of
+the Matching Circuits for the user to select from.
+Enter the device file name (.DAT extension assumed) desired.  A wrong entry or
+incorrect path will cause an Error routine to pop up.  You have the option of
+trying again or exiting the program.  Make sure the DAT.CFG file has the path
+for the .DAT files. The DAT.CFG file must be in the directory where the
+.EXE files reside.  Once the selection has been made the Main Menu will pop up.
+
+MAIN MENU Selections
+
+    The Main Menu contains selections for Automatic and Interactive routines,
+    Utilities, Device Configuration, Device Selection, and New File Creation 
+    utility.
+
+Auto Design Routines N1 - N6
+
+    These routines make it easy for the non-technical person to design a
+    pre-amp and evaluate different transistors real fast.  Pressing the F10 key
+    while the cursor is on the routine of interest will provide a popup Help
+    Screen which gives information on that routine.
+
+    QL's are adjusted automatically during these optimizations to insure
+    positive values of CT.  QL, QU, and Kc are reset to their optimized values 
+    each time a new device is run.  They can be varied during the active
+    routine with the F3 key.
+
+    When YL (Real) and/or YS (Real) are < ZL or ZS the matching circuit
+    automatically defaults to LO-Z Matching.  Losses are included in the 
+    calculations.
+
+"N1" This Option Optimizes for High Gain and Low Output VSWR while Optimizing 
+    for Low Noise Figure. 
+
+    Minimum Noise and High Gain usually occur at low values of Stern's Stability
+    Factor K.  This routine will sweep a range of K while checking for minimum
+    noise figure.
+   
+    The designer should be aware that not all devices will provide useable L/C
+    values for the matching circuits at this value of K.
+
+
+"N2" This Option Optimizes for High Power Out and Low Output VSWR while 
+    Optimizing for Low Noise Figure. 
+
+    YL (Real) is adjusted for Highest Output Power (dBm) while YL (Imaginary)
+    is constantly re-adjusted for Lowest Output VSWR while YS (Real) is
+    optimized for Lowest Noise Figure while constantly re-adjusting
+    YS (Imaginary) for Input Reactive Match. The Input is not optimized for
+    Lowest Input VSWR but for lowest losses since Lowest Noise Figure is what
+    is desired.
+	
+    The Output Power is calculated as Linear Class B Output Power which is less 
+    than or equal to the -1 dB compression point.
+
+
+                                 Pg. 3
+
+"N3" This Option Optimizes YL for a specified GT while Optimizing    
+    Output VSWR and Noise Figure.  This option most useful for FET devices.
+
+    The Caculated Gain will be within .1 dB of the User Specified Gain.
+    YL (Real) is adjusted to the specified gain while YL (Imaginary) is
+    adjusted for Lowest Output VSWR while Input YS (Real) and YS (Imaginary)
+    are adjusted for Lowest Noise Figure.
+
+"N4" This Option Optimizes Input/Output VSWR at a Designer specified GT.
+    NF and PO are not optimized.  This option most useful for FET devices
+    and Interstage Amplifiers where Noise Figure is not critical.
+
+    The Caculated Gain will be within .1 dB of the User Specified Gain.
+    YL (Real) and YL (Imaginary) are adjusted for Lowest Output VSWR
+    while Input YS (Real) and YS (Imaginary) are also adjusted for the Lowest
+    INPUT VSWR.
+
+"N5" This Routine allows the user specify a design to a specific Stern's 
+    Stability Factor K.  When first selected, the routine asks the user for a 
+    new K.  K is made larger than the desired during the optimization if it is
+    found the GS < Gin and/or GL < Gout.  This will allow realistic QL's and
+    low VSWR's.  
+
+    Output VSWR is optimized in this routine.
+
+"N6" This option works just like N5 except Input VSWR is also optimized.
+    K is made larger than the desired during the optimization if it is
+    found the GS < Gin and/or GL < Gout.  This will allow realistic QL's and
+    low VSWR's.  The Input and Output VSWR's are optimized in this routine.
+
+Interactive Routines Y1 - Y4
+
+    Stern's Stability Factor K can not be changed from the default value for
+    Y1 - Y4 options.  These are user interactive routines and the K is
+    determined by the user YS and/or YL.
+
+    QL, QU, and Kc can be varied during the active routine by use of the F3 key.
+    QL's are not adjusted automatically in the Y2 - Y4 routines except QL(input)
+    of the  Y1 routine.
+
+    When YL (Real) and/or YS (Real) (Y2 - Y4) or just YS(Real) (Y1) are
+    < ZL or ZS the matching circuit automatically defaults to LO-Z Matching. 
+
+"Y1"  This Option lets the Designer enter a user specified Tranformer 
+    of known transformation and reactive component.  The Input is optimized 
+    for Best Noise Figure and the Output for VSWR.
+
+    QU (Output) should be adjusted to the measured value after the first run.
+    QL (Input) is adjusted automatically during the optimization to insure
+    positive values of CT.  QL (Output) will automatically be calculated during
+    the run and will be < 1 for most broadband applications.  A Coefficient of
+    Coupling = 1 for Kc is used for the Transformer.  The program will return to the 
+    default values when selecting a routine other than Y1.
+
+
+
+
+
+                                 Pg. 4
+
+"Y2" This Option accepts the Designers specified YL (Real), calculates
+    GT while Optimizing for Low Output VSWR and Lowest Noise Figure.
+
+    This routine is useful if the designer just wants to see the effects
+    of manually varying the Load while maintaining a Low VSWR output and
+    Lowest Noise Figure for this Load.  The SR routine will do the same by
+    sweeping a range of Loads at one time but with a given Reactive component
+    of the Load.
+
+"Y3" This Option lets the Designer enter a user specified YL while the
+    input is optimized for Best Noise Figure.
+
+    This routine is useful if the designer wants to see the effects of
+    different YL's (Real & Imaginary).  Output is not optimized for Low
+    VSWR.
+
+"Y4" This Option lets the Designer enter a user specified YS (Real & Imaginary)
+    and YL (Real & Imaginary) in order to customize the amplifier.
+
+    The Input is not optimized for Best Noise Figure and the Output is not
+    optimized for Low VSWR in this selection.
+
+    If N4 Source and Load Admittances are used for Y4, the Gain will be 
+    somewhat higher and the NF reading much lower because in the N4 option 
+    an input Shunt resistor is used which adds to the circuit losses.
+    The Y4 option assumes YS is a pure source except for Inductor losses.
+							 
+Utility Routines
+
+"SI" This Utility will sweep a range of YL(Img) while keeping YL(Real) 
+    fixed. YS(Re & Img), NF, GT, and PO are displayed.  Uses default Q's, 
+    Kc's, and K.
+
+    The Status column will indicate OK for Stable and ** for Unsafe conditions.
+    For Unsafe conditions the ** will indicate different colors for different
+    degrees of instability defined as;
+
+        K > 1   Stable                - Cyan
+	Input Gin is negative only    - Yellow
+	Output Gout is negative only  - Blue
+	Gin & Gout are both negative  - Violet
+        Gin, Gout are negative, K < 1 - Red
+
+"SR" This Utility will sweep a range of YL(Real) while keeping YL(Img) 
+    fixed. YS(Re & Img), NF, GT, and PO are displayed.  Uses default Q's, 
+    Kc's, and K.
+
+    The Status Column will indicate different colors for different conditions.
+
+        K > 1   Stable                - Cyan
+	Input Gin is negative only    - Yellow
+	Output Gout is negative only  - Blue
+	Gin & Gout are both negative  - Violet
+        Gin, Gout are negative, K < 1 - Red  
+	
+
+
+
+                                 Pg. 5
+
+"SZ" This Utility allows the Designer to change the Real values of the
+    Source (ZS) and the Load (ZL).  The user has the option of four (4)
+    different 50 Ohm / 75 Ohm ZS/ZL combinations to work with.  This will
+    allow use of low loss 75 Ohm cable.  75 Ohm useful for Cable TV.
+
+"DD"  This selection will redisplay the Data just calculated if no other
+    selection has been made.  There will be no data screen to view if no
+    previous selection was made.
+
+"DP" This selection will display the S and Y Parameters of the Device.
+
+"PI" This selection will display useful information about the program.
+
+                 SPECIAL DATA DISPLAY FUNCTION KEYS
+
+Shift F1 (^F1) This will send the Data Output Screen information to the Printer.
+
+Left Arrow
+    This will Toggle back and forth between the Capacitive Coupling Matching
+    Circuit and the Tapped Inductor Circuit for the Input Network. 
+
+Right Arrow
+    This will Toggle back and forth between the Capacitive Coupling Matching
+    Circuit and the Tapped Inductor Circuit for the Output Network. 
+
+F2  This selection pops up a window showing the Input/Ouput Matching Limits
+    for transformed Sources/Loads and the Mis-Match Ratio for for the current 
+    Stern's Stability Factor.  Also Maximum Safe values of the Transformed
+    Source are given for Schottky and Silicon diode Front End protection 
+    for given device parameters.
+
+F3  Pressing this Key will display the current Input/Output Inductor UnLoaded/
+    Loaded Q's and their Coefficient of Coupling (Kc), Operationg Fo along with
+    Stern's Stability Factor.  The Unloaded Q's and Kc's can be altered at this
+    stage and the Configuration file updated.  The operating frequency Fo and
+    Loaded Q's can be changed during the design process but will not change the
+    configuration file.  K is shown for informational purposes only.
+
+    To change values, just enter the selection number, (CR), and type in the
+    new value.  When finished press the Esc Key to redisplay the new parameters. 
+    If you make a mistake while entering just press the BKSP Key and re-enter
+    the correct value. 
+
+F4  Pressing this key activates the plotting routine.  Input/Output tuning 
+    component values can be varied by the user by pressing the F1 key 
+    (Plot Routine) to further optimize the circuit with visual feedback.  
+
+    Amplifier Stability, Gain, NF, and Output VSWR are displayed.
+
+    Plotting is done at a medium sweep rate and sweep range.  Faster/Slower 
+    sweep rates as well as Wider/Narrower sweep ranges can be selected by the
+    F10 key.  
+
+    Pressing F8 will return the user to the main program where the last YL, YS 
+    was used in the Screen Plot Utility.  The Y4 routine is used to document the
+    design.
+
+    No Plotter/Printer Drivers are currently available for the Screen Plot.
+                                 Pg. 6
+
+                    DEFINITION OF DISPLAY SYMBOLS                   
+
+        YS = Source Admittance and Susceptance  "Enter as 1/GS, 1/BS"                     
+        YL = Load   Admittance and Susceptance  "Enter as 1/GL, 1/BL"                     
+        YI = Device Input  Admittance and Susceptance  "Shown as 1/GI, 1/BI"               
+        YO = Device Output Admittance and Susceptance  "Shown as 1/GO, 1/BO"
+        GT = Device Gain (dB) including Losses                      
+        NF = Device Spot Noise Figure (dB) including Input Losses   
+        PO = Maximum Linear Output Power (dBm)                      
+         K = Stern's Stability Factor at Operating Frequency
+      LOSS = Total Amplifier Losses (dB) "Inductor, RSH Losses"
+        TS = Amplifier Tuning Sensitivity   < .3 is not Critical    
+        CT = Capacitance required to resonate Tuned Circuit
+        Cc = Series Coupling Capacitance required for proper Source 
+             or Load Transformation 
+        LT = Parallel Inductance needed for chosen Loaded Q and Load
+         N = Inductor Turns Ratio for Inductor to provide proper    
+             Source or Load Transformation.  #Turns (Length) * 1/N  
+        QU = Unloaded Inductor Quality Factor  User Settable       
+        QL = Loaded Inductor Quality Factor    User Settable        
+        RS = Transformed Source from 50 Ohms                        
+        RL = Transformed Load from 50 Ohms                          
+       RSH = Shunt Resistance required for 1:1 VSWR                 
+        Kc = Inductor Coefficient of Coupling  Provides correct N (Tap point)
+             User Settable - approxomately .3 for airwound, .9 for toroids        
+        ZI = Impedance looking into the Amplifier                   
+        ZO = Impedance out of the Amplifier                         
+        ZS = Source Impedance - 50 or 75 ohms Resistive - Selectable
+        ZL = Load Impedance - 50 or 75 ohms Resistive   - Selectable
+        L1 = LO-Z Match Shunt Inductor - Device Port to RF Ground        
+        C1 = LO-Z Match Series Capacitor - Device Port to L2 Series Inductor    
+        L2 = LO-Z Match Series Inductor - From Series C1 to In/Output Port      
+        C2 = LO-Z Match Shunt Capacitor - In/Output Port to RF Ground  
+
+ESC This Selection returns to the Main Menu.
+					  
+
+                            MATCHING methods
+
+Capacitor Coupling Symbol Definitions
+
+    CT = Capacitance required to resonate circuit with LT.
+    Cc = Series coupling capacitance to top of LT required to transform
+         the 50 ohm or 75 ohm line up to the required RS or RL.
+    LT = Inductance required for a particular Fo and QL.
+
+Inductive Tap Method
+
+    CT = Capacitance required to resonate circuit with LT.
+    LT = Inductance required for a particular Fo and QL.
+         N = Turns Ratio - use 1/N * # Turns for Tap.
+
+
+
+
+
+
+
+                                Pg. 7
+
+LO-Z Matching Method
+    This Method is utilized when the transformed Load falls below
+    the ZS or ZL selected.  Inductor Losses are included when calculating
+    Gain, NF, VSWR, etc.
+
+    L1 = LO-Z Match Shunt Inductor - Device Port to RF Ground     
+    C1 = LO-Z Match Series Capacitor - Device Port to L2 Series Inductor    
+    L2 = LO-Z Match Series Inductor - From Series C1 to In/Output Port
+    C2 = LO-Z Match Shunt Capacitor - In/Output Port to RF Ground  
+
+    See Motorola (TM) RF Device Data Manual DL110 Rev 3 Pg 7-30     
+               Application Note AN267  Network C1                   
+
+BroadBand Transformer
+    The Turns Ratio "N" is calculated from the given transformed RL and BL
+    using a default Kc of 1.  After the first run of Y1, modify Q unloaded
+    (F3 Key) to the actual measured value.  Q Loaded is automatically
+    calculated.
+
+Misc. circuits
+    The designer need not be limited to the above matching circuits.
+    With the YL, YS, YI, and YO provided, other circuits such as
+    micro-strip can be utilized. 
+
+    Biasing methods of the transistors are left to the designer.
+
+
+                               DESIGN AIDS
+
+    Q's are adjusted in the N1 - N6 and Y1 Routines to automatically provide
+    real values of CT.  In the Y2 - Y4 Routines, if CT and/or Cc are negative,
+    then a higher value of QL must be used. 
+
+    The Inductance values of LT can also be varied to a desired or measured
+    value by changing QL if QL is above the minimum value calculated during
+    the N1 - N6 and Y1 Routines.
+								   
+    Fo can also be varied to a particular operating frequency if within 10%
+    of the original data file Fo.
+
+    The turns ratio N has been corrected for the Coefficient of Coupling Kc.
+
+    Excessively high N at the Input could cause device failure even if shunt
+    back-to-back protection diodes are used if the voltage step up exceeds the
+    device gate to source breakdown.  Check the Vendor's data sheet for device
+    maximum ratings.  For Schottky diodes use Vgate =.6V * N +/- Vsource (Volts),
+    for Switching diodes use Vgate = 1V * N +/- Vsource (Volts).
+
+    In general Capacitive coupling will yield lower VSWRs while the Inductor
+    Tap will provide lower input losses. 
+
+    Use chip capacitors and resistors if possible.  Insure good shielding and
+    grounding.  Orient Inductors at right angles to each other even with using
+    shielding.  Use feedthru caps for Supply feeds.  Use low loss BNC or SMA
+    type connectors.  Use double sided solder plated copper PC Boards with
+    grounds tied together at numerous spots to provide low ground impedances.  
+
+
+                                 Pg. 8
+
+New File Creation Utility
+    A window will pop up asking you if you want to enter S-Parameters or
+Y-Parameters.  Enter the letter S or Y.
+
+    The program will then prompt you with a series of questions pertaining to 
+the device you are using.  All questions should be fairly self explanatory, but
+if you are not familiar with transistor design at all, then refer to the 
+following detailed explanations.  At the end of the questions you will be 
+queried as to whether you want to write these entries to a new data file.
+
+    Making a new data file will allow you to call up the device directly
+from the Data Library without re-entering all the parameters again.  Make sure
+you specify a file name not already used.  The Data Library will be displayed
+at this time in order to show you the current names of the files.  The .DAT
+extension is automatically added when you make a new file. 
+
+(1) Enter Device Part Number
+
+    Enter the Device Part Number only <CR>  (DOS limit of 8 characters)
+
+(2) Specify Device Type <CR>
+
+    BI for Bipolar Junction Transistor
+    JF for Junction FET
+    SG for Enhancement Mode Single Gate FET
+    DG for Enhancement Mode Dual Gate FET
+    GF for Single or Dual Gate GaAs FET
+
+(3) What is VDS or VCE (Volts)
+
+    Enter Device operating Drain/Source or Collector/Emitter Voltage <CR>
+
+(4) Specify Operating Frequency (MHZ)
+
+    Enter Device operating Frequency <CR>
+
+(5) Specify NF (dB) measured in a 50 Ohm system (Bipolars Only)
+
+    Enter the Noise Figure of the BJT as indicated by the Vendors S-Parameter
+    DATA Sheet <CR>.   This will be the Un-optimized value at some frequency. 
+    Example:  1.6 dB at 500 MHZ for the Motorola (TM) MRF-904 Device
+
+(6) Specify Frequency (Mhz) that the NF was measured at (Bipolars Only)
+
+    Enter the frequency of the BJT where the un-optimized Noise Figure
+    was measured <CR>
+    Example:  500 MHZ for the Motorola (TM) MRF-904 Device
+
+(7) Specify IDss for FET Devices or Continuous IC for Bipolar (mA)
+
+    Enter the Short Circuit Drain Current or Maximum Collector Current of the
+    Device. <CR>
+	
+(8) Specify Operating ID or IC (mA) for Device
+
+    Enter the operating Drain or Collector Current of the Device <CR>
+
+
+                                 Pg. 10
+
+(9) Specify Device VGS1 or VBE Reverse Breakdown Voltage (Volts)
+
+(10) Specify Device VGS1 or VBE Operating Voltage
+
+(11) Specify HFE (Bipolar Only)
+
+    Enter the Bipolar HFE from the Vendor Data sheet <CR>
+
+(12) Specify FT (MHZ) (Bipolar Only)
+
+    Enter the Bipolar FT from the Vendor Data sheet <CR>
+
+(13) Is Data Input Correct? (N)
+
+    Enter " Y " if OK then <CR> else just <CR> to re-enter all previous data.
+
+           Device S-Parameter Data Entry from Vendor Data Sheet
+           @ Device Operating Frequency and Bias Conditions
+
+    * The Y-Parameters follow the same sequence except that you are entering
+      Admittances.
+
+(14) SPECIFY S11(M), S11(P)
+
+    Enter S11 Input Reflection Coefficient <CR>
+    Enter S11 Phase Angle (Degrees) <CR>
+
+(15) SPECIFY S21(M), S21(P)
+
+    Enter S21 Forward Reflection Coefficient <CR>
+    Enter S21 Phase Angle (Degrees) <CR>
+
+(16) SPECIFY S12(M), S12(P)
+
+    Enter S12 Reverse Reflection Coefficient <CR>
+    Enter S12 Phase Angle (Degrees) <CR>
+
+(17) SPECIFY S22(M), S22(P)
+
+    Enter S22 Output Reflection Coefficient <CR>
+    Enter S22 Phase Angle (Degrees) <CR>
+
+(18) Is S-Parameter Data Correct? (Y)
+
+    If Data is correct press <CR> else type " N " <CR> and re-enter Data
+
+(19) Do you wish to make this entry a Data File? (Y)
+
+    Enter <CR> for "Y" or " N " <CR> for "No"
+
+    ** Caution **  If you select " N "
+    Program will still retain the entered data while the program is still
+    running but will loose it if a different device is entered or you exit
+    the program.
+
+
+
+
+                                 Pg. 11
+
+(20) If you pressed Y then enter Data File Name 
+     (.DAT extension added automatically)
+
+    If you previously answered yes then this prompt will display itself.
+    Enter the Data File name (Normal DOS limits) and press <CR>
+    The file will be written to the Path indicated by the DAT.CFG File
+
+    ** Caution **
+    If you use a name previously used the old file will be written over!
+
+(21) You will be asked if you what to generate another file or return to
+    program.  Enter your response.
+
+                           SCREEN PLOTTING ROUTINE
+
+    The Screen Plotting Routine allows a visual display of Amplifier Gain,
+    Stability, N.F., and Output VSWR.  The designer can tweak the matching 
+    circuits for optimum performance.  EGA or higher graphics are required
+    to run this routine.
+
+    Current YS and YL, along with Center Frequency Gain, N,F., and VSWR 
+    are values are also shown. A Stability Color Coded Bar is displayed
+    at the bottom of the plot as well as the 3dB Bandwidth at the top.
+
+                                  UTILITIES
+
+^F1 GRAPHICS SCREEN DUMP
+    Pressing "SHIFT + F1" will provide a B&W Graphics Screen Dump to your
+    graphics capable printer.   Since the standard DOS GRAPHICS.COM doesn't 
+    allow the user any flexibility a user configurable file DISPLAY.CFG has
+    been provided to allow customizing of the Screen Dump format to your 
+    particular printer.
+
+F1  TUNE 
+    Pressing F1 pops up a screen containing the Input and Ouput 
+    Matching Components.  Values can be modified to change performance.
+
+    Changing the Output CT provides the best choice in adjusting the
+    N.F. without degrading amplifier performance to a large degree.
+
+    Loaded Q's are automatically recalculated when changing inductor values
+    or Source, Load changes.
+
+F4  MENU
+    Returns to Main Program Menu.  Amplifier Data is not saved.
+
+F8  DOCUMENTATION
+    Returns Modified or Un-Modified Amplifier Design to Main Program.
+    routine Y4 is used to reconstruct the circuit except for Y1 in which the
+    Y1 routine is used.
+
+F10 CFG
+    The Plot Utility is normally set to the medium plotting speed and 
+    Mid-Range on frequency sweep.
+
+    Plotting speed (or Line density) can be changed and the sweep reset
+    to a larger or smaller range.

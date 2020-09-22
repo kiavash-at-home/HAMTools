@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Name=YAGIMAX
+GenericName=Signals, Noise and Propagation
+TryExec=YAGIMAX
+Exec=YAGIMAX %F
+Icon=YAGIMAX
+Terminal=false
+Type=Application
+Categories=Education;Math;Engineering;
+MimeType=application/YAGIMAX;

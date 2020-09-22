@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Name=PCAAD
+GenericName=Personal Computer Aided Antenna Design 2.1
+TryExec=PCAAD
+Exec=PCAAD %F
+Icon=PCAAD
+Terminal=false
+Type=Application
+Categories=Education;Math;Engineering;
+MimeType=application/PCAAD;

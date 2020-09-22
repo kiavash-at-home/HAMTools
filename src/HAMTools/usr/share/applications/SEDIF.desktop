@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Name=SEDIF
+GenericName=ACTIVE & PASSIVE FILTERS STUDY & DESIGN
+TryExec=SEDIF
+Exec=SEDIF %F
+Icon=SEDIF
+Terminal=false
+Type=Application
+Categories=Education;Math;Engineering;
+MimeType=application/SEDIF;

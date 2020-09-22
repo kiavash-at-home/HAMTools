@@ -1,0 +1,6 @@
+?package(YAGIMAX):needs="X11" \
+ section="Applications/Science/Electronics" \
+ title="YAGIMAX" \
+ longtitle="ACTIVE & PASSIVE FILTERS STUDY & DESIGN" \
+ icon="/usr/share/pixmaps/YAGIMAX.xpm" \
+ command="/usr/local/bin/YAGIMAX"

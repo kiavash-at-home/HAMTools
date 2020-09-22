@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Name=Post-Puff
+GenericName=Calculate K and D from puff
+TryExec=post-puff
+Exec=post-puff %F
+Icon=post-puff
+Terminal=false
+Type=Application
+Categories=Education;Math;Engineering;
+MimeType=application/post-puff;
