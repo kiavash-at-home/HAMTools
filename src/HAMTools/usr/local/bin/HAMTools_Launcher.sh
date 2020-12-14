@@ -74,6 +74,6 @@ if [ -f ${RFTOOLS_CONFIG_LOCATON}/${MAIN_CONFIG} -a -f ${RFTOOLS_CONFIG_LOCATON}
     xdotool search --name "${TOOL}" set_window --classname "${TOOL}" --class "${TOOL}" windowunmap windowmap
     exit 0
 else
-    echo "Re-installe the package!"
+    echo "Re-install the package!"
     exit 1
 fi
