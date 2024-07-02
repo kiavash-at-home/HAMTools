@@ -8,12 +8,15 @@ POBJS =	puff.o pfart.o pffft.o pfmsc.o pfrw.o pfst.o pfun1.o pfun2.o pfun3.o xgr
 # Find the ARCH and use the corresponding lcl-unit path
 ARCH := $(shell uname -m)
 
+# Find version
+ARCH := $(shell ./version)
+
 puff:	$(POBJS) puff_c.o ppas.sh
 	sed 's/.res -e _start/.res puff_c.o -lX11 -e _start/' <ppas.sh  >ppasx.sh
 	sh ppasx.sh
 
 %.o:	%.pas
-	$(PASCALCOMPILER) -g $< -Cn -Fu/usr/lib/lazarus/2.?.?/components/lazutils/lib/$(ARCH)-linux/
+	$(PASCALCOMPILER) -g $< -Cn -Fu/usr/lib/lazarus/$(VERSION)/components/lazutils/lib/$(ARCH)-linux/
 
 ppas.sh:	puff.pas
 	$(PASCALCOMPILER) -g -s -a -T puff.pas
