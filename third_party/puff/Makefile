@@ -9,11 +9,11 @@ POBJS =	puff.o pfart.o pffft.o pfmsc.o pfrw.o pfst.o pfun1.o pfun2.o pfun3.o xgr
 ARCH := $(shell uname -m)
 
 puff:	$(POBJS) puff_c.o ppas.sh
-	sed 's/link.res/link.res puff_c.o -lX11/' <ppas.sh  >ppasx.sh
+	sed 's/.res -e _start/.res puff_c.o -lX11 -e _start/' <ppas.sh  >ppasx.sh
 	sh ppasx.sh
 
 %.o:	%.pas
-	$(PASCALCOMPILER) -g $< -Cn -Fu/usr/lib/lazarus/2.0.0/components/lazutils/lib/$(ARCH)-linux/
+	$(PASCALCOMPILER) -g $< -Cn -Fu/usr/lib/lazarus/2.2.6/components/lazutils/lib/$(ARCH)-linux/
 
 ppas.sh:	puff.pas
 	$(PASCALCOMPILER) -g -s -a -T puff.pas
@@ -25,5 +25,5 @@ clean:
 	rm -rf *.o
 	rm -rf *.s
 	rm -rf *.ppu
-	rm -rf link.res
+	rm -rf link*.res
 	rm -rf ppas.sh ppasx.sh
