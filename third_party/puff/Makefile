@@ -13,7 +13,7 @@ puff:	$(POBJS) puff_c.o ppas.sh
 	sh ppasx.sh
 
 %.o:	%.pas
-	$(PASCALCOMPILER) -g $< -Cn -Fu/usr/lib/lazarus/2.2.6/components/lazutils/lib/$(ARCH)-linux/
+	$(PASCALCOMPILER) -g $< -Cn -Fu/usr/lib/lazarus/2.?.?/components/lazutils/lib/$(ARCH)-linux/
 
 ppas.sh:	puff.pas
 	$(PASCALCOMPILER) -g -s -a -T puff.pas
