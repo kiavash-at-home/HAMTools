@@ -14,6 +14,8 @@ jobs:
         run: | 
           cd $GITHUB_WORKSPACE
           chmod +x ./third_party/puff/version.sh
+          git config --global user.name "GitHub Action"
+          git config --global user.email "action@github.com"
       - name: q2
         run: git add .
       - name: commit
