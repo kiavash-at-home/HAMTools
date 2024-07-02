@@ -1,0 +1,24 @@
+name: build
+
+on:
+  workflow_dispatch:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Init tools
+        uses: actions/checkout@v4.1.7
+      - name: Create Package
+        shell: bash
+        run: |
+          cd $GITHUB_WORKSPACE
+          chmod +x *
+          $GITHUB_WORKSPACE/src/build.sh
+      - name: Output the result
+        uses: actions/upload-artifact@v4.3.3
+        with:
+          name: pbskids-dl.deb
+          path: HAMTools*.deb
+          if-no-files-found: error
