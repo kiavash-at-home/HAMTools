@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
 : '
-Copyright 2020 by Kiavash
+Copyright 2024 by Kiavash
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -15,7 +15,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 '
 PACKAGE_NAME=HAMTools
-PACKAGE_VERSION=20200922
+PACKAGE_VERSION=20240702
 
 # Array holding list of MSDOS tools inside this package
 TOOLS_INCLUDED_IN_PACKAGE=( SEDIF LINPLAN HEAD ASP PCAAD SNAPmax RASCAL YAGIMAX ANTMAKER LPCAD )
@@ -42,7 +42,7 @@ then if [ "${1}" == "clean" ];
 fi
 
 ##Check build dependencies
-LIST_NEEDED_PACKGES=( build-essential fakeroot fpc lcl-units libgtk2.0-dev libxmu-headers libgd-dev libxmu-dev libglib2.0-dev libncurses5-dev )
+LIST_NEEDED_PACKGES=( build-essential fpc lcl-units libgtk2.0-dev libxmu-headers libgd-dev libxmu-dev libglib2.0-dev libncurses5-dev )
 TO_INSTALL_PACKAGES=""
 
 for NEEDED_PACKAGE in "${LIST_NEEDED_PACKGES[@]}"
@@ -155,4 +155,4 @@ sed -r "s/(Version:).*/\1 ${PACKAGE_VERSION}/" -i ${PACKAGE_NAME}/DEBIAN/control
 sed -r "s/(Architecture:).*/\1 ${ARCH}/" -i ${PACKAGE_NAME}/DEBIAN/control
 
 # build the deb binary package
-fakeroot dpkg-deb --root-owner-group -b ${PACKAGE_NAME}/ ${PACKAGE_NAME}_${PACKAGE_VERSION}_${ARCH}.deb
+dpkg-deb --root-owner-group --build ${PACKAGE_NAME}/ ${PACKAGE_NAME}_${PACKAGE_VERSION}_${ARCH}.deb
