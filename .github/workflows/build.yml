@@ -19,6 +19,6 @@ jobs:
       - name: Output the result
         uses: actions/upload-artifact@v4.3.3
         with:
-          name: pbskids-dl.deb
+          name: HAMTools.deb
           path: src/HAMTools.deb
           if-no-files-found: error
