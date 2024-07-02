@@ -156,4 +156,6 @@ sed -r "s/(Architecture:).*/\1 ${ARCH}/" -i ${PACKAGE_NAME}/DEBIAN/control
 
 # build the deb binary package
 dpkg-deb --root-owner-group --build ${PACKAGE_NAME}/ ${PACKAGE_NAME}_${PACKAGE_VERSION}_${ARCH}.deb
-ln -s ${PACKAGE_NAME}_${PACKAGE_VERSION}_${ARCH}.deb ${PACKAGE_NAME}.deb
+if [ -n "$GITHUB_WORKSPACE" ]; then
+  ln -s ${PACKAGE_NAME}_${PACKAGE_VERSION}_${ARCH}.deb ${PACKAGE_NAME}.deb
+fi
