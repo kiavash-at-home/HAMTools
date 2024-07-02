@@ -1,2 +1,2 @@
 #/bin/bash
-ls /usr/lib/lazarus ö grep -E "2.?.?"
+ls /usr/lib/lazarus | grep -E "2.?.?"
