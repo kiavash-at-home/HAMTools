@@ -54,7 +54,7 @@ do
 done
 
 if [ -n "${TO_INSTALL_PACKAGES}" ]; then
-    echo "The packages ${TO_INSTALL_PACKAGES}, need to be installed."
+    echo "The packages${TO_INSTALL_PACKAGES}, need to be installed."
     exit 1
 fi
 
