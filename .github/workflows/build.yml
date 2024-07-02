@@ -13,9 +13,9 @@ jobs:
       - name: Create Package
         shell: bash
         run: |
-          cd $GITHUB_WORKSPACE
-          sudo apt install build-essential fpc lcl-units libgtk2.0-dev libxmu-headers libgd-dev libxmu-dev libglib2.0-dev libncurses5-dev
-          $GITHUB_WORKSPACE/src/build.sh
+          cd $GITHUB_WORKSPACE/src
+          sudo apt-get install build-essential fpc lcl-units libgtk2.0-dev libxmu-headers libgd-dev libxmu-dev libglib2.0-dev libncurses5-dev
+          ./build.sh
       - name: Output the result
         uses: actions/upload-artifact@v4.3.3
         with:
