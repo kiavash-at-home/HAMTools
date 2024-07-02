@@ -1,0 +1,20 @@
+name: Non-existent workflow
+on:
+  push:
+
+permissions: write-all
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.7
+      - name: test
+        run: | 
+          cd $GITHUB_WORKSPACE
+          chmod +x ./third_party/puff/version.sh
+      - name: q2
+        run: git add .
+      - name: commit
+        run: git commit -m "chmod"
